@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+      <form action="redirect" method="post">
+
+        <h1 class="heading-large">Enter your postcode</h1>
+
+        <label for="postcode">
+          <span class="form-hint">Enter the first part of your postcode, for example LS1 or YO26</span>
+        </label>
+
+        <br>
+
+        <input class="form-control form-control-1-4" id="postcode" type="text" name="postcode">
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
