@@ -1,0 +1,23 @@
+.c-field-submit {
+  background: $panel-colour;
+  padding: 2rem;
+  margin: 4rem 0 2rem 0;
+  @include clearfix;
+  &__heading {
+    margin: 0 0 1rem 0;
+  }
+  &__row {
+    @include clearfix;
+  }
+  &__capture,
+  &__action{
+    float: left;
+  }
+  &__capture {
+    margin-right: 10px;
+  }
+  &__label {
+    margin-bottom: 1rem;
+    display: block;
+  }
+}
