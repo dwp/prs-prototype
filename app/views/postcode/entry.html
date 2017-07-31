@@ -10,18 +10,31 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-
       <form action="redirect" method="post">
 
-        <h1 class="heading-large">Enter your postcode</h1>
+        <div class="c-field-submit">
 
-        <label for="postcode">
-          <span class="form-hint">Enter the first part of your postcode, for example LS1 or YO26</span>
-        </label>
+          <h1 class="heading-large c-field-submit__heading">Enter your postcode</h1>
 
-        <br>
+          <label for="postcode" class="c-field-submit__label">Enter your full postcode, for example LS1 or YO26</label>
 
-        <input class="form-control form-control-1-4" id="postcode" type="text" name="postcode">
+          <div class="c-field-submit__row">
+
+            <div class="c-field-submit__capture">
+              <input class="form-control form-control-1-1" id="postcode" type="text" name="postcode">
+            </div>
+
+            <div class="c-field-submit__action">
+              <input type="submit" class="button" value="Submit">
+            </div>
+
+          </div>
+
+      </div>
+
+        <div class="form-group">
+          <span class="form-hint">Find a postcode on <a href="http://www.royalmail.com/find-a-postcode">Royal Mail's postcode finder</a></span>
+        </div>
 
       </form>
 
