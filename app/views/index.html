@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  GOV.UK prototype kit ss
+  GOV.UK prototype kit
 {% endblock %}
 
 {% block content %}
@@ -11,25 +11,54 @@
     <div class="column-two-thirds">
 
       <h1 class="heading-xlarge">
-        Request direct rent payments if you're a landlord
-      </h1>
-      <p>
-        If a tenant is in rent arrears of 2 or more months you can ask for payments to be taken direct from their Universal Credit. </p>
+                Request direct rent payments if you're a landlord
+        <!-- <span class="heading-secondary">{{releaseVersion}}</span>
+      </h1>{{releaseVersion | log }}
+ -->
+  <h2 class="heading-xlarge">Prototypes</h2>
 
-        <p>You can ask for regular direct payments of rent (known as ‘managed payments’), deductions for rent arrears, or both.</p>
 
-        <p>You will need to complete and send a form to the Department for Work and Pensions.
-      </p>
 
-			
-      <p><a href="/postcode/entry.html" class="button button-start">Check where to send your form</a></p>
 
-      <h2 class="heading-large">Before you start</h2>
-      <p>You can also <a href="#">request a direct payment by post</a>.</p>
-      
+  <h2 class="heading-large">Postcode checker</h2>
+  <ul class="list-bullet">
+ <!--    <li> <a href="/payments-v2/start">Postcode checker v2:</a> new prototype including feedbak from UR sessions week commencing 7/8/2017</li> -->
+    
+    <li> <a href="/postcode/start">Postcode checker v1:</a> initial prototype for postcode checker</li>
+  </ul>
+
+
+    <h2 class="heading-medium">Examples and documentation</h2>
+
+    <ul class="list list-bullet">
+      <li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
+      <li><a href="https://github.com/alphagov/govuk_prototype_kit">GitHub</a></li>
+    </ul>
+
+    <h2 class="heading-medium">Other resources</h2>
+
+  <ul class="list list-bullet">
+    <li>
+      <a href="https://govuk-elements.herokuapp.com/snippets/">
+        Guide to GOV.UK Elements
+      </a>
+    </li>
+    <li>
+      <a href="https://www.gov.uk/service-manual">
+        Service design manual
+      </a>
+    </li>
+    <li>
+      <a href="https://www.gov.uk/design-principles">
+        Government Digital Service Design Principles
+      </a>
+    </li>
+  </ul>
 
     </div>
   </div>
 </main>
 
 {% endblock %}
+
+
