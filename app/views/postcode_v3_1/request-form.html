@@ -11,7 +11,7 @@
     <div class="column-two-thirds">
 
         <h1 class="heading-large">Your request form</h1>
-        {% if postcode == 'SK4 1EZ' %}
+        {% if data['postcode'] == 'SK4 1EZ' %}
         <p>This is the form you will need to fill in to request your direct payment.</p>
         <p>Download this form, and email to <a href="mailto:fullserviceuniversalcredithousing.aparequest@dwp.gsi.gov.uk">fullserviceuniversalcredithousing.aparequest@dwp.gsi.gov.uk</a></p>
         <br>
@@ -21,9 +21,13 @@
         <br>
         {% endif %}
 
+        {% if data['gsiTrue'] == 'true' %}
+        <p><i class="icon icon-file-download" style="vertical-align: middle; margin-right: 10px;"></i> <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/608414/uc47-secure-landlord-request-for-a-managed-payment-rent-arrears.pdf" class="bold-xsmall">Download SECURE APA request form</a></p>
+        {% endif %}
 
+        {% if data['gsiTrue'] == 'false' %}
         <p><i class="icon icon-file-download" style="vertical-align: middle; margin-right: 10px;"></i> <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/608414/uc47-non-secure-landlord-request-for-a-managed-payment-rent-arrears.pdf" class="bold-xsmall">Download UNSECURE APA request form</a></p>
-
+        {% endif %}
 
 <!--         If the wording for the pdf needs to be different:
  -->
