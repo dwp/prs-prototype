@@ -8,7 +8,7 @@ router.get('/', function (req, res) {
 
 // Route index page v1
 router.post('/postcode/redirect', function (req, res) {
-  res.render('./postcode/full-service-email', {
+  res.render('./postcode/request-form', {
     postcode: (req.body.postcode ? req.body.postcode : 'not entered')
   })
 })
