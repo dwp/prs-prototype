@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+
+
+        <h1 class="heading-large">Your request form</h1>
+ 
+<!--         <<< form section >>>
+ -->
+        {% if data['gsiTrue'] == 'true' %}
+        <p>This is the form you will need to fill in to request your direct payment.</p>
+        <ul class="list list-number">
+        <br>
+        <li>Download and fill in this form:
+        <p><i class="icon icon-file-download" style="vertical-align: middle; margin-right: 10px;"></i> <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/608413/uc47-secure-landlord-request-for-a-managed-payment-rent-arrears-deduction.pdf" class="bold-xsmall">Download SECURE APA request form</a></p>
+        {% endif %}
+        </li>
+        </ul>
+
+        {% if data['gsiTrue'] == 'false' %}
+        <p>This is the form you will need to fill in to request your direct payment.</p>
+        <ul class="list list-number">
+        <li>Download and fill in this form:
+        <p><i class="icon icon-file-download" style="vertical-align: middle; margin-right: 10px;"></i> <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/608414/uc47-non-secure-landlord-request-for-a-managed-payment-rent-arrears.pdf" class="bold-xsmall">Download UNSECURE APA request form</a></p>
+        {% endif %}
+        </li>
+        </ul>
+
+<!--         <<< email section >>>
+ -->
+
+        {% if data['postcode'] == 'SK4 1EZ' %}
+        <ul class="list list-number">
+        <li>And email to:
+        <a href="mailto:fullserviceuniversalcredithousing.aparequest@dwp.gsi.gov.uk">fullserviceuniversalcredithousing.aparequest@dwp.gsi.gov.uk</a></li>
+        <br>
+        </ul>
+
+        {% else %}
+        <ul class="list list-number">
+        <li>And email to:
+        <a href="mailto:liveserviceuniversalcredithousing.aparequest@dwp.gsi.gov.uk">liveserviceuniversalcredithousing.aparequest@dwp.gsi.gov.uk</a></li>
+        </ul>
+        {% endif %}
+        <br>
+
+                <a class="button" href="/postcode_v5/start" role="button">Finish</a>
+                <br>
+
+                <br>
+                  </br>      
+
+
+
+        <ul class="list">
+        <li>Alternatively, you can post your form to:</li>
+        <li>FREEPOST</li>
+        <li>DWP</li>
+        <li>Universal Credit Live Service</li>
+        </ul>
+
+</div>
+</div>
+</main>
+
+
+        </div>
+        </ul>
+
+        </div>
+
+        
+
+<!--         If the wording for the pdf needs to be different:
+ -->
+        <!-- <p><i class="icon icon-file-download" style="vertical-align: middle; margin-right: 10px;"></i> <a href="#" class="bold-xsmall">Download {{ 'full service ' if postcode == 'SK4 1EZ' }} APA request form</a></p>
+ -->
+
+
+
+
+
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

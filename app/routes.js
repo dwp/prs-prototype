@@ -27,10 +27,22 @@ router.post('/postcode_v3_1/redirect', function (req, res) {
   })
 })
 
+// Route index page v5
+router.post('/postcode_v5/redirect', function (req, res) {
+  res.render('./postcode_v5/email-type', {
+    postcode: (req.body.postcode ? req.body.postcode : 'not entered')
+  })
+})
+
 
 // Branching v3.1
 router.get('/postcode_v3_1/email-type', function (req, res) {
   res.render('./postcode_v3_1/request-form')
+})
+
+// Branching v5
+router.get('/postcode_v5/email-type', function (req, res) {
+  res.render('./postcode_v5/request-form')
 })
 
 // add your routes here
