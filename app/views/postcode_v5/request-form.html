@@ -22,7 +22,7 @@
         <ul class="list list-number">
         <br>
         <li>Download and fill in this form:
-        <p><i class="icon icon-file-download" style="vertical-align: middle; margin-right: 10px;"></i> <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/608413/uc47-secure-landlord-request-for-a-managed-payment-rent-arrears-deduction.pdf" class="bold-xsmall">Download SECURE APA request form</a></p>
+        <p><i class="icon icon-file-download" style="vertical-align: middle; margin-right: 10px;"></i> <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/608413/uc47-secure-landlord-request-for-a-managed-payment-rent-arrears-deduction.pdf" class="bold-xsmall">Download request form</a></p>
         {% endif %}
         </li>
         </ul>
@@ -31,7 +31,7 @@
         <p>This is the form you will need to fill in to request your direct payment.</p>
         <ul class="list list-number">
         <li>Download and fill in this form:
-        <p><i class="icon icon-file-download" style="vertical-align: middle; margin-right: 10px;"></i> <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/608414/uc47-non-secure-landlord-request-for-a-managed-payment-rent-arrears.pdf" class="bold-xsmall">Download UNSECURE APA request form</a></p>
+        <p><i class="icon icon-file-download" style="vertical-align: middle; margin-right: 10px;"></i> <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/608414/uc47-non-secure-landlord-request-for-a-managed-payment-rent-arrears.pdf" class="bold-xsmall">Download request form</a></p>
         {% endif %}
         </li>
         </ul>
@@ -40,21 +40,21 @@
  -->
 
         {% if data['postcode'] == 'SK4 1EZ' %}
-        <ul class="list list-number">
+        <ol class="list list-number" start="2">
         <li>And email to:
         <a href="mailto:fullserviceuniversalcredithousing.aparequest@dwp.gsi.gov.uk">fullserviceuniversalcredithousing.aparequest@dwp.gsi.gov.uk</a></li>
         <br>
-        </ul>
+        </ol>
 
         {% else %}
-        <ul class="list list-number">
+        <ol class="list list-number" start="2">
         <li>And email to:
         <a href="mailto:liveserviceuniversalcredithousing.aparequest@dwp.gsi.gov.uk">liveserviceuniversalcredithousing.aparequest@dwp.gsi.gov.uk</a></li>
-        </ul>
+        </ol>
         {% endif %}
         <br>
 
-                <a class="button" href="/postcode_v5/start" role="button">Finish</a>
+                <a class="button" href="/postcode_v5/start" role="button">Start again</a>
                 <br>
 
                 <br>
