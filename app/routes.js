@@ -34,6 +34,13 @@ router.post('/postcode_v5/redirect', function (req, res) {
   })
 })
 
+// Route index page v6
+router.post('/postcode_v6/redirect', function (req, res) {
+  res.render('./postcode_v6/email', {
+    postcode: (req.body.postcode ? req.body.postcode : 'not entered')
+  })
+})
+
 
 // Branching v3.1
 router.get('/postcode_v3_1/email-type', function (req, res) {
@@ -51,10 +58,24 @@ router.post('/postcode_v5/email', function(req, res) {
     res.redirect('/postcode_v5/post')}
 })
 
+router.post('/postcode_v6/email', function(req, res) {
+  console.log(req.body.email)
+  if(req.body.email==='emailyes') {
+    res.redirect('/postcode_v6/email-type')
+  }
+  else{
+    res.redirect('/postcode_v6/post')}
+})
+
 
 // Branching v5
 router.post('/postcode_v5/email-type', function (req, res) {
   res.redirect('/postcode_v5/request-form')
+})
+
+// Branching v6
+router.post('/postcode_v6/email-type', function (req, res) {
+  res.redirect('/postcode_v6/request-form')
 })
 
 module.exports = router
