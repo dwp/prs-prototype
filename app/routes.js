@@ -107,7 +107,7 @@ router.post('/notify-automated/contact-method', function(req, res) {
 router.get('/notify-automated/submitted', function(req, res){
   // const reference = 'DWP0002017G6YDS';
   const messagesToSend = []
-  const personalisation = { 'refno' : 'DWP017G6YDS' }
+  const personalisation = { 'refno' : 'AA123' }
   if (req.session.contactType.includes('sms')){
     console.log('sms triggered');
     messagesToSend.push(
