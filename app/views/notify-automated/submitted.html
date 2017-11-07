@@ -1,0 +1,29 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit ss {% endblock %} {% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-full">
+
+      <div class="govuk-box-highlight padding-small">
+        <h1 class="bold-large m-b-s">Your application has been submitted</h1><br>
+        <p><strong class="heading-small">Your reference number is {{ reference }}</strong></p>
+        <p>We will also send this reference to you via your preferred contact method</p>
+        <!--   <p><We will also send this to you via your preffered contact method.</p> -->
+      </div>
+
+      <h2 class="heading-medium">What happens next?</h2>
+      <p>We will contact you by your preferred method when we have something to tell you.<br>
+        </br>If you don't hear from us within 14 working days then please call us on 0330 123 4567.<br>
+        <p>
+          If any information regarding your application or your tenant changes, then please inform us at <a href="#">UC.SERVICECENTREHOUSING@DWP.GSI.GOV.UK</a> as soon as possible.
+        </p><br>
+
+
+        <!-- <p>Phone Number {{ phone }}</p>
+        <p>Email {{ email }}</p> -->
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

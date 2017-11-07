@@ -1,0 +1,35 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">Landlord's contact details</h1>
+      <p>We need this so we can contact you.</p>
+
+      <form method="post" class="form">
+
+        <div class="form-group">
+          <label class="form-label-bold" for="landlordPhone">Phone number</label>
+          <input class="form-control" id="landlordPhone" name="landlordPhone" type="text">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label-bold" for="landlordEmail">Email address</label>
+          <input class="form-control" id="landlordEmail" name="landlordEmail" type="text">
+        </div>
+
+        <p>
+          <a href="#">I don't have an email address</a>
+        </p>
+
+
+        <div class="form-group">
+          <button type="submit" class="button">Continue</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

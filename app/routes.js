@@ -78,4 +78,64 @@ router.post('/postcode_v6/email-type', function (req, res) {
   res.redirect('/postcode_v6/request-form')
 })
 
+
+///////////////////////////////////////////////
+
+router.post('/notify-automated/landlord-contact', function (req, res) {
+  req.session.landlordPhone = req.body.landlordPhone;
+  req.session.landlordEmail = req.body.landlordEmail;
+  res.redirect('./landlord-bank')
+})
+
+router.get('/notify-automated/contact-confirm', function(req, res) {
+  // console.log(`the current value of phone is: ${req.session.landlordPhone}`)
+  // console.log(`the current value of email is: ${req.session.landlordEmail}`)
+  res.render('./notify-automated/contact-confirm', { landlordPhone: req.session.landlordPhone })
+})
+
+router.post('/notify-automated/contact-confirm', function(req, res) {
+  req.session.landlordPhone = req.body.landlordSmsContactNumber;
+  res.render('./notify-automated/declaration')
+})
+
+router.post('/notify-automated/contact-method', function(req, res) {
+  req.session.contactType = req.body.contactType;
+  // console.log(`contact method is: ${req.session.contactType}. and the type is: ${typeof(req.session.contactType)}`)
+  res.redirect('./contact-confirm')
+})
+
+router.get('/notify-automated/submitted', function(req, res){
+  // const reference = 'DWP0002017G6YDS';
+  const messagesToSend = []
+  const personalisation = { 'refno' : 'DWP017G6YDS' }
+  if (req.session.contactType.includes('sms')){
+    console.log('sms triggered');
+    messagesToSend.push(
+      {
+        type: 'sms',
+        template: '6a1aebbc-78f7-49c2-9313-ddccb9164bce',
+        to: req.session.landlordPhone,
+        personalisation
+      }
+  );
+  }
+  if (req.session.contactType.includes('email')){
+    console.log('email triggered');
+    messagesToSend.push(
+      {
+        type: 'email',
+        template: '0f6f2be7-ec6b-4e59-bfa1-207f3aed03fc',
+        to: req.session.landlordEmail,
+        personalisation
+      }
+  );
+  }
+
+  var callMe = require('./assets/javascripts/notify-automated')(messagesToSend);
+  res.render('./notify-automated/submitted', { reference: personalisation.refno, phone: req.session.landlordPhone, email: req.session.landlordEmail });
+  // res.send(messagesToSend);
+})
+///////////////////////////////////////////////
+
+
 module.exports = router

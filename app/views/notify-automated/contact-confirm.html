@@ -1,0 +1,28 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-large">You've asked for text messages</h1>
+      <p>This is the phone number you'll get updates on.</p>
+      <p>You can change this if you want to use a different number.</p>
+
+
+      <form method="post" class="form">
+
+        <div class="form-group">
+          <label class="form-label-bold" for="landlordSmsContactNumber">Mobile phone number</label>
+          <input class="form-control" id="landlordSmsContactNumber" name="landlordSmsContactNumber" type="text" value={{landlordPhone}}>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="button">Continue</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
