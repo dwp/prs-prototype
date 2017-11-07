@@ -131,7 +131,7 @@ router.get('/notify-automated/submitted', function(req, res){
   );
   }
 
-  var callMe = require('./assets/javascripts/notify-automated')(messagesToSend);
+  var callMe = require('./assets/javascripts/notify')(messagesToSend);
   res.render('./notify-automated/submitted', { reference: personalisation.refno, phone: req.session.landlordPhone, email: req.session.landlordEmail });
   // res.send(messagesToSend);
 })
