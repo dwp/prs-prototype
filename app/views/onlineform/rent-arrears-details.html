@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+        <a href="/onlineform/partner.html" class="link-back">Back</a>
+
+
+<h1 class="heading-large">
+        Rent arrears details
+      </h1>
+
+      <br>
+
+<form>
+      <div class="grid-row">
+        <div class="form-group-compound list-item-wrapper">
+          <h2 class="heading-medium">Missing rent payment 1</h2>
+
+          <fieldset>
+            <div class="column-one-third no-padding">
+              <div class="form-group list-item">
+                <label class="form-label" for="rent-due-date">
+                  Rent due date:
+                </label>
+                <input type="text" class="form-control" id="rent-due-date" name="rent-due-date">
+              </div>
+            </div>
+
+            <div class="column-one-third no-padding">
+              <div class="form-group list-item">
+                <label class="form-label" for="amount-due">
+                Amount due:
+              </label>
+                <input type="text" class="form-control" id="amount-due" name="amount-due">
+              </div>
+            </div>
+
+               <div class="column-one-third no-padding">
+              <div class="form-group list-item">
+                <label class="form-label" for="field-2">
+                  Amount paid (if any):
+                </label>
+                <input type="text" class="form-control" id="field-2" name="field-2">
+              </div>
+            </div>
+
+            <dd class="change">
+            <a href="#">
+              Change<span class="visually-hidden"> name</span>
+            </a>
+          </dd>
+
+          <hr />
+        </div>
+      </div>
+
+      <div class="grid-row">
+        <div class="column-two-thirds">
+          <div class="form-group">
+            <button id="add-button" class="button button-add-another">Add another</button>
+          </div>
+
+        </div>
+      </div>
+    </form>
+
+<p><a href="/onlineform/rent-arrears-details.html" class="button">Continue</a></p>
+        <p>
+
+
+
+
+<!-- <div class="form-group-compound">
+        <div class="form-group form-group">
+          <label class="form-label" for="dob-day">Day</label>
+          <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+        </div>
+        <div class="form-group form-group-month">
+          <label class="form-label" for="dob-month">Month</label>
+          <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+        </div>
+        <div class="form-group form-group-year">
+          <label class="form-label" for="dob-year">Year</label>
+          <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
+        </div>
+      </div>
+ -->
+
+<!-- <fieldset>
+            <div class="column-one-third no-padding">
+              <div class="form-group">
+                <label class="form-label" for="field-1">
+                  Field label
+                </label>
+                <input type="text" class="form-control" id="field-1" name="field-1">
+              </div>
+            </div>
+ -->
+
+
+
+  </form>
+
+
+   
+        
+
+
+
+
+
+
+<!--    <p><a href="/onlineform/check-your-answers.html" class="button">Continue</a></p>
+        <p>
+ -->
+
+
+    
+    </div>
+  </div>
+</main>
+
+{% endblock %}
