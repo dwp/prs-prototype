@@ -1,49 +1,30 @@
-{% extends "layout.html" %}
-
-{% block page_title %}
-  GOV.UK prototype kit
-{% endblock %}
-
-{% block content %}
-
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
 <main id="content" role="main">
-  <div class="grid-row">
-    <div class="column-two-thirds">
-        <a href="/onlineform/landlord-bank.html" class="link-back">Back</a>
-
-
-        <h1 class="heading-large">Tenant's name</h1>
-<!--         <p>We need this so we can pay you.</p>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <a href="/onlineform/landlord-bank.html" class="link-back">Back</a>
+            <h1 class="heading-large">Tenant's name</h1>
+            <!--         <p>We need this so we can pay you.</p>
  -->
-        <fieldset>
-
-        <div class="form-group">
-        <label class="form-label" for="first-name-2">First name</label>
-        <input class="form-control" id="first-name-2" name="first-name-2" type="text">
-       </div>
-
-          <div class="form-group">
-        <label class="form-label" for="first-name-2">Surname</label>
-        <input class="form-control" id="first-name-2" name="first-name-2" type="text">
-       </div>
-
-    <!--    <div class="form-group">
+            <fieldset>
+                <div class="form-group">
+                    <label class="form-label" for="first-name-2">First name</label>
+                    <input class="form-control" id="first-name-2" name="first-name-2" type="text">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="first-name-2">Surname</label>
+                    <input class="form-control" id="first-name-2" name="first-name-2" type="text">
+                </div>
+                <!--    <div class="form-group">
         <label class="form-label-bold" for="first-name-2">Account number</label>
         <input class="form-control" id="first-name-2" name="first-name-2" type="text">
        </div> -->
-   
-     <!--  <p>
+                <!--  <p>
   <a href="#">I don't have an email address</a>
 </p> -->
-
-   <p><a href="/onlineform/tenant-address-entry.html" class="button">Continue</a></p>
-        <p>
-
-
-
-    
+                <p><a href="/onlineform/tenant-address-entry.html" class="button">Continue</a></p>
+                <p>
+        </div>
     </div>
-  </div>
 </main>
-
 {% endblock %}

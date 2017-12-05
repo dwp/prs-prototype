@@ -1,60 +1,41 @@
-{% extends "layout.html" %}
-
-{% block page_title %}
-  GOV.UK prototype kit
-{% endblock %}
-
-{% block content %}
-
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
 <main id="content" role="main">
-  <div class="grid-row">
-    <div class="column-two-thirds">
+    <div class="grid-row">
+        <div class="column-two-thirds">
             <a href="/onlineform/request-reason.html" class="link-back">Back</a>
-
-
-<h1 class="heading-large">Landlord details</h1>
-<p>This can be an individual landlord, letting agent or agency.</p>
-
-
+            <h1 class="heading-large">Landlord details</h1>
+            <p>This can be an individual landlord, letting agent or agency.</p>
+            <form action="/onlineform/landlord-bank" method="post" class="form">
                 <div class="form-group">
-                  <label class="form-label" for="first-name-2">Full name</label>
-                  <input class="form-control" id="first-name-2" name="first-name-2" type="text">
+                    <label class="form-label" for="first-name-1">Full name</label>
+                    <input class="form-control" id="first-name-1" name="landlord-name" type="text">
                 </div>
                 <br>
-
                 <div class="form-group">
-                  <label class="form-label" for="first-name-2">Phone number</label>
-                    <input class="form-control" id="first-name-2" name="first-name-2" type="text">
+                    <label class="form-label" for="first-name-2">Phone number</label>
+                    <input class="form-control" id="landlord-phone" name="landlord-phone" type="text">
                 </div>
-
                 <div class="form-group">
-                  <label class="form-label" for="first-name-2">Email address</label>
-                  <input class="form-control" id="first-name-2" name="first-name-2" type="text">
+                    <label class="form-label" for="first-name-2">Email address</label>
+                    <input class="form-control" id="landlord-email" name="landlord-email" type="text">
                 </div>
-
-                            <form action="address-postcode" method="POST" autocomplete="off">
-                              <div class="form-group" data-required data-error="Enter your postcode">
-                                <label for="postcode" class="form-label">
-                                  Postcode
-                                </label>
-              
-                            <div class="c-field-submit__row">
-
-                          <div class="c-field-submit__capture">
-                            <input class="form-control form-control-1-1" id="postcode" type="text" name="postcode" class="form-control form-control-1-4" value="{{ postcode }}">
-                          </div>
-
-                          <div class="c-field-submit__action">
-                            <input type="submit" class="button" value="Find UK address">
-                          </div>
-
+                <form action="address-postcode" method="POST" autocomplete="off">
+                    <div class="form-group" data-required data-error="Enter your postcode">
+                        <label for="postcode" class="form-label">
+                            Postcode
+                        </label>
+                        <div class="c-field-submit__row">
+                            <div class="c-field-submit__capture">
+                                <input class="form-control form-control-1-1" id="postcode" type="text" name="postcode" class="form-control form-control-1-4" value="{{ postcode }}">
+                            </div>
+                            <div class="c-field-submit__action">
+                                <input type="submit" class="button" value="Find UK address">
+                            </div>
                         </div>
-                          </form>
-                          <p><a href="contact-details">Enter address manually</a></p>
-
-<p><a href="/onlineform/landlord-bank.html" class="button">Continue</a></p>
-        <p>
-  </div>
+                        <p><a href="contact-details">Enter address manually</a></p>
+                        <input type="submit" class="button" value="Continue">
+                    </div>
+                </form>
+            </form>
 </main>
-
 {% endblock %}
