@@ -6,38 +6,38 @@
             <h1 class="heading-large">Rent details</h1>
             <!--         <p>We need this so we can pay you.</p>
  -->
-            <fieldset>
-                <div class="form-group">
-                    <label class="form-label-bold" for="total-rent-outstanding">Total rent amount outstanding</label>
-                    <input class="form-control" id="total-rent-outstanding" name="total-rent-outstanding" type="number">
-                </div>
-                <div class="form-group">
-                    <label class="form-label-bold" for="rent-free-weeks">Number of rent free weeks</label>
-                    <input class="form-control" id="rent-free-weeks" name="rent-free-weeks" type="number">
-                </div>
-                <form>
+            <form action="/onlineform/rent-arrears-details" method="post" class="form">
+                <fieldset>
                     <div class="form-group">
-                        <fieldset>
-                            <legend>
-                                <label class="form-label-bold">How frequently is the rent paid?</label>
-                            </legend>
-                            <div class="multiple-choice">
-                                <input id="radio-1" type="radio" name="radio-group" value="Weekly">
-                                <label for="radio-1">Weekly</label>
-                            </div>
-                            <div class="multiple-choice">
-                                <input id="radio-2" type="radio" name="radio-group" value="Fornightly">
-                                <label for="radio-2">Fornightly</label>
-                            </div>
-                            <div class="multiple-choice">
-                                <input id="radio-3" type="radio" name="radio-group" value="Monthly">
-                                <label for="radio-3">Monthly</label>
-                            </div>
-                        </fieldset>
+                        <label class="form-label-bold" for="total-rent-outstanding">Total rent amount outstanding</label>
+                        <input class="form-control" id="total-rent-outstanding" name="total-rent-outstanding" type="number">
                     </div>
-                </form>
-                <p><a href="/onlineform/rent-arrears-details.html" class="button">Continue</a></p>
-                <p>
+                    <div class="form-group">
+                        <label class="form-label-bold" for="rent-free-weeks">Number of rent free weeks</label>
+                        <input class="form-control" id="rent-free-weeks" name="rent-free-weeks" type="number">
+                    </div>
+                    <form>
+                        <div class="form-group">
+                            <fieldset>
+                                <legend>
+                                    <label class="form-label-bold">How frequently is the rent paid?</label>
+                                </legend>
+                                <div class="multiple-choice">
+                                    <input id="rent-frequency-1" type="radio" name="rent-frequency" value="Weekly">
+                                    <label for="rent-frequency-1">Weekly</label>
+                                </div>
+                                <div class="multiple-choice">
+                                    <input id="rent-frequency-2" type="radio" name="rent-frequency" value="Fornightly">
+                                    <label for="rent-frequency-2">Fornightly</label>
+                                </div>
+                                <div class="multiple-choice">
+                                    <input id="rent-frequency-3" type="radio" name="rent-frequency" value="Monthly">
+                                    <label for="rent-frequency-3">Monthly</label>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <input type="submit" class="button" value="Continue">
+                    </form>
         </div>
     </div>
 </main>

@@ -159,5 +159,20 @@ router.get('/onlineform/joint-tenancy-partner', function(req, res) {
     }
 })
 
+router.get('/onlineform/partner-name', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    // req.session.jointtenancy = req.query.jointtenancy
+    console.dir(req)
+    var partner = req.query.partner
+    console.log(partner)
+
+    if (partner === 'false') { // redirect to the relevant page
+        res.redirect('/onlineform/rent-details')
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform/partner-name')
+    }
+})
+
 
 module.exports = router
