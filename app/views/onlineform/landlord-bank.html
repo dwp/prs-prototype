@@ -6,50 +6,43 @@
             <h1 class="heading-large">Landlord's bank details</h1>
             <p>The bank account the rent will be paid into.</p>
             <fieldset>
-                <div class="form-group">
-                    <label class="form-label" for="first-name-2">Account name</label>
-                    <input class="form-control" id="first-name-2" name="first-name-2" type="text">
-                </div>
-                <div class="form-group">
-                    <label class="form-label" for="first-name-2">Sort code</label>
-                    <legend>
-                        <span class="form-label"></span>
-                    </legend>
-                    <div class="form-date">
-                        <div class="form-group form-group-day">
-                            <label class="form-label" for="dob-day"></label>
-                            <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
-                        </div>
-                        <div class="form-group form-group-month">
-                            <label class="form-label" for="dob-month"></label>
-                            <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
-                        </div>
-                        <div class="form-group form-group-month">
-                            <label class="form-label" for="dob-month"></label>
-                            <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
-                        </div>
+                <form action="/onlineform/tenant-details" method="post" class="form">
+                    <div class="form-group">
+                        <label class="form-label" for="account-name">Account name</label>
+                        <input class="form-control" id="account-name" name="account-name" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="sort-code">Sort code</label>
+                        <legend>
+                            <span class="form-label"></span>
+                        </legend>
+                        <div class="form-date">
+                            <div class="form-group form-group-day">
+                                <label class="form-label" for="dob-day"></label>
+                                <input class="form-control" id="sortcode-1" name="sortcode-1" type="number" pattern="[0-9]*" min="0" max="31">
+                            </div>
+                            <div class="form-group form-group-month">
+                                <label class="form-label" for="sortcode-2"></label>
+                                <input class="form-control" id="sortcode-2" name="sortcode-2" type="number" pattern="[0-9]*" min="0" max="12">
+                            </div>
+                            <div class="form-group form-group-month">
+                                <label class="form-label" for="sortcode-3"></label>
+                                <input class="form-control" id="sortcode-3" name="sortcode-3" type="number" pattern="[0-9]*" min="0" max="12">
+                            </div>
             </fieldset>
             <div class="form-group">
-                <label class="form-label" for="first-name-2">Account number</label>
-                <input class="form-control" id="first-name-2" name="first-name-2" type="text">
+                <label class="form-label" for="account-number">Account number</label>
+                <input class="form-control" id="account-number" name="account-number" type="text">
             </div>
             <div class="form-group">
-                <label class="form-label" for="first-name-2">Reference number</label>
+                <label class="form-label" for="ref-number">Reference number</label>
                 <span class="form-hint">
               Provided by you, it will appear on your bank statements
             </span>
-                <input class="form-control" id="first-name-2" name="first-name-2" type="text">
+                <input class="form-control" id="ref-number" name="ref-number" type="text">
             </div>
-            <!--    <div class="form-group">
-        <label class="form-label-bold" for="first-name-2">Account number</label>
-        <input class="form-control" id="first-name-2" name="first-name-2" type="text">
-       </div> -->
-            <!--  <p>
-  <a href="#">I don't have an email address</a>
-</p> -->
-            <p><a href="/onlineform/tenant-details.html" class="button">Continue</a></p>
-            <p>
-                </div>
-                </div>
+            <input type="submit" class="button" value="Continue">
+            </div>
+            </div>
 </main>
 {% endblock %}
