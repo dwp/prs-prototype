@@ -174,5 +174,20 @@ router.get('/onlineform/partner-name', function(req, res) {
     }
 })
 
+router.get('/onlineform/service-charge-details', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    // req.session.jointtenancy = req.query.jointtenancy
+    console.dir(req)
+    var servicecharge = req.query.servicecharge
+    console.log(servicecharge)
+
+    if (servicecharge === 'false') { // redirect to the relevant page
+        res.redirect('/onlineform/check-your-answers')
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform/service-charge-details')
+    }
+})
+
 
 module.exports = router
