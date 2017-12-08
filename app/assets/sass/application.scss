@@ -11,11 +11,11 @@ $path: "/public/images/";
 @import 'patterns/task-list';
 
 @mixin clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 }
 
 @import 'components/components';
@@ -23,23 +23,23 @@ $path: "/public/images/";
 // Related items
 // (These styles will be moved to GOV.UK elements, duplicating here for now.)
 .govuk-related-items {
-  margin-top: $gutter;
-  border-top: 10px solid $govuk-blue;
-  padding-top: 5px;
+    margin-top: $gutter;
+    border-top: 10px solid $govuk-blue;
+    padding-top: 5px;
 
-  .heading-medium {
-    margin-top: 0.3em;
-    margin-bottom: 0.5em;
-  }
+    .heading-medium {
+        margin-top: 0.3em;
+        margin-bottom: 0.5em;
+    }
 
-  li {
-    margin-bottom: 10px;
-    list-style-type: none;
-  }
+    li {
+        margin-bottom: 10px;
+        list-style-type: none;
+    }
 }
 
 .form-control-1-1 {
-  width: 100%;
+    width: 100%;
 }
 
 .legal_message {
@@ -48,77 +48,138 @@ $path: "/public/images/";
     background-image: url(https://assets.digital.cabinet-office.gov.uk/static/icon-important-2x-c948a58b675598f444f7f8fffd9ebf3d740905da332308c65b0dcb4af880d7ba.png);
     background: url(https://assets.digital.cabinet-office.gov.uk/static/icon-important-aab708504574eda2dc4a4de0802be03dbbd70d57b422de93e55e265c9ae2fc43.png) no-repeat scroll 0 0.5em;
     background-size: 34px 34px
-  }
-      
+}
+
 
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+.no-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.remove-list-item {
+    display: inline-block;
+    margin-top: 1.6em;
+}
+
+.list-item-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.list-item-wrapper .heading-small,
+.list-item-wrapper .heading-medium,
+.list-item-wrapper .heading-large,
+.list-item-wrapper .heading-xlarge {
+    margin-top: 0;
+}
+
+.list-item-wrapper .column-one-third .list-item {
+    width: 100%;
+}
+
+.list-item-wrapper .column-one-third input {
+    width: 90%;
+}
+
+.button-add-another {
+    background-color: #eee;
+    color: #000;
+    box-shadow: 0 2px 0 #666;
+    margin-right: 12px;
+}
+
+.button-add-another:hover {
+    background-color: #ccc;
+    color: #000;
+    box-shadow: 0 2px 0 #666;
+}
+
+.button-add-another:focus {
+    background-color: #ccc;
+    color: #000;
+    box-shadow: 0 2px 0 #666;
+}
+
+@media (max-width: 640px) {
+    .list-item-wrapper .column-one-third input {
+        width: 100%;
+    }
 
     .no-padding {
-      padding-left: 0;
-      padding-right: 0;
-    }
-
-    .remove-list-item {
-      display: inline-block;
-      margin-top: 1.6em;
-    }
-
-    .list-item-wrapper {
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-
-    .list-item-wrapper .heading-small,
-    .list-item-wrapper .heading-medium,
-    .list-item-wrapper .heading-large,
-    .list-item-wrapper .heading-xlarge {
-      margin-top: 0;
-    }
-
-    .list-item-wrapper .column-one-third .list-item {
-      width: 100%;
-    }
-
-    .list-item-wrapper .column-one-third input {
-      width: 90%;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .button-add-another {
-      background-color: #eee;
-      color: #000;
-      box-shadow: 0 2px 0 #666;
-      margin-right: 12px;
-    }
-
-    .button-add-another:hover {
-      background-color: #ccc;
-      color: #000;
-      box-shadow: 0 2px 0 #666;
-    }
-
-    .button-add-another:focus {
-      background-color: #ccc;
-      color: #000;
-      box-shadow: 0 2px 0 #666;
-    }
-
-    @media (max-width: 640px) {
-      .list-item-wrapper .column-one-third input {
-        width: 100%;
-      }
-
-      .no-padding {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-
-      .button-add-another {
         width: 90%;
         margin: auto;
         display: block;
-      }
     }
-                
+}
 
+.no-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
 
+.remove-list-item {
+    display: inline-block;
+    margin-top: 1.6em;
+}
+
+.list-item-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.list-item-wrapper .heading-small,
+.list-item-wrapper .heading-medium,
+.list-item-wrapper .heading-large,
+.list-item-wrapper .heading-xlarge {
+    margin-top: 0;
+}
+
+.list-item-wrapper .column-one-third .list-item {
+    width: 100%;
+}
+
+.list-item-wrapper .column-one-third input {
+    width: 90%;
+}
+
+.button-add-another {
+    background-color: #eee;
+    color: #000;
+    box-shadow: 0 2px 0 #666;
+}
+
+.button-add-another:hover {
+    background-color: #ccc;
+    color: #000;
+    box-shadow: 0 2px 0 #666;
+}
+
+.button-add-another:focus {
+    background-color: #ccc;
+    color: #000;
+    box-shadow: 0 2px 0 #666;
+}
+
+@media (max-width: 640px) {
+    .list-item-wrapper .column-one-third input {
+        width: 100%;
+    }
+
+    .no-padding {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .button-add-another {
+        width: 90%;
+        margin: auto;
+        display: block;
+    }
+}

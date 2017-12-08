@@ -15,9 +15,9 @@
                             <div class="column-one-third no-padding">
                                 <div class="form-group list-item">
                                     <label class="form-label" for="rent-due-date">
-                                        Rent due date:
+                                        Date due:
                                     </label>
-                                    <input class="form-control" id="rent-due-date" name="rent-due-date" type="text">
+                                    <input class="form-control" id="rent-due-date" name="rent-due-date" type="text" style="none">
                                 </div>
                             </div>
                             <div class="column-one-third no-padding">
@@ -30,30 +30,25 @@
                             </div>
                             <div class="column-one-third no-padding">
                                 <div class="form-group list-item">
-                                    <label class="form-label" for="field-2">
+                                    <label class="form-label" for="amount-paid">
                                         Amount paid (if any):
                                     </label>
                                     <input type="text" class="form-control" id="amount-paid" name="amount-paid">
                                 </div>
                             </div>
-                            <dd class="change">
-                                <a href="#">
-              Change<span class="visually-hidden"> name</span>
-            </a>
-                            </dd>
-                            <hr />
+                            <div class="grid-row">
+                                <div class="column-two-thirds">
+                                    <div class="form-group">
+                                        <button id="add-button" class="button button-add-another">Add another</button>
+                                        <input type="submit" class="button" value="Continue">
+                                    </div>
+                                </div>
+                            </div>
                     </div>
                 </div>
-                <div class="grid-row">
-                    <div class="column-two-thirds">
-                        <div class="form-group">
-                            <button id="add-button" class="button button-add-another">Add another</button>
-                            <input type="submit" class="button" value="Continue">
-                            </div>
-                        </div>
-                    </div>
-            </form>
-            <!-- <div class="form-group-compound">
+        </div>
+        </form>
+        <!-- <div class="form-group-compound">
         <div class="form-group form-group">
           <label class="form-label" for="dob-day">Day</label>
           <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
@@ -68,7 +63,7 @@
         </div>
       </div>
  -->
-            <!-- <fieldset>
+        <!-- <fieldset>
             <div class="column-one-third no-padding">
               <div class="form-group">
                 <label class="form-label" for="field-1">
@@ -78,11 +73,11 @@
               </div>
             </div>
  -->
-            </form>
-            <!--    <p><a href="/onlineform/check-your-answers.html" class="button">Continue</a></p>
+        </form>
+        <!--    <p><a href="/onlineform/check-your-answers.html" class="button">Continue</a></p>
         <p>
  -->
-            </div>
-        </div>
+    </div>
+    </div>
 </main>
 {% endblock %}

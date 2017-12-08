@@ -190,4 +190,21 @@ router.get('/onlineform/service-charge-details', function(req, res) {
 })
 
 
+router.get('/onlineform/rent-statement-upload', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    // req.session.jointtenancy = req.query.jointtenancy
+    console.dir(req)
+    var rentstatement = req.query.rentstatement
+    console.log(rentstatement)
+
+    if (rentstatement === 'false') { // redirect to the relevant page
+        res.redirect('/onlineform/rent-arrears-details')
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform/rent-statement-upload')
+    }
+})
+
+
+
 module.exports = router

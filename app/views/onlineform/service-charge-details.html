@@ -9,51 +9,48 @@
             <br>
             <form action="/onlineform/check-your-answers" method="post" class="form">
                 <div class="grid-row">
-                    <div class="form-group-compound list-item-wrapper">
-                        <h2 class="heading-medium">Missing service charge 1</h2>
-                        <fieldset>
-                            <div class="column-one-third no-padding">
-                                <div class="form-group list-item">
-                                    <label class="form-label" for="rent-due-date">
-                                        Service charge type:
-                                    </label>
-                                    <input class="form-control" id="service-charge-type" name="service-charge-type" type="text">
-                                </div>
-                            </div>
-                            <div class="column-one-third no-padding">
-                                <div class="form-group list-item">
-                                    <label class="form-label" for="amount-due">
-                                        Amount:
-                                    </label>
-                                    <input type="text" class="form-control" id="service-charge-amount" name="service-charge-amount">
-                                </div>
-                            </div>
-                            <div class="column-one-third no-padding">
-                                <div class="form-group list-item">
-                                    <label class="form-label" for="field-2">
-                                        Frequency:
-                                    </label>
-                                    <input type="text" class="form-control" id="service-charge-frequency" name="service-charge-frequency">
-                                </div>
-                            </div>
-                            <dd class="change">
-                                <a href="#">
-              Change<span class="visually-hidden"> name</span>
-            </a>
-                            </dd>
-                            <hr />
+    <div class="form-group-compound list-item-wrapper">
+        <h2 class="heading-medium">Missing service charge 1</h2>
+        <fieldset>
+            <div class="column-one-third no-padding">
+                <div class="form-group list-item">
+                    <label class="form-label" for="rent-due-date">
+                        Charge type:
+                    </label>
+                    <input class="form-control" id="service-charge-type" name="service-charge-type" type="text" style="none">
+                </div>
+            </div>
+            <div class="column-one-third no-padding">
+                <div class="form-group list-item">
+                    <label class="form-label" for="amount-due">
+                        Amount:
+                    </label>
+                    <input type="text" class="form-control" id="service-charge-amount" name="service-charge-amount">
+                </div>
+            </div>
+            <div class="column-one-third no-padding">
+                <div class="form-group list-item">
+                    <label class="form-label" for="select-box">Frequency</label>
+                    <select class="form-control" id="service-charge-frequency" name="service-charge-frequency">
+                        <option>Weekly</option>
+                        <option>Fortnightly</option>
+                        <option>Monthly</option>
+                    </select>
+                </div>
+            </div>
+            <div class="grid-row">
+                <div class="column-two-thirds">
+                    <div class="form-group">
+                        <button id="add-button" class="button button-add-another">Add another</button>
+                        <input type="submit" class="button" value="Continue">
                     </div>
                 </div>
-                <div class="grid-row">
-                    <div class="column-two-thirds">
-                        <div class="form-group">
-                            <button id="add-button" class="button button-add-another">Add another</button>
-                            <a href="/onlineform/check-your-answers.html" class="button">Continue</a>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <!-- <div class="form-group-compound">
+            </div>
+    </div>
+</div>
+</div>
+</form>
+<!-- <div class="form-group-compound">
         <div class="form-group form-group">
           <label class="form-label" for="dob-day">Day</label>
           <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
@@ -68,7 +65,7 @@
         </div>
       </div>
  -->
-            <!-- <fieldset>
+<!-- <fieldset>
             <div class="column-one-third no-padding">
               <div class="form-group">
                 <label class="form-label" for="field-1">
@@ -78,11 +75,11 @@
               </div>
             </div>
  -->
-            </form>
-            <!--    <p><a href="/onlineform/check-your-answers.html" class="button">Continue</a></p>
+</form>
+<!--    <p><a href="/onlineform/check-your-answers.html" class="button">Continue</a></p>
         <p>
  -->
-        </div>
-    </div>
+</div>
+</div>
 </main>
 {% endblock %}
