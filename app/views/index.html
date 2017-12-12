@@ -1,137 +1,366 @@
-{% extends "layout.html" %}
-
-{% block page_title %}
-  GOV.UK prototype kit
-{% endblock %}
-
-{% block content %}
-
+{% extends "layout-index.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+<div class="homepage-top">
+    <div class="homepage-top-content">
+        <h1 class="heading-xlarge">
+      {{serviceName}}
+      <span>Prototypes</span>
+    </h1>
+    </div>
+</div>
 <main id="content" role="main">
-  <div class="grid-row">
-    <div class="column-two-thirds">
-
-      <!-- <h1 class="heading-xlarge">
-          Request a direct rent payment if you're a landlord prototypes</h1> -->
-
-  <h2 class="heading-xlarge">Prototypes</h2>
-
-
-<h2 class="heading-large">Online form</h2>
-    <h3 class="heading-medium">Updates for this version</h3>
-    <p class="text">
-          First draft design of the online form based on user research
-        </p>
-    <p><a href="/onlineform/start.html" class="button">View prototype</a></p>
-    <!-- <p class="heading-medium">Previous versions</p>
-    <p> <a href="/staff/v3/"><span class="heading-small">Version 3</span></a> Change ot the Home screen view to show Adviser caseload, first iteration of Timeline ideas and adding MI banner.</p> -->
-    
-
-
-  <h2 class="heading-large">Design sprint</h2>
-  <ul class="list-bullet">
-    <li> <a href="/notify/start">Version 1:</a> Notify the landlord</li>
-     <li> <a href="/notify-automated/start">Version 2:</a> Notify the landlord with Gov uk Notify</li>
-   </ul>
-
-  </ul>
-
-  <h2 class="heading-large">Postcode checker</h2>
-  <ul class="list-bullet">
- <!--    <li> <a href="/postcode_v2/start">Postcode checker v2:</a> new prototype including feedbak from UR sessions week commencing 7/8/2017</li> -->
-
-    <li> <a href="/postcode/start">Version 1:</a> initial prototype for postcode checker</li>
-    <li> <a href="/postcode_v3/guidance">Version 2:</a> prototype for postcode checker with added start pages</li>
-    <li> <a href="/postcode_v3_1/guidance">Version 3:</a> gsi gsx different routes</li>
-    <li> <a href="/postcode_v3_1/start">Version 4:</a> starts from start page not guidance)</li>
-    <li> <a href="/postcode_v5/start">Version 5:</a> content and amends based on UR</li>
-    <li> <a href="/postcode_v6/start">Version 6:</a> More changes based on September UR</li>
-  </ul>
-    
-
-  
-
-  
-
-    <h2 class="heading-medium">Examples and documentation</h2>
-
-    <ul class="list list-bullet">
-      <li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
-      <li><a href="https://github.com/alphagov/govuk_prototype_kit">GitHub</a></li>
-    </ul>
-
-    <h2 class="heading-medium">Other resources</h2>
-
-  <ul class="list list-bullet">
-    <li>
-      <a href="https://govuk-elements.herokuapp.com/snippets/">
-        Guide to GOV.UK Elements
-      </a>
-    </li>
-    <li>
-      <a href="https://www.gov.uk/service-manual">
-        Service design manual
-      </a>
-    </li>
-    <li>
-      <a href="https://www.gov.uk/design-principles">
-        Government Digital Service Design Principles
-      </a>
-    </li>
-  </ul>
-
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            {# Start of most recent box #}
+            <div class="most-recent">
+                {# Start of prototype write up #}
+                <div class="prototype-write-up">
+                    <div class="grid-row">
+                        <div class="column-one-third">
+                            <dl>
+                                <dt class="heading-small">Date of release</dt>
+                                <dd>December 2017 (ongoing)</dd>
+                            </dl>
+                        </div>
+                        <div class="column-one-third">
+                            <dl>
+                                <dt class="heading-small">Feature</dt>
+                                <dd>Online form</dd>
+                            </dl>
+                        </div>
+                        <div class="column-one-third">
+                            <dl>
+                                <dt class="heading-small">Related stories</dt>
+                                <dd>n/a</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <h3 class="heading-small">Changes</h3>
+                    <p>
+                        In this version, there have been several iterations based on new research findings on the current UC47.
+                    </p>
+                    <h3 class="heading-small">Hypothesis</h3>
+                    <p>
+                        If we add the ability to upload a rent statement, it saves the user time when inputting rent arrears information.
+                    </p>
+                    <h3 class="heading-small">Research notes</h3>
+                    <p>
+                        Needs filling in.
+                    </p>
+                    <p>
+                        Needs filling in.
+                    </p>
+                    <p>
+                        More work is needed to improve the design of this feature.
+                    </p>
+                    <a href="/onlineform/start.html" class="button button-start">View prototype</a>
+                </div>
+                {# End of prototype write up #}
+            </div>
+            {# End of most recent box #}
+            <h2 class="heading-large">All versions</h2> {# Start of hidden panel #}
+            <details>
+                <summary><span class="summary">Show all versions</span></summary>
+                <div class="panel panel-border-narrow">
+                    {# Start of prototype write up #}
+                    <div class="prototype-write-up">
+                        <div class="grid-row">
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Date of release</dt>
+                                    <dd>November 2017</dd>
+                                </dl>
+                            </div>
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Feature</dt>
+                                    <dd>Design sprint Notify the landlord</dd>
+                                </dl>
+                            </div>
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Related stories</dt>
+                                    <dd>n/a</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <h3 class="heading-small">Changes</h3>
+                        <p>
+                            ...
+                        </p>
+                        <h3 class="heading-small">Hypothesis</h3>
+                        <p>
+                            If... then... because.
+                        </p>
+                        <h3 class="heading-small">Research notes</h3>
+                        <p>
+                            ...
+                        </p>
+                        <a href="/notify/start.html" class="button button-start">View prototype</a>
+                    </div>
+                    {# End of prototype write up #}
+                    <hr /> {# Start of prototype write up #}
+                    <div class="prototype-write-up">
+                        <div class="grid-row">
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Date of release</dt>
+                                    <dd>1 December 2017</dd>
+                                </dl>
+                            </div>
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Feature</dt>
+                                    <dd>Design sprint Notify the landlord with Notify</dd>
+                                </dl>
+                            </div>
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Related stories</dt>
+                                    <dd>n/a</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <h3 class="heading-small">Changes</h3>
+                        <p>
+                            Notifications to be automated with Notify.
+                        </p>
+                        <h3 class="heading-small">Hypothesis</h3>
+                        <p>
+                            If... then... because.
+                        </p>
+                        <h3 class="heading-small">Research notes</h3>
+                        <p>
+                            ...
+                        </p>
+                        <a href="notify-automated/start.html" class="button button-start">View prototype</a>
+                    </div>
+                    {# End of prototype write up #}
+                    <hr /> {# Start of prototype write up #}
+                    <div class="prototype-write-up">
+                        <div class="grid-row">
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Date of release</dt>
+                                    <dd>unknown</dd>
+                                </dl>
+                            </div>
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Feature</dt>
+                                    <dd>Postcode checker v6</dd>
+                                </dl>
+                            </div>
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Related stories</dt>
+                                    <dd>n/a</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <h3 class="heading-small">Changes</h3>
+                        <p>
+                            More changes based on September UR.
+                        </p>
+                        <h3 class="heading-small">Hypothesis</h3>
+                        <p>
+                            If... then... because.
+                        </p>
+                        <h3 class="heading-small">Research notes</h3>
+                        <p>
+                            ...
+                        </p>
+                        <a href="/postcode_v6/start.html" class="button button-start">View prototype</a>
+                    </div>
+                    {# End of prototype write up #}
+                    <hr /> {# Start of prototype write up #}
+                    <div class="prototype-write-up">
+                        <div class="grid-row">
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Date of release</dt>
+                                    <dd>unknown</dd>
+                                </dl>
+                            </div>
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Feature</dt>
+                                    <dd>Postcode checker v5</dd>
+                                </dl>
+                            </div>
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Related stories</dt>
+                                    <dd>n/a</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <h3 class="heading-small">Changes</h3>
+                        <p>
+                            Content and amends based on UR.
+                        </p>
+                        <h3 class="heading-small">Hypothesis</h3>
+                        <p>
+                            If... then... because.
+                        </p>
+                        <h3 class="heading-small">Research notes</h3>
+                        <p>
+                            ...
+                        </p>
+                        <a href="/postcode_v5/start.html" class="button button-start">View prototype</a>
+                    </div>
+                    {# End of prototype write up #}
+                    <hr /> {# Start of prototype write up #}
+                    <div class="prototype-write-up">
+                        <div class="grid-row">
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Date of release</dt>
+                                    <dd>unknown</dd>
+                                </dl>
+                            </div>
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Feature</dt>
+                                    <dd>Postcode checker v4</dd>
+                                </dl>
+                            </div>
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Related stories</dt>
+                                    <dd>n/a</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <h3 class="heading-small">Changes</h3>
+                        <p>
+                            Starts from start page not guidance.
+                        </p>
+                        <h3 class="heading-small">Hypothesis</h3>
+                        <p>
+                            If... then... because.
+                        </p>
+                        <h3 class="heading-small">Research notes</h3>
+                        <p>
+                            ...
+                        </p>
+                        <a href="/postcode_v3_1/start.html" class="button button-start">View prototype</a>
+                    </div>
+                    {# End of prototype write up #}
+                    <hr /> {# Start of prototype write up #}
+                    <div class="prototype-write-up">
+                        <div class="grid-row">
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Date of release</dt>
+                                    <dd>unknown</dd>
+                                </dl>
+                            </div>
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Feature</dt>
+                                    <dd>Postcode checker v3</dd>
+                                </dl>
+                            </div>
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Related stories</dt>
+                                    <dd>n/a</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <h3 class="heading-small">Changes</h3>
+                        <p>
+                            Gsi gsx different routes
+                        </p>
+                        <h3 class="heading-small">Hypothesis</h3>
+                        <p>
+                            If... then... because.
+                        </p>
+                        <h3 class="heading-small">Research notes</h3>
+                        <p>
+                            ...
+                        </p>
+                        <a href="/postcode_v3/start.html" class="button button-start">View prototype</a>
+                    </div>
+                    {# End of prototype write up #}
+                    <hr /> {# Start of prototype write up #}
+                    <div class="prototype-write-up">
+                        <div class="grid-row">
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Date of release</dt>
+                                    <dd>unknown</dd>
+                                </dl>
+                            </div>
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Feature</dt>
+                                    <dd>Postcode checker v2</dd>
+                                </dl>
+                            </div>
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Related stories</dt>
+                                    <dd>n/a</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <h3 class="heading-small">Changes</h3>
+                        <p>
+                            Prototype for postcode checker with added start pages.
+                        </p>
+                        <h3 class="heading-small">Hypothesis</h3>
+                        <p>
+                            If... then... because.
+                        </p>
+                        <h3 class="heading-small">Research notes</h3>
+                        <p>
+                            ...
+                        </p>
+                        <a href="/postcode_v2/start.html" class="button button-start">View prototype</a>
+                    </div>
+                    {# End of prototype write up #}
+                    <hr /> {# Start of prototype write up #}
+                    <div class="prototype-write-up">
+                        <div class="grid-row">
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Date of release</dt>
+                                    <dd>unknown</dd>
+                                </dl>
+                            </div>
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Feature</dt>
+                                    <dd>Postcode checker v1</dd>
+                                </dl>
+                            </div>
+                            <div class="column-one-third">
+                                <dl>
+                                    <dt class="heading-small">Related stories</dt>
+                                    <dd>n/a</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <h3 class="heading-small">Changes</h3>
+                        <p>
+                            Initial prototype for postcode checker.
+                        </p>
+                        <h3 class="heading-small">Hypothesis</h3>
+                        <p>
+                            If... then... because.
+                        </p>
+                        <h3 class="heading-small">Research notes</h3>
+                        <p>
+                            ...
+                        </p>
+                        <a href="/postcode/start.html" class="button button-start">View prototype</a>
+                    </div>
+                    {# End of prototype write up #}
+                </div>
+            </details>
+            {# End of hidden panel #}
+        </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--   <h2 class="heading-xlarge">Prototypes</h2>
-
- <h2 class="heading-large">Design sprint</h2>
-  <ul class="list-bullet">
-    <li> <a href="/notify/start">V1:</a> Notify the landlord</li>
-
-  </ul>
-
-   
-
-
-  <h2 class="heading-large">Online form (UC47 replacement)</h2>
-  <ul class="list-bullet">
- <!--    <li> <a href="/postcode_v2/start">Postcode checker v2:</a> new prototype including feedbak from UR sessions week commencing 7/8/2017</li> -->
-
-    <!-- <li> <a href="/onlineform/start">V1:</a> first design based on UR feedback from postcode checker</li>
-  </ul>
-
-
-  
- -->
-
-  
-
-    </div>
-  </div>
 </main>
-
 {% endblock %}

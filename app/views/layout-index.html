@@ -1,0 +1,34 @@
+{% extends "govuk_template.html" %}
+{% set global_header_text = "DWP" %}
+{% set originalServiceName = serviceName %}
+{% set serviceName = "" %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block cookie_message %}
+  <p>{{cookieText | safe }}</p>
+{% endblock %}
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+{% block body_start %}
+  {% set serviceName = originalServiceName %}
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+  {% block page_scripts %}{% endblock %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
+
+{% block footer_support_links %}
+  {% if useAutoStoreData %}
+    <ul>
+      <li><a href="/prototype-admin/clear-data">Clear data</a></li>
+    </ul>
+  {% endif %}
+{% endblock %}

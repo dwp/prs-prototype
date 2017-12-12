@@ -1,0 +1,63 @@
+.homepage-top {
+  background-color: $govuk-blue;
+  box-sizing: border-box;
+  color: $page-colour;
+  margin-top: -10px;
+  width: 100%;
+
+  @media (max-width: 640px) {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  h1 {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-top: 40px;
+
+    span {
+      display: block;
+      font-size: .7em;
+      font-weight: normal;
+      padding-bottom: 40px;
+      padding-top: 20px;
+    }
+  }
+
+  .homepage-top-content {
+    margin: auto;
+    max-width: 960px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 641px) {
+  .most-recent {
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 45px;
+  }
+}
+
+.most-recent {
+  border: 1px solid $border-colour;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    background-color: $border-colour;
+    color: $page-colour;
+    content: 'MOST RECENT';
+    font-family: 'nta', Arial, sans-serif;
+    font-weight: 400;
+    left: 0;
+    padding: .2105263158em .7894736842em;
+    position: absolute;
+    text-transform: none;
+    top: 0;
+  }
+}
