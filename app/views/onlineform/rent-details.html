@@ -7,42 +7,44 @@
             <!--         <p>We need this so we can pay you.</p>
  -->
             <form action="/onlineform/rent-statement" method="post" class="form">
-                <fieldset>
-                    <div class="form-group">
-                        <label class="form-label" for="total-rent-outstanding">Rent amount</label>
-                        <input class="form-control narrow" id="total-rent-outstanding" name="total-rent-outstanding" type="number">
+                <label class="form-label" for="total-rent-outstanding">Rent amount</label>
+                <div class="govuk-currency-input">
+                    <div class="govuk-currency-input__inner">
+                        <span class="govuk-currency-input__inner__unit">£</span>
+                        <input class="govuk-currency-input__inner__input form-control form-control-1-4" aria-label="Enter amount in pounds" name="tickets-cost" data-non-numeric="" type="text" id="tickets-cost" pattern="[0-9]\d*(\.\d+)?">
                     </div>
-                    <div class="form-group">
-                        <label class="form-label" for="rent-free-weeks">Number of rent free weeks</label>
-                        <input class="form-control narrow" id="rent-free-weeks" name="rent-free-weeks" type="number">
-                    </div>
-                    <form>
-                        <div class="form-group">
-                            <fieldset>
-                                <legend>
-                                    <label class="form-label">How frequently is the rent paid?</label>
-                                </legend>
-                                <div class="multiple-choice">
-                                    <input id="rent-frequency-1" type="radio" name="rent-frequency" value="Weekly">
-                                    <label for="rent-frequency-1">Weekly</label>
-                                </div>
-                                <div class="multiple-choice">
-                                    <input id="rent-frequency-2" type="radio" name="rent-frequency" value="Fornightly">
-                                    <label for="rent-frequency-2">Fornightly</label>
-                                </div>
-                                <div class="multiple-choice">
-                                    <input id="rent-frequency-3" type="radio" name="rent-frequency" value="Monthly">
-                                    <label for="rent-frequency-3">Monthly</label>
-                                </div>
-                            </fieldset>
-                            <br>
-                            <div class="form-group">
-                                <label class="form-label" for="rent-free-weeks">Number of bedrooms</label>
-                                <input class="form-control narrow" id="rent-free-weeks" name="rent-free-weeks" type="number">
-                            </div>
-                            <input type="submit" class="button" value="Continue">
-                    </form>
-                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <fieldset>
+                        <legend>
+                            <label class="form-label">How frequently is the rent paid?</label>
+                        </legend>
+                        <div class="multiple-choice">
+                            <input id="rent-frequency-1" type="radio" name="rent-frequency" value="Weekly">
+                            <label for="rent-frequency-1">Weekly</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="rent-frequency-2" type="radio" name="rent-frequency" value="Fornightly">
+                            <label for="rent-frequency-2">Fornightly</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="rent-frequency-3" type="radio" name="rent-frequency" value="Monthly">
+                            <label for="rent-frequency-3">Monthly</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="rent-free-weeks">Rent free weeks</label>
+                    <input class="form-control narrow" id="rent-free-weeks" name="rent-free-weeks" type="number">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="rent-free-weeks">Bedrooms</label>
+                    <input class="form-control narrow" id="rent-free-weeks" name="rent-free-weeks" type="number">
+                </div>
+                <input type="submit" class="button" value="Continue">
+            </form>
         </div>
+    </div>
 </main>
 {% endblock %}

@@ -185,7 +185,11 @@ $path: "/public/images/";
 }
 
 .narrow {
-    width: 75px
+    width: 170px
+}
+
+div.govuk-box-highlight {
+    padding-top: 1em
 }
 
 @import 'layout-index';
