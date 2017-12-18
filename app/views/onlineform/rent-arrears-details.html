@@ -25,7 +25,10 @@
                                     <label class="form-label" for="amount-due">
                                         Amount due:
                                     </label>
-                                    <input type="text" class="form-control" id="amount-due" name="amount-due">
+                                    <div class="govuk-currency-input__inner">
+                                        <span class="govuk-currency-input__inner__unit">£</span>
+                                        <input class="govuk-currency-input__inner__input form-control form-control-1-4" aria-label="Enter amount in pounds" name="amount-due" data-non-numeric="" type="text" id="amount-due" pattern="[0-9]\d*(\.\d+)?">
+                                    </div>
                                 </div>
                             </div>
                             <div class="column-one-third no-padding">
@@ -33,7 +36,10 @@
                                     <label class="form-label" for="amount-paid">
                                         Amount paid:
                                     </label>
-                                    <input type="text" class="form-control" id="amount-paid" name="amount-paid">
+                                    <div class="govuk-currency-input__inner">
+                                        <span class="govuk-currency-input__inner__unit">£</span>
+                                        <input class="govuk-currency-input__inner__input form-control form-control-1-4" aria-label="Enter amount in pounds" name="amount-paid" data-non-numeric="" type="text" id="amount-paid" pattern="[0-9]\d*(\.\d+)?">
+                                    </div>
                                 </div>
                             </div>
                             <div class="grid-row">
