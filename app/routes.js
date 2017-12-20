@@ -205,6 +205,68 @@ router.get('/onlineform/rent-statement-upload', function(req, res) {
     }
 })
 
+/////// Online form v2 ///////
+
+router.get('/onlineform_v2/joint-tenancy-partner', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    // req.session.jointtenancy = req.query.jointtenancy
+    console.dir(req)
+    var joint = req.query.joint
+    console.log(joint)
+
+    if (joint === 'false') { // redirect to the relevant page
+        res.redirect('/onlineform_v2/rent-details')
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v2/joint-tenancy-partner')
+    }
+})
+
+router.get('/onlineform_v2/partner-name', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    // req.session.jointtenancy = req.query.jointtenancy
+    console.dir(req)
+    var partner = req.query.partner
+    console.log(partner)
+
+    if (partner === 'false') { // redirect to the relevant page
+        res.redirect('/onlineform_v2/rent-details')
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v2/partner-name')
+    }
+})
+
+router.get('/onlineform_v2/service-charge-details', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    // req.session.jointtenancy = req.query.jointtenancy
+    console.dir(req)
+    var servicecharge = req.query.servicecharge
+    console.log(servicecharge)
+
+    if (servicecharge === 'false') { // redirect to the relevant page
+        res.redirect('/onlineform_v2/check-your-answers')
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v2/service-charge-details')
+    }
+})
+
+router.get('/onlineform_v2/rent-statement-upload', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    // req.session.jointtenancy = req.query.jointtenancy
+    console.dir(req)
+    var rentstatement = req.query.rentstatement
+    console.log(rentstatement)
+
+    if (rentstatement === 'false') { // redirect to the relevant page
+        res.redirect('/onlineform_v2/rent-arrears-details')
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v2/rent-statement-upload')
+    }
+})
+
 
 
 module.exports = router
