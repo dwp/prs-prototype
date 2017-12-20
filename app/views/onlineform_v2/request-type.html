@@ -1,0 +1,27 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <a href="/onlineform_v2/start.html" class="link-back">Back</a>
+            <div class="form-group">
+                <h2 class="heading-large">What is this a request for?</h2>
+                <p>Please select all that apply:</p>
+                <form action="/onlineform_v2/request-reason" method="post" class="form">
+                    <fieldset>
+                        <div class="multiple-choice">
+                            <input id="request-type-1" name="request-types" type="checkbox" value="Direct rent payment">
+                            <label for="request-type-1">Direct rent payment</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="request-type-2" name="request-types" type="checkbox" value="Re-payment of arrears/third party deductions">
+                            <label for="request-type-2">Re-payment of arrears/third party deductions</label>
+                        </div>
+                    </fieldset>
+                    <br>
+                    </br>
+                    <input type="submit" class="button" value="Continue">
+                </form>
+            </div>
+        </div>
+</main>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <a href="/onlineform_v2/tenant-details.html" class="link-back">Back</a>
+            <h2 class="heading-large">Does your tenant have a partner living with them?</h2>
+            <!--             <p><span class= "form-hint">T</p>
+ -->
+            <form>
+                <div class="form-group">
+                    <fieldset class="inline">
+                        <div class="multiple-choice">
+                            <input id="partner" type="radio" name="partner-yes" value="Yes">
+                            <label for="partner-yes">Yes</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="nopartner" type="radio" name="partner-no" value="No">
+                            <label for="partner-no">No</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <br>
+                </br>
+                <input type="submit" class="button" value="Continue">
+            </form>
+            <p>
+        </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,166 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <a href="/onlineform_v2/rent-statement.html" class="link-back">Back</a>
+            <h1 class="heading-large">
+        Rent arrears details
+      </h1>
+            <br>
+            <form action="/onlineform_v2/check-your-answers" method="post" class="form">
+                <div class="grid-row">
+                    <div class="form-group-compound list-item-wrapper">
+                        <h2 class="heading-medium">Missing rent payment 1</h2>
+                        <div class="column-one-third no-padding">
+                            <div class="form-group list-item">
+                                <label class="form-label" for="rent-due-date">
+                                    Date due:
+                                </label>
+                                <input class="form-control" id="rent-due-date" name="rent-due-date" type="text" style="none">
+                            </div>
+                        </div>
+                        <div class="column-one-third no-padding">
+                            <div class="form-group list-item">
+                                <label class="form-label" for="amount-due">
+                                    Amount due:
+                                </label>
+                                <div class="govuk-currency-input__inner">
+                                    <span class="govuk-currency-input__inner__unit">£</span>
+                                    <input class="govuk-currency-input__inner__input form-control form-control-1-4" aria-label="Enter amount in pounds" name="amount-due" data-non-numeric="" type="text" id="amount-due" pattern="[0-9]\d*(\.\d+)?">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column-one-third no-padding">
+                            <div class="form-group list-item">
+                                <label class="form-label" for="amount-paid">
+                                    Amount paid:
+                                </label>
+                                <div class="govuk-currency-input__inner">
+                                    <span class="govuk-currency-input__inner__unit">£</span>
+                                    <input class="govuk-currency-input__inner__input form-control form-control-1-4" aria-label="Enter amount in pounds" name="amount-paid" data-non-numeric="" type="text" id="amount-paid" pattern="[0-9]\d*(\.\d+)?">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-row">
+                            <div class="column-two-thirds">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-row">
+                    <div class="form-group-compound list-item-wrapper">
+                        <h2 class="heading-medium">Missing rent payment 2</h2>
+                        <div class="column-one-third no-padding">
+                            <div class="form-group list-item">
+                                <label class="form-label" for="rent-due-date">
+                                    Date due:
+                                </label>
+                                <input class="form-control" id="rent-due-date" name="rent-due-date" type="text" style="none">
+                            </div>
+                        </div>
+                        <div class="column-one-third no-padding">
+                            <div class="form-group list-item">
+                                <label class="form-label" for="amount-due">
+                                    Amount due:
+                                </label>
+                                <div class="govuk-currency-input__inner">
+                                    <span class="govuk-currency-input__inner__unit">£</span>
+                                    <input class="govuk-currency-input__inner__input form-control form-control-1-4" aria-label="Enter amount in pounds" name="amount-due" data-non-numeric="" type="text" id="amount-due" pattern="[0-9]\d*(\.\d+)?">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column-one-third no-padding">
+                            <div class="form-group list-item">
+                                <label class="form-label" for="amount-paid">
+                                    Amount paid:
+                                </label>
+                                <div class="govuk-currency-input__inner">
+                                    <span class="govuk-currency-input__inner__unit">£</span>
+                                    <input class="govuk-currency-input__inner__input form-control form-control-1-4" aria-label="Enter amount in pounds" name="amount-paid" data-non-numeric="" type="text" id="amount-paid" pattern="[0-9]\d*(\.\d+)?">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-row">
+                            <div class="column-two-thirds">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-row">
+                    <div class="form-group-compound list-item-wrapper">
+                        <h2 class="heading-medium">Missing rent payment 3</h2>
+                        <div class="column-one-third no-padding">
+                            <div class="form-group list-item">
+                                <label class="form-label" for="rent-due-date">
+                                    Date due:
+                                </label>
+                                <input class="form-control" id="rent-due-date" name="rent-due-date" type="text" style="none">
+                            </div>
+                        </div>
+                        <div class="column-one-third no-padding">
+                            <div class="form-group list-item">
+                                <label class="form-label" for="amount-due">
+                                    Amount due:
+                                </label>
+                                <div class="govuk-currency-input__inner">
+                                    <span class="govuk-currency-input__inner__unit">£</span>
+                                    <input class="govuk-currency-input__inner__input form-control form-control-1-4" aria-label="Enter amount in pounds" name="amount-due" data-non-numeric="" type="text" id="amount-due" pattern="[0-9]\d*(\.\d+)?">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column-one-third no-padding">
+                            <div class="form-group list-item">
+                                <label class="form-label" for="amount-paid">
+                                    Amount paid:
+                                </label>
+                                <div class="govuk-currency-input__inner">
+                                    <span class="govuk-currency-input__inner__unit">£</span>
+                                    <input class="govuk-currency-input__inner__input form-control form-control-1-4" aria-label="Enter amount in pounds" name="amount-paid" data-non-numeric="" type="text" id="amount-paid" pattern="[0-9]\d*(\.\d+)?">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-row">
+                            <div class="column-two-thirds">
+                                <div class="form-group">
+                                    <button id="add-button" class="button button-add-another">Add another</button>
+                                    <input type="submit" class="button" value="Continue">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </form>
+        <!-- <div class="form-group-compound">
+        <div class="form-group form-group">
+          <label class="form-label" for="dob-day">Day</label>
+          <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+        </div>
+        <div class="form-group form-group-month">
+          <label class="form-label" for="dob-month">Month</label>
+          <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+        </div>
+        <div class="form-group form-group-year">
+          <label class="form-label" for="dob-year">Year</label>
+          <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
+        </div>
+      </div>
+ -->
+        <!-- <fieldset>
+            <div class="column-one-third no-padding">
+              <div class="form-group">
+                <label class="form-label" for="field-1">
+                  Field label
+                </label>
+                <input type="text" class="form-control" id="field-1" name="field-1">
+              </div>
+            </div>
+ -->
+        </form>
+        <!--    <p><a href="/onlineform/check-your-answers.html" class="button">Continue</a></p>
+        <p>
+ -->
+    </div>
+    </div>
+</main>
+{% endblock %}

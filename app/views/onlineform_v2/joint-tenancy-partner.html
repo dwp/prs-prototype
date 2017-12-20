@@ -1,0 +1,31 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <form action="/onlineform_v2/partner-name" method="get" class="form">
+                <a href="/onlineform_v2/joint-tenancy.html" class="link-back">Back</a>
+                <h2 class="heading-large">Is the other person the tenants partner?</h2>
+                <!--             <p><span class= "form-hint">T</p>
+ -->
+                <form>
+                    <div class="form-group">
+                        <fieldset class="inline">
+                            <div class="multiple-choice">
+                                <input id="partner-1" type="radio" name="partner" value="true">
+                                <label for="radio-inline-1">Yes</label>
+                            </div>
+                            <div class="multiple-choice">
+                                <input id="partner-2" type="radio" name="partner" value="false">
+                                <label for="radio-inline-2">No</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <br>
+                    </br>
+                    <input type="submit" class="button" value="Continue">
+                </form>
+                <p>
+        </div>
+    </div>
+</main>
+{% endblock %}

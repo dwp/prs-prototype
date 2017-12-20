@@ -1,0 +1,379 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <a href="/onlineform_v2/service-charge-details.html" class="link-back">Back</a>
+            <h1 class="heading-large">
+        Check your answers before sending your application
+      </h1>
+            <!-- <<< CLAIM DETAILS >>>-->
+            <h2 class="heading-medium">
+      Claim details      
+      </h2>
+            <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+            <!--   * `cya-questions-short` for short questions -->
+            <!--   * `cya-questions-long` for long questions -->
+            <!--   * none for single group of q&a -->
+            <dl class="govuk-check-your-answers cya-questions-short">
+                <div>
+                    <dt class="cya-question">
+                        Type of claim
+                    </dt>
+                    <dd class="cya-answer">
+                        <p>{{ data['request-types'] }}</p>
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> name</span>
+            </a>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="cya-question">
+                        Reason for claim
+                    </dt>
+                    <dd class="cya-answer">
+                        <p>{{ data['reason-types'] }}</p>
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> date of birth</span>
+            </a>
+                    </dd>
+                </div>
+            </dl>
+            <!-- <<< LANDLORD DETAILS >>>-->
+            <h2 class="heading-medium">
+        Landlord details
+      </h2>
+            <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+            <!--   * `cya-questions-short` for short questions -->
+            <!--   * `cya-questions-long` for long questions -->
+            <!--   * none for single group of q&a -->
+            <dl class="govuk-check-your-answers cya-questions-short">
+                <div>
+                    <dt class="cya-question">
+                        Name
+                    </dt>
+                    <dd class="cya-answer">
+                        <p>{{ data['landlord-name'] }}</p>
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> name</span>
+            </a>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="cya-question">
+                        Phone number
+                    </dt>
+                    <dd class="cya-answer">
+                        <p>{{ data['landlord-phone'] }}</p>
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> date of birth</span>
+            </a>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="cya-question">
+                        Email address
+                    </dt>
+                    <dd class="cya-answer">
+                        <p>{{ data['landlord-email'] }}</p>
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> home address</span>
+            </a>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="cya-question">
+                        Address
+                    </dt>
+                    <dd class="cya-answer">
+                        XXXX
+                        <br>
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> contact details</span>
+            </a>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="cya-question">
+                        Bank details
+                    </dt>
+                    <dd class="cya-answer">
+                        {{ data['account-name'] }}
+                        <br> {{ data['sortcode-1'] }} {{ data['sortcode-2'] }} {{ data['sortcode-3'] }}
+                        <br> {{ data['account-number'] }}
+                        <br> {{ data['ref-number'] }}
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> contact details</span>
+            </a>
+                    </dd>
+                </div>
+            </dl>
+            <!-- <<< TENANT DETAILS >>>-->
+            <h2 class="heading-medium">
+        Tenant details
+      </h2>
+            <dl class="govuk-check-your-answers cya-questions-short">
+                <div>
+                    <dt class="cya-question">
+                        Name
+                    </dt>
+                    <dd class="cya-answer">
+                        <p>{{ data['first-name-1'] }} {{ data['surname-1'] }}</p>
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> name</span>
+            </a>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="cya-question">
+                        Date of birth
+                    </dt>
+                    <dd class="cya-answer">
+                        <p>{{ data['dob-day'] }} {{ data['dob-month'] }} {{ data['dob-year'] }}</p>
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> name</span>
+            </a>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="cya-question">
+                        National Insurance Number
+                    </dt>
+                    <dd class="cya-answer">
+                        <p>{{ data['nino-1'] }}</p>
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> date of birth</span>
+            </a>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="cya-question">
+                        Phone number
+                    </dt>
+                    <dd class="cya-answer">
+                        <p>{{ data['tenant-phone'] }}</p>
+                        <br>
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> contact details</span>
+            </a>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="cya-question">
+                        Address
+                    </dt>
+                    <dd class="cya-answer">
+                        72 Guild Street
+                        <br> London
+                        <br> SE23 6FH
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> home address</span>
+            </a>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="cya-question">
+                        Partner Name
+                    </dt>
+                    <dd class="cya-answer">
+                        <p>{{ data['first-name-partner'] }} {{ data['surname-partner'] }}</p>
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> home address</span>
+            </a>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="cya-question">
+                        Partner Date of birth
+                    </dt>
+                    <dd class="cya-answer">
+                        <p>{{ data['dob-day-partner'] }} {{ data['dob-month-partner'] }} {{ data['dob-year-partner'] }}</p>
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> home address</span>
+            </a>
+                    </dd>
+                </div>
+            </dl>
+            <h2 class="heading-medium">
+        Rent details
+      </h2>
+            <dl class="govuk-check-your-answers cya-questions-short">
+                <div>
+                    <dt class="cya-question">
+                        Total amount outstanding
+                    </dt>
+                    <dd class="cya-answer">
+                        <p>{{ data['total-rent-outstanding'] }}</p>
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> name</span>
+            </a>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="cya-question">
+                        Rent frequency
+                    </dt>
+                    <dd class="cya-answer">
+                        <p>{{ data['rent-frequency'] }}</p>
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> date of birth</span>
+            </a>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="cya-question">
+                        Rent free weeks
+                    </dt>
+                    <dd class="cya-answer">
+                        <p>{{ data['rent-free-weeks'] }}</p>
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> contact details</span>
+            </a>
+                    </dd>
+                </div>
+            </dl>
+            <!-- <<< MISSING PAYMENTS >>>-->
+            <h2 class="heading-medium">
+      Missing payment 1</h2>
+            <dl class="govuk-check-your-answers cya-questions-short">
+                <div>
+                    <dt class="cya-question">
+                        Date due
+                    </dt>
+                    <dd class="cya-answer">
+                        <p>{{ data['rent-due-date'] }}</p>
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> name</span>
+            </a>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="cya-question">
+                        Amount due
+                    </dt>
+                    <dd class="cya-answer">
+                        <p>{{ data['amount-due'] }}</p>
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> name</span>
+            </a>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="cya-question">
+                        Amount paid
+                    </dt>
+                    <dd class="cya-answer">
+                        <p>{{ data['amount-paid'] }}</p>
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> name</span>
+            </a>
+                    </dd>
+                </div>
+            </dl>
+            <h2 class="heading-medium">
+      Missing service charge 1</h2>
+            <dl class="govuk-check-your-answers cya-questions-short">
+                <div>
+                    <dt class="cya-question">
+                        Type of service charge
+                    </dt>
+                    <dd class="cya-answer">
+                        <p>{{ data['service-charge-type'] }}</p>
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> name</span>
+            </a>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="cya-question">
+                        Amount
+                    </dt>
+                    <dd class="cya-answer">
+                        <p>{{ data['service-charge-amount'] }}</p>
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> name</span>
+            </a>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="cya-question">
+                        Frequency
+                    </dt>
+                    <dd class="cya-answer">
+                        <p>{{ data['service-charge-frequency'] }}</p>
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">
+              Change<span class="visually-hidden"> date of birth</span>
+            </a>
+                    </dd>
+                </div>
+            </dl>
+            <h2 class="heading-medium">Now send your application</h2>
+            <!-- <h1 class="heading-xlarge">Declaration</h1>
+ -->
+            <p class="text">By sending the application you agree that By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+            <!-- <ul class="list-bullet">
+    <li>the information is correct and complete as far as you know</li>
+    <li>you&rsquo;ll pay back any money you&rsquo;re overpaid if you&rsquo;re asked to</li>
+  </ul> -->
+            <div class="legal_message">
+                You could be prosecuted or have to pay a financial penalty if you deliberately give the wrong or incomplete information or don&rsquo;t report changes.
+            </div>
+            <p><a href="/onlineform/confirmation.html" class="button">I agree - send my application</a></p>
+            <!-- <p class="text">
+        By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      </p>
+
+      <div class="form-group">
+        <a href="/onlineform/confirmation.html" class="button">Accept and send your application</a>
+      </div>
+
+    </div>
+    -->
+        </div>
+</main>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <a href="/onlineform_v2/landlord-details.html" class="link-back">Back</a>
+            <h1 class="heading-large">Landlord's bank details</h1>
+            <p>The bank account the rent will be paid into.</p>
+            <fieldset>
+                <form action="/onlineform_v2/tenant-details" method="post" class="form">
+                    <div class="form-group">
+                        <label class="form-label" for="account-name">Account name</label>
+                        <input class="form-control" id="account-name" name="account-name" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="sort-code">Sort code</label>
+                        <legend>
+                            <span class="form-label"></span>
+                        </legend>
+                        <div class="form-date">
+                            <div class="form-group form-group-day">
+                                <label class="form-label" for="dob-day"></label>
+                                <input class="form-control" id="sortcode-1" name="sortcode-1" type="number" pattern="[0-9]*" min="0" max="31">
+                            </div>
+                            <div class="form-group form-group-month">
+                                <label class="form-label" for="sortcode-2"></label>
+                                <input class="form-control" id="sortcode-2" name="sortcode-2" type="number" pattern="[0-9]*" min="0" max="12">
+                            </div>
+                            <div class="form-group form-group-month">
+                                <label class="form-label" for="sortcode-3"></label>
+                                <input class="form-control" id="sortcode-3" name="sortcode-3" type="number" pattern="[0-9]*" min="0" max="12">
+                            </div>
+            </fieldset>
+            <div class="form-group">
+                <label class="form-label" for="account-number">Account number</label>
+                <input class="form-control" id="account-number" name="account-number" type="text">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="ref-number">Tenant reference number</label>
+                <span class="form-hint">
+              Provided by you, and will be used as the BACS identifier and will appear on the payment transaction.
+            </span>
+                <input class="form-control" id="ref-number" name="ref-number" type="text">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="ref-number">Your creditor reference</label>
+                <span class="form-hint">
+                    Please provide your Department for
+                    Work and Pensions creditor reference
+                    number (if known) this can be found
+                    on your last payment schedule
+                    proceeded by 5 zeros.
+            </span>
+                <input class="form-control" id="ref-number" name="ref-number" type="text">
+            </div>
+            <input type="submit" class="button" value="Continue">
+            </div>
+</main>
+{% endblock %}
