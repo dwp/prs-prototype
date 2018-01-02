@@ -154,19 +154,6 @@
                 </div>
                 <div>
                     <dt class="cya-question">
-                        National Insurance Number
-                    </dt>
-                    <dd class="cya-answer">
-                        <p>{{ data['nino-1'] }}</p>
-                    </dd>
-                    <dd class="cya-change">
-                        <a href="#">
-              Change<span class="visually-hidden"> date of birth</span>
-            </a>
-                    </dd>
-                </div>
-                <div>
-                    <dt class="cya-question">
                         Phone number
                     </dt>
                     <dd class="cya-answer">
@@ -227,10 +214,10 @@
             <dl class="govuk-check-your-answers cya-questions-short">
                 <div>
                     <dt class="cya-question">
-                        Total amount outstanding
+                        Rent amount
                     </dt>
                     <dd class="cya-answer">
-                        <p>{{ data['total-rent-outstanding'] }}</p>
+                        <p>{{ data['rent-amount'] }}</p>
                     </dd>
                     <dd class="cya-change">
                         <a href="#">
@@ -267,91 +254,7 @@
             </dl>
             <!-- <<< MISSING PAYMENTS >>>-->
             <h2 class="heading-medium">
-      Missing payment 1</h2>
-            <dl class="govuk-check-your-answers cya-questions-short">
-                <div>
-                    <dt class="cya-question">
-                        Date due
-                    </dt>
-                    <dd class="cya-answer">
-                        <p>{{ data['rent-due-date'] }}</p>
-                    </dd>
-                    <dd class="cya-change">
-                        <a href="#">
-              Change<span class="visually-hidden"> name</span>
-            </a>
-                    </dd>
-                </div>
-                <div>
-                    <dt class="cya-question">
-                        Amount due
-                    </dt>
-                    <dd class="cya-answer">
-                        <p>{{ data['amount-due'] }}</p>
-                    </dd>
-                    <dd class="cya-change">
-                        <a href="#">
-              Change<span class="visually-hidden"> name</span>
-            </a>
-                    </dd>
-                </div>
-                <div>
-                    <dt class="cya-question">
-                        Amount paid
-                    </dt>
-                    <dd class="cya-answer">
-                        <p>{{ data['amount-paid'] }}</p>
-                    </dd>
-                    <dd class="cya-change">
-                        <a href="#">
-              Change<span class="visually-hidden"> name</span>
-            </a>
-                    </dd>
-                </div>
-            </dl>
-            <h2 class="heading-medium">
-      Missing service charge 1</h2>
-            <dl class="govuk-check-your-answers cya-questions-short">
-                <div>
-                    <dt class="cya-question">
-                        Type of service charge
-                    </dt>
-                    <dd class="cya-answer">
-                        <p>{{ data['service-charge-type'] }}</p>
-                    </dd>
-                    <dd class="cya-change">
-                        <a href="#">
-              Change<span class="visually-hidden"> name</span>
-            </a>
-                    </dd>
-                </div>
-                <div>
-                    <dt class="cya-question">
-                        Amount
-                    </dt>
-                    <dd class="cya-answer">
-                        <p>{{ data['service-charge-amount'] }}</p>
-                    </dd>
-                    <dd class="cya-change">
-                        <a href="#">
-              Change<span class="visually-hidden"> name</span>
-            </a>
-                    </dd>
-                </div>
-                <div>
-                    <dt class="cya-question">
-                        Frequency
-                    </dt>
-                    <dd class="cya-answer">
-                        <p>{{ data['service-charge-frequency'] }}</p>
-                    </dd>
-                    <dd class="cya-change">
-                        <a href="#">
-              Change<span class="visually-hidden"> date of birth</span>
-            </a>
-                    </dd>
-                </div>
-            </dl>
+      
             <h2 class="heading-medium">Now send your application</h2>
             <!-- <h1 class="heading-xlarge">Declaration</h1>
  -->
@@ -363,7 +266,7 @@
             <div class="legal_message">
                 You could be prosecuted or have to pay a financial penalty if you deliberately give the wrong or incomplete information or don&rsquo;t report changes.
             </div>
-            <p><a href="/onlineform/confirmation.html" class="button">I agree - send my application</a></p>
+            <p><a href="/onlineform_v2/rent-statement.html" class="button">I agree - continue with my application</a></p>
             <!-- <p class="text">
         By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.
       </p>
