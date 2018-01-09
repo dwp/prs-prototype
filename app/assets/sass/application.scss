@@ -234,5 +234,11 @@
         max-width: 30em;
     }
 
+    @media (max-width: 640px) {
+        width: 90%;
+        margin: auto;
+        display: block;
+    }
+
 
     @import 'layout-index';

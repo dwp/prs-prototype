@@ -120,6 +120,81 @@ function sortFields() {
     }
 }
 
+$(document).on('click', '.button-add-another-vertical', function(e) {
+    e.preventDefault();
+    var beforeThis = $(this).parents('.list-item-wrapper-vertical').find('.grid-row').last();
+    $(beforeThis).before(
+        '<div class="grid-row">' +
+        '<div class="column-two-thirds">' +
+        '<div class="form-group-compound">' +
+        '<h2 class="heading-medium">Item 1</h2>' +
+        '<div class="form-group">' +
+        '<label class="form-label" for="field-1">' +
+        'Field label' +
+        '</label>' +
+        '<input type="text" class="form-control" id="field-1" name="field-1">' +
+        '</div>' +
+        '<div class="form-group">' +
+        '<label class="form-label" for="field-2">' +
+        'Field label' +
+        '</label>' +
+        '<input type="text" class="form-control" id="field-2" name="field-2">' +
+        '</div>' +
+        '<div class="form-group">' +
+        '<label class="form-label" for="field-3">' +
+        'Field label' +
+        '</label>' +
+        '<input type="text" class="form-control" id="field-3" name="field-3">' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '<div class="column-one-third">' +
+        '</div>' +
+        '</div>' +
+        '<hr />'
+    );
+    sortFieldsVertical();
+});
+
+function sortFieldsVertical() {
+    var listCounter = 1;
+    var inputCounter = 1;
+
+    $(document).find('.list-item-wrapper-vertical .grid-row').each(function() {
+        $(this).find('h2').text('Item ' + listCounter);
+
+        if ($(this).find('.remove-list-item-vertical').length === 0) {
+            $(this).find('.column-one-third:last').append('<a id="remove-item-vertical-' + listCounter + '" class="remove-list-item-vertical" href="#">Remove this</a>');
+        } else {
+            $(this).find('.remove-list-item-vertical').attr('id', 'remove-item-vertical-' + listCounter);
+        }
+
+        $(this).find('label').each(function() {
+            $(this).attr('for', 'field-' + inputCounter);
+            inputCounter++;
+        });
+
+        $(this).find('input').each(function() {
+            var labelNo = $(this).parent().find('label').attr('for').split('-').pop();
+            $(this).attr('id', 'field-' + labelNo);
+            $(this).attr('name', 'field-' + labelNo);
+        });
+
+        listCounter++;
+    });
+
+    if ($(document).find('.list-item-wrapper-vertical .grid-row').length === 2) {
+        $('.remove-list-item-vertical').remove();
+    }
+}
+
+$(document).on('click', '.remove-list-item-vertical', function(e) {
+    e.preventDefault();
+    $(this).parents('.grid-row').prev('hr').remove();
+    $(this).parents('.grid-row').remove();
+    sortFieldsVertical();
+});
+
 
 
 Alternative pattern
