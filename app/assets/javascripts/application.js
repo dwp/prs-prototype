@@ -19,28 +19,7 @@ $(document).ready(function() {
 })
 
 
-Skip to main content
-DWP
-Design patterns
-Back
-Add items to a list
 
-Standard pattern
-
-Use this when:
-
-    the user must enter a list of things
-the items are in value pairs or sets, eg name of medicine plus the dosage
-Item 1
-
-
-Field label
-
-Field label
-
-Add another
-View code snippet
-HTMLSCSSCSSJS
 
 $(document).on('click', '.button-add-another', function(e) {
     var beforeThis = $(this).parents('.grid-row');
@@ -197,31 +176,31 @@ $(document).on('click', '.remove-list-item-vertical', function(e) {
 
 
 
-Alternative pattern
+// Alternative pattern
 
-Use this when:
+// Use this when:
 
-    there is a single entry, eg a list of conditions or disabilities
-Item 1
+//     there is a single entry, eg a list of conditions or disabilities
+// Item 1
 
-Field label
+// Field label
 
-Field label
+// Field label
 
-Field label
+// Field label
 
-Add another
-View code snippet
-Content and use notes
+// Add another
+// View code snippet
+// Content and use notes
 
-Users don 't always see the add another button and may comma separate in a single box. Access to Work found that having 3 boxes on screen hepled to prompt '
-one thing per box '.
-Give an example of the type of thing that could be listed.
-An alternative pattern being used in Access to Work is to give a radio list of the most popular answers by data, and then have an 'Anything else?'
-question, which then allows the user to enter a list.
-Built by DWP Digital
+// Users don 't always see the add another button and may comma separate in a single box. Access to Work found that having 3 boxes on screen hepled to prompt '
+// one thing per box '.
+// Give an example of the type of thing that could be listed.
+// An alternative pattern being used in Access to Work is to give a radio list of the most popular answers by data, and then have an 'Anything else?'
+// question, which then allows the user to enter a list.
+// Built by DWP Digital
 
-Open Government Licence
-All content is available under the Open Government Licence v3 .0, except where otherwise stated
+// Open Government Licence
+// All content is available under the Open Government Licence v3 .0, except where otherwise stated
 
-© Crown copyright
+// © Crown copyright
