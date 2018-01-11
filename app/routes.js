@@ -159,6 +159,22 @@ router.get('/onlineform/joint-tenancy-partner', function(req, res) {
     }
 })
 
+
+router.get('/onlineform_v2/landlord-details', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    // req.session.jointtenancy = req.query.jointtenancy
+    console.dir(req)
+    var arrears = req.query.arrears
+    console.log(arrears)
+
+    if (arrears === 'false') { // redirect to the relevant page
+        res.redirect('/onlineform_v2/request-reason')
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v2/landlord-details')
+    }
+})
+
 router.get('/onlineform/partner-name', function(req, res) {
     // get the answer from the query string (eg. ?over18=false)
     // req.session.jointtenancy = req.query.jointtenancy
