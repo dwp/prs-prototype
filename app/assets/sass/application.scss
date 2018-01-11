@@ -120,7 +120,7 @@
     }
 
     .list-item-wrapper {
-        padding-left: 20px;
+        padding-left: 15px;
         padding-right: 20px;
     }
 
@@ -157,33 +157,13 @@
         box-shadow: 0 2px 0 #666;
     }
 
-    @media (max-width: 640px) {
-        .list-item-wrapper .column-one-third input {
-            width: 100%;
-        }
 
-        .no-padding {
-            padding-left: 20px;
-            padding-right: 20px;
-        }
 
-        .button-add-another {
-            width: 90%;
-            margin: auto;
-            display: block;
-        }
 
-        .narrow {
-            width: 170px
-        }
 
-        div.govuk-box-highlight {
-            padding-top: 1em
-        }
-
-        div.govuk-box-highlight {
-            padding-top: 1em
-        }
+    .modified-govuk-box {
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
     }
 
     .govuk-currency-input__inner {
