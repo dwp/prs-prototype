@@ -1,0 +1,19 @@
+{% macro get(id) %}
+<div class="address-picker">
+    <div id="input">
+        <input class="form-control" name="{{id}}-postcode" type="text" />
+        <button class="button">Find address</button>
+        <!-- TODO i live outside the uk -->
+        <p><a href="" id="address-manual">Enter address manually</a></p>
+    </div>
+    <div id="output" class="hidden">
+        <span class="heading-small">M410RN</span>
+        <a class="link" id="change">Change</a>
+        <h3 class="heading-medium">Select an address</h3>
+        <select class="form-control" id="{{id}}-address" name="{{id}}-address"></select>
+    </div>
+    <div id="manual" class="hidden">
+        <p>hello</p>
+    </div>
+</div>
+{% endmacro %}

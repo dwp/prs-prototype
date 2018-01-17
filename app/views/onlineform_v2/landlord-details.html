@@ -24,18 +24,18 @@
                         <label for="postcode" class="form-label">
                             Postcode
                         </label>
-                        <div class="c-field-submit__row">
+                        {% import "onlineform_v2/addressPicker.html" as addressPicker %} {{ addressPicker.get("landlord") }}
+                        <!-- <div class="c-field-submit__row">
                             <div class="c-field-submit__capture">
                                 <input class="form-control form-control-1-1" id="postcode" type="text" name="postcode" class="form-control form-control-1-4" value="{{ postcode }}">
                             </div>
                             <div class="c-field-submit__action">
                                 <input type="submit" class="button" value="Find UK address">
-                            </div>
-                        </div>
-                        <p><a href="contact-details">Enter address manually</a></p>
-                        <input type="submit" class="button" value="Continue">
+                            </div> -->
                     </div>
-                </form>
-            </form>
+                    <input type="submit" class="button" value="Continue">
+        </div>
+        </form>
+        </form>
 </main>
 {% endblock %}

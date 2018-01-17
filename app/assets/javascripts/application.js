@@ -176,6 +176,7 @@ $(document).on('click', '.remove-list-item-vertical', function(e) {
 
 
 
+
 // Alternative pattern
 
 // Use this when:

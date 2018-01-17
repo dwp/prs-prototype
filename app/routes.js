@@ -283,6 +283,16 @@ router.get('/onlineform_v2/rent-statement-upload', function(req, res) {
     }
 })
 
+const addresses = [
+    { address: ['Studio 103', 'The Business Centre', '61 Wellfield Road', 'Roath', 'Cardiff', 'CF24 3DG'] },
+    { address: ['Room 67', '14 Tottenham Court Road', 'London', 'England', 'W1T 1JY'] },
+    { address: ['Unit 14', '3 Edgar Buildings', 'George Street', 'Bath', 'England', 'BA1 2FJ'] },
+    { address: ['Department 98', '44-46 Morningside Road', 'Edinburgh', 'Scotland', 'EH10 4BF'] },
+    { address: ['Box 777', '91 Western Road', 'Brighton', 'East Sussex', 'England', 'BN1 2NW'] },
+    { address: ['Office 33', '27 Colmore Row', 'Birmingham', 'England', 'B3 2EW'] }
+]
+
+router.use('/postcode', require('./postcodes')(addresses))
 
 
 module.exports = router

@@ -1,0 +1,36 @@
+div.address-picker {
+
+    margin-bottom: 2em;
+
+
+
+    input {
+        width: 19rem;
+        height: 38px;
+    }
+
+    button {
+
+        display: inline-block;
+        height: 36px;
+
+
+
+        &:hover {
+            background-color: $secondary-text-colour;
+        }
+    }
+
+    #output {
+        span {
+            padding-right: 1rem;
+        }
+        a {
+            cursor: pointer;
+        }
+        h3 {
+            margin-top: 1em;
+            margin-bottom: 0em;
+        }
+    }
+}
