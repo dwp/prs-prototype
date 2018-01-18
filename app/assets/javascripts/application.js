@@ -17,7 +17,7 @@ function addauth(username, password) {
     var headers = new Headers();
     headers.set('Authorization', value);
     window.fetch = function(data) {
-      fetch.call(this, data, { headers: headers });
+      return fetch.call(this, data, { headers: headers });
     };
   })(window.fetch);
 };
