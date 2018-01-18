@@ -5,7 +5,6 @@ var router = express.Router()
 // this middleware function adds the username and password for the page to the nunjucks variables
 // this is needed for the fetching of clientside resources ( eg, api calls - for the postcode lookup )
 router.use((req, res, next) => {
-  console.log('USERNAME : ' + process.env.USERNAME + ' PASSWORD: ' + process.env.PASSWORD)
   res.locals['auth'] = {
     username: process.env.USERNAME,
     password: process.env.PASSWORD
