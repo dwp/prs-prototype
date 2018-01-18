@@ -172,6 +172,7 @@
 
     .govuk-currency-input__inner__input {
         padding-left: 25px;
+        width: 25%;
     }
 
     .govuk-currency-input__inner__unit {
@@ -224,6 +225,35 @@
         width: 400px;
     }
 
+    .form-control-1-4 {
+        width: 25%;
+    }
+
+    .narrow {
+        width: 12.5%;
+    }
+
+
+    .details summary {
+        display: inline-block;
+        color: #005ea5;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 0.2631578947em;
+    }
+
+    .form-group .panel-border-narrow:last-child {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .form-group .panel-border-narrow {
+        float: left;
+        width: 100%;
+        padding-bottom: 10px;
+    }
+
     @import 'addressPicker';
+
 
     @import 'layout-index';

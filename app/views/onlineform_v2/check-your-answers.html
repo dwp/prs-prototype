@@ -8,7 +8,7 @@
       </h1>
             <!-- <<< CLAIM DETAILS >>>-->
             <h2 class="heading-small th">
-      Claim details   
+      Application details   
         <p class="payment-link">
     
       <a href="">
@@ -24,7 +24,7 @@
             <dl class="data-summary">
                 <div>
                     <dt class="data-summary-key">
-                        Type of claim
+                        Type of payment
                     </dt>
                     <dd class="data-summary-value">
                         <p>{{ data['request-types'] }}</p>
@@ -37,7 +37,7 @@
                 </div>
                 <div>
                     <dt class="data-summary-key">
-                        Reason for claim
+                        Reason for application
                     </dt>
                     <dd class="data-summary-value">
                         <p>{{ data['reason-types'] }}</p>
@@ -107,7 +107,23 @@
                         {{ data['account-name'] }}
                         <br> {{ data['sortcode-1'] }} {{ data['sortcode-2'] }} {{ data['sortcode-3'] }}
                         <br> {{ data['account-number'] }}
-                        <br> {{ data['ref-number'] }}
+                        <br> {{ data['creditor-ref'] }}
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Tenant reference number
+                    </dt>
+                    <dd class="data-summary-value">
+                        {{ data['tenant-ref'] }}
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Creditor reference number
+                    </dt>
+                    <dd class="data-summary-value">
+                        {{ data['creditor-ref'] }}
                     </dd>
                 </div>
             </dl>

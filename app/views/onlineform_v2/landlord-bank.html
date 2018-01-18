@@ -37,22 +37,34 @@
             <div class="form-group">
                 <label class="form-label" for="ref-number">Tenant reference number</label>
                 <span class="form-hint">
-              Provided by you, and will be used as the BACS identifier and will appear on the payment transaction.
+              This will be used as the BACS identifier and will appear on the payment transaction.
             </span>
-                <input class="form-control" id="ref-number" name="ref-number" type="text">
+                <input class="form-control" id="tenant-ref" name="tenant-ref" type="text">
             </div>
             <div class="form-group">
-                <label class="form-label" for="ref-number">Your creditor reference</label>
-                <span class="form-hint">
-                    Please provide your Department for
-                    Work and Pensions creditor reference
-                    number (if known) this can be found
-                    on your last payment schedule
-                    proceeded by 5 zeros.
-            </span>
-                <input class="form-control" id="ref-number" name="ref-number" type="text">
-            </div>
-            <input type="submit" class="button" value="Continue">
-            </div>
+                <label class="form-label" for="ref-number">Do you have a creditor reference number?</label>
+                <details role="group">
+                    <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Whats this?</span></summary>
+                    <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+                        <div class="">
+                            <p>Please provide your Department for Work and Pensions creditor reference number (if known) this can be found on your last payment schedule. E.g 0000012345.</p>
+                        </div>
+                </details>
+                <p></p>
+                <div class="multiple-choice" data-target="creditor-ref">
+                    <input id="creditorRefYes" type="radio" name="creditor" value="true">
+                    <label for="creditorRefYes">Yes</label>
+                </div>
+                <div class="panel panel-border-narrow js-hidden" id="creditor-ref">
+                    <label class="form-label" for="creditor-ref">Creditor reference number</label>
+                    <input class="form-control" name="creditor-ref" type="text" id="creditor-ref">
+                </div>
+                <div class="multiple-choice">
+                    <input id="creditorRefNo" type="radio" name="creditor" value="false">
+                    <label for="creditorRefNo">No</label>
+                </div>
+                </div>
+                </details>
+                <input type="submit" class="button" value="Continue"> </form>
 </main>
 {% endblock %}

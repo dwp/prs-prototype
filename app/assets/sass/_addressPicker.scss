@@ -13,11 +13,13 @@ div.address-picker {
 
         display: inline-block;
         height: 36px;
-
-
+        background-color: $panel-colour;
+        box-shadow: 0 2px 0 $secondary-text-colour;
+        color: black !important;
+        margin-left: 0.1em;
 
         &:hover {
-            background-color: $secondary-text-colour;
+            background-color: $border-colour;
         }
     }
 
