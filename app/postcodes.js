@@ -1,11 +1,12 @@
-module.exports = (addresses) => {
-  const router = require('express').Router()
-  const arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-  const getLetterScore = letter => arr.indexOf(letter.toLowerCase()) % addresses.length
+const router = require('express').Router()
 
-  router.route('/:postcode').get((req, res) => {
-    res.json(addresses[getLetterScore(req.params.postcode.charAt(0))])
-  })
+const addresses = [
+  { address: [ '34 Carr Street', 'Ecclesall', 'Sheffield', 'S119PJ' ] },
+  { address: [ 'Flat 26', 'Nightingale Road', 'Newton Heath', 'M100AE' ] }
+]
 
-  return router
-}
+router.route('/:postcode').get((req, res) => {
+  res.json(addresses[req.params.postcode.toUpperCase() === 'S119PJ' ? 0 : 1])
+})
+
+module.exports = router
