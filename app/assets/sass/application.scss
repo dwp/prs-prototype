@@ -263,4 +263,12 @@ $path: "/public/images/"; // Import GOV.UK elements from /govuk-modules/, this w
   cursor: pointer;
 }
 
+.remove-service-link {
+  position: absolute;
+  margin-left: 2em;
+  margin-top: 0.2em;
+  width: 20em;
+  cursor: pointer;
+}
+
 @import 'layout-index';
