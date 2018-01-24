@@ -3,11 +3,16 @@ div.address-picker {
     margin-bottom: 2em;
 
 
-
-    input {
-        width: 19rem;
-        height: 38px;
+    #manual {
+        input {
+            width: 50%;
+        }
     }
+
+    .postcode-input {
+        width: 35% !important;
+    }
+
 
     button {
 

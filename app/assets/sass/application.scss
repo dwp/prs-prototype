@@ -256,19 +256,23 @@ $path: "/public/images/"; // Import GOV.UK elements from /govuk-modules/, this w
 @import 'addressPicker';
 
 .remove-link {
-  position: absolute;
-  left: 13em;
-  top: 0.3em;
-  width: 12rem;
-  cursor: pointer;
+    position: absolute;
+    left: 8em;
+    top: 0.3em;
+    width: 12rem;
+    cursor: pointer;
 }
 
 .remove-service-link {
-  position: absolute;
-  margin-left: 2em;
-  margin-top: 0.2em;
-  width: 20em;
-  cursor: pointer;
+    position: absolute;
+    margin-left: 2em;
+    margin-top: 0.2em;
+    width: 20em;
+    cursor: pointer;
+}
+
+.manual-address {
+    width: 100%;
 }
 
 @import 'layout-index';
