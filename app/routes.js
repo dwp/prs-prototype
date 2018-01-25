@@ -182,7 +182,7 @@ router.get('/onlineform_v2/landlord-details', function(req, res) {
         res.redirect('/onlineform_v2/request-reason')
     } else {
         // if over18 is any other value (or is missing) render the page requested
-        res.render('/onlineform_v2/landlord-details')
+        res.render('onlineform_v2/landlord-details')
     }
 })
 
