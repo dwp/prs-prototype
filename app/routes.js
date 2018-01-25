@@ -5,11 +5,11 @@ var router = express.Router()
 // this middleware function adds the username and password for the page to the nunjucks variables
 // this is needed for the fetching of clientside resources ( eg, api calls - for the postcode lookup )
 router.use((req, res, next) => {
-  res.locals['auth'] = {
-    username: process.env.USERNAME,
-    password: process.env.PASSWORD
-  }
-  next()
+    res.locals['auth'] = {
+        username: process.env.USERNAME,
+        password: process.env.PASSWORD
+    }
+    next()
 })
 
 // Route index page
@@ -163,7 +163,7 @@ router.get('/onlineform/joint-tenancy-partner', function(req, res) {
     console.log(joint)
 
     if (joint === 'false') { // redirect to the relevant page
-        res.redirect('/onlineform/rent-details')
+        res.redirect('onlineform/rent-details')
     } else {
         // if over18 is any other value (or is missing) render the page requested
         res.render('onlineform/joint-tenancy-partner')
@@ -182,26 +182,26 @@ router.get('/onlineform_v2/landlord-details', function(req, res) {
         res.redirect('/onlineform_v2/request-reason')
     } else {
         // if over18 is any other value (or is missing) render the page requested
-        res.render('onlineform_v2/landlord-details')
+        res.render('/onlineform_v2/landlord-details')
     }
 })
 
 // <<< creditor reference >>>
 
 // router.get('/onlineform_v2/tenant-details', function(req, res) {
-            //     // get the answer from the query string (eg. ?over18=false)
-            //     // req.session.jointtenancy = req.query.jointtenancy
-            //     console.dir(req)
-            //     var arrears = req.query.arrears
-            //     console.log(arrears)
+//     // get the answer from the query string (eg. ?over18=false)
+//     // req.session.jointtenancy = req.query.jointtenancy
+//     console.dir(req)
+//     var arrears = req.query.arrears
+//     console.log(arrears)
 
-            //     if (arrears === 'false') { // redirect to the relevant page
-            //         res.redirect('/onlineform_v2/request-reason')
-            //     } else {
-            //         // if over18 is any other value (or is missing) render the page requested
-            //         res.render('onlineform_v2/tenant-details')
-            //     }
-            // })
+//     if (arrears === 'false') { // redirect to the relevant page
+//         res.redirect('/onlineform_v2/request-reason')
+//     } else {
+//         // if over18 is any other value (or is missing) render the page requested
+//         res.render('onlineform_v2/tenant-details')
+//     }
+// })
 
 
 

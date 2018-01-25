@@ -1,66 +1,59 @@
-{% extends "layout.html" %}
-
-{% block page_title %} GOV.UK prototype kit {% endblock %}
-
-{% block content %}
-  <main id="content" role="main">
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+<main id="content" role="main">
     <div class="grid-row">
-      <div class="column-two-thirds">
-        <a href="/onlineform_v2/check-your-answers.html" class="link-back">Back</a>
-        <form action="/onlineform_v2/check-your-rent" method="post" class="form">
-          <h1 class="heading-large">Missing rent payments</h1>
-          <p>Give details about each missing or incomplete rent payment.</p>
-          <br>
-          <div class="form-group-compound list-item-wrapper">
-            <div>
-              <div class="grid-row missingRentPayment-row">
-                <div class="column-one-third no-padding">
-                  <div class="form-group list-item">
-                    <label class="form-label" for="rent-due-date">Date due:</label>
-                    <input class="form-control" id="rent-due-date" name="rent-due-date" type="text" style="none">
-                  </div>
-                </div>
-                <div class="column-one-third no-padding">
-                  <div class="form-group list-item">
-                    <label class="form-label" for="amount-due">Amount due:</label>
-                    <div class="govuk-currency-input__inner">
-                      <span class="govuk-currency-input__inner__unit">£</span>
-                      <input class="govuk-currency-input__inner__input form-control form-control-1-4" aria-label="Enter amount in pounds" name="amount-due" data-non-numeric="" type="text" id="amount-due" pattern="[0-9]\d*(\.\d+)?">
+        <div class="column-two-thirds">
+            <a href="/onlineform_v2/check-your-answers.html" class="link-back">Back</a>
+            <form action="/onlineform_v2/check-your-rent" method="post" class="form">
+                <h1 class="heading-large">Missing rent payments</h1>
+                <p>Give details about each missing or incomplete rent payment.</p>
+                <br>
+                <div class="form-group-compound list-item-wrapper">
+                    <div>
+                        <div class="grid-row missingRentPayment-row">
+                            <div class="column-one-third no-padding">
+                                <div class="form-group list-item">
+                                    <label class="form-label" for="rent-due-date">Date due:</label>
+                                    <input class="form-control" id="rent-due-date" name="rent-due-date" type="text" style="none">
+                                </div>
+                            </div>
+                            <div class="column-one-third no-padding">
+                                <div class="form-group list-item">
+                                    <label class="form-label" for="amount-due">Amount due:</label>
+                                    <div class="govuk-currency-input__inner">
+                                        <span class="govuk-currency-input__inner__unit">£</span>
+                                        <input class="govuk-currency-input__inner__input form-control form-control-1-4" aria-label="Enter amount in pounds" name="amount-due" data-non-numeric="" type="text" id="amount-due" pattern="[0-9]\d*(\.\d+)?">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column-one-third no-padding">
+                                <div class="form-group list-item">
+                                    <label class="form-label" for="amount-paid">Amount received:</label>
+                                    <div class="govuk-currency-input__inner">
+                                        <span class="govuk-currency-input__inner__unit">£</span>
+                                        <input class="govuk-currency-input__inner__input form-control form-control-1-4" aria-label="Enter amount in pounds" name="amount-paid" data-non-numeric="" type="text" id="amount-paid" pattern="[0-9]\d*(\.\d+)?" />
+                                        <a class='link remove-link'>Remove this</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-                <div class="column-one-third no-padding">
-                  <div class="form-group list-item">
-                    <label class="form-label" for="amount-paid">Amount received:</label>
-                    <div class="govuk-currency-input__inner">
-                      <span class="govuk-currency-input__inner__unit">£</span>
-                      <input class="govuk-currency-input__inner__input form-control form-control-1-4" aria-label="Enter amount in pounds" name="amount-paid" data-non-numeric="" type="text" id="amount-paid" pattern="[0-9]\d*(\.\d+)?" />
-                      <a class='link remove-link'>Remove this</a>
+                <div class="grid-row">
+                    <div class="column-two-thirds">
+                        <div class="form-group">
+                            <button id="add-button" class="button button-add-another vertical">Add another</button>
+                            <input type="submit" class="button" value="Continue" />
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="grid-row">
-            <div class="column-two-thirds">
-              <div class="form-group">
-                <button id="add-button" class="button button-add-another vertical">Add another</button>
-                <input type="submit" class="button" value="Continue" />
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
+            </form>
+        </div>
     </div>
-  </main>
-{% endblock %}
-
-{% block scripts %}
-  {{ super() }}
-  <script type="application/javascript">
-    document.addEventListener('DOMContentLoaded', function onDOMContentLoaded() {
-      addRemoveNode('#add-button', '.missingRentPayment-row .remove-link', '.missingRentPayment-row' )
-    })
-  </script>
+</main>
+{% endblock %} {% block scripts %} {{ super() }}
+<script type="application/javascript">
+document.addEventListener('DOMContentLoaded', function onDOMContentLoaded() {
+    addRemoveNode('#add-button', '.missingRentPayment-row .remove-link', '.missingRentPayment-row')
+})
+</script>
 {% endblock %}
