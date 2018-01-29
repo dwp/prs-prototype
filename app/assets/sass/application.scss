@@ -257,18 +257,21 @@ $path: "/public/images/"; // Import GOV.UK elements from /govuk-modules/, this w
 
 .remove-link {
     position: absolute;
-    left: 8em;
+    left: 13em;
     top: 0.3em;
     width: 12rem;
     cursor: pointer;
 }
 
-.remove-service-link {
-    position: absolute;
-    margin-left: 2em;
-    margin-top: 0.2em;
-    width: 20em;
-    cursor: pointer;
+@media (max-width: 640px) {
+    .remove-link {
+      top: 2.5em;
+      left: 0em;
+      display: block;
+    }
+    .missingRentPayment-row {
+      margin-bottom: 2em;
+    }
 }
 
 .manual-address {
