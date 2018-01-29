@@ -265,12 +265,19 @@ $path: "/public/images/"; // Import GOV.UK elements from /govuk-modules/, this w
 
 @media (max-width: 640px) {
     .remove-link {
-      top: 2.5em;
-      left: 0em;
-      display: block;
+        top: 2.5em;
+        left: 0em;
+        display: block;
     }
     .missingRentPayment-row {
-      margin-bottom: 2em;
+        margin-bottom: 2em;
+        .form-group {
+            width: 112% !important;
+        }
+    }
+    .button-add-another {
+        width: 100%;
+        margin-bottom: 1em;
     }
 }
 
