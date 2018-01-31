@@ -41,7 +41,3 @@ $(document).ready(function() {
     var showHideContent = new GOVUK.ShowHideContent()
     showHideContent.init()
 })
-
-document.addEventListener('DOMContentLoaded', function() {
-    window.CHECKBOX_UNCHECK.setup()
-})
