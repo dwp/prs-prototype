@@ -13,7 +13,11 @@
                             <div class="column-one-third no-padding">
                                 <div class="form-group list-item">
                                     <label class="form-label" for="rent-due-date">Date due:</label>
-                                    <input class="form-control" id="rent-due-date" name="rent-due-date" type="text" style="none">
+                                    <div class="form-date">
+                                        <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31" placeholder="dd">
+                                        <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12" placeholder="mm">
+                                        <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="1900" max="2019" placeholder="yyyy">
+                                    </div>
                                 </div>
                             </div>
                             <div class="column-one-third no-padding">
@@ -36,11 +40,16 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="grid-row missingRentPayment-row">
                             <div class="column-one-third no-padding">
                                 <div class="form-group list-item">
                                     <label class="form-label" for="rent-due-date">Date due:</label>
-                                    <input class="form-control" id="rent-due-date" name="rent-due-date" type="text" style="none">
+                                    <div class="form-date">
+                                        <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31" placeholder="dd">
+                                        <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12" placeholder="mm">
+                                        <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="1900" max="2019" placeholder="yyyy">
+                                    </div>
                                 </div>
                             </div>
                             <div class="column-one-third no-padding">
@@ -63,6 +72,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
                 <div class="grid-row">

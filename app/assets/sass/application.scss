@@ -272,6 +272,17 @@ $path: "/public/images/"; // Import GOV.UK elements from /govuk-modules/, this w
   width: 100%;
 }
 
+.missingRentPayment-row {
+  .form-date {
+    input {
+      width: 4.5rem;
+      &:last-child {
+        width: 7rem;
+      }
+    }
+  }
+}
+
 @media (max-width: 640px) {
     .remove-link {
         top: 2.5em;
