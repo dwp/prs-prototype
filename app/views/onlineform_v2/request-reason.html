@@ -37,7 +37,7 @@
             </div>
             <div class="panel panel-border-narrow js-hidden" id="other-reason">
               <label class="form-label" for="none">Please tell us more about your reason for application</label>
-              <input class="form-control form-control-3-4" name="reason_for_request" type="text" id="reason-type-8">
+              <textarea class="form-control" name="reason_for_request" rows="5"></textarea>
             </div>
           </fieldset>
         </div>
@@ -56,13 +56,13 @@
       window.CHECKBOX_UNCHECK.setup()
       var inputs = document.querySelectorAll('#reasons_div input')
       var textdiv = document.querySelector('#other-reason')
-      var textinput = textdiv.querySelector('input')
+      var textarea = textdiv.querySelector('textarea')
       for(var i = 0; i < inputs.length; i++) {
         inputs[i].addEventListener('click', function(e) {
           if(textdiv.className.indexOf('js-hidden') === -1) {
             textdiv.setAttribute('aria-hidden', true)
             textdiv.className += ' js-hidden'
-            textinput.value = ''
+            textarea.value = ''
           }
         })
       }

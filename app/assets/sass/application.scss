@@ -264,6 +264,14 @@ $path: "/public/images/"; // Import GOV.UK elements from /govuk-modules/, this w
     cursor: pointer;
 }
 
+#other-reason {
+  width: 150%;
+}
+
+.manual-address {
+  width: 100%;
+}
+
 @media (max-width: 640px) {
     .remove-link {
         top: 2.5em;
@@ -280,10 +288,12 @@ $path: "/public/images/"; // Import GOV.UK elements from /govuk-modules/, this w
         width: 100%;
         margin-bottom: 1em;
     }
-}
-
-.manual-address {
-    width: 100%;
+    #reasons_div {
+      margin-bottom: 0.8em;
+    }
+    #other-reason {
+      width: 100%;
+    }
 }
 
 @import 'layout-index';
