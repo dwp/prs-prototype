@@ -2,6 +2,10 @@ function handlePostcodeLookup(pickers) {
     function getButtonHandler(picker) {
         return function(e) {
             e.preventDefault()
+            var manualInputs = picker.querySelectorAll('#manual input')
+            for(var i = 0; i < manualInputs.length; i++) {
+              manualInputs[i].value = ''
+            }
             var postcode = picker.querySelector('input').value
             if (!postcode || postcode.length === 0) {
                 return
@@ -35,6 +39,7 @@ function handlePostcodeLookup(pickers) {
             picker.querySelector('#input').className += ' hidden'
             var input = picker.querySelector('#manual')
             input.className = ''
+            picker.querySelector('#output select').value = ''
         }
     }
 

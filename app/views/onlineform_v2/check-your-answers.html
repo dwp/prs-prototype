@@ -1,45 +1,25 @@
 {% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
 <main id="content" role="main">
-    <div class="grid-row">
-        <div class="column-two-thirds">
-            <a href="/onlineform_v2/rent-details.html" class="link-back">Back</a>
-            <h1 class="heading-large">
-        Check your answers before continuing with your application
-      </h1>
-            <!-- <<< CLAIM DETAILS >>>-->
-            <h2 class="heading-small th">
-      Application details   
-        <p class="payment-link">
-    
-      <a href="">
-        Change
-      </a>
-    
-  </p>   
-      </h2>
-            <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
-            <!--   * `cya-questions-short` for short questions -->
-            <!--   * `cya-questions-long` for long questions -->
-            <!--   * none for single group of q&a -->
-            <dl class="data-summary">
-                <div>
-                    <dt class="data-summary-key">
-                        Type of payment
-                    </dt>
-                    <dd class="data-summary-value">
-                        <p>{{ data['request-types'] }}</p>
-                    </dd>
-                    <!-- dd class="cya-change">
-<a href="#">
-              Change<span class="visually-hidden"> name</span>
-            </a>
-</dd> -->
-                </div>
-                <div>
-                    <dt class="data-summary-key">
-                        Reason for application
-                    </dt>
-                    <dd class="data-summary-value">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="/onlineform_v2/rent-details.html" class="link-back">Back</a>
+        <h1 class="heading-large">Check your answers before continuing with your application</h1>
+
+        <h2 class="heading-small th">Application details
+          <p class="payment-link">
+            <a href="">Change</a>
+          </p>
+        </h2>
+        <dl class="data-summary">
+          <div>
+            <dt class="data-summary-key">Type of payment</dt>
+            <dd class="data-summary-value">
+              <p>{{ data['request-types'] }}</p>
+            </dd>
+          </div>
+          <div>
+            <dt class="data-summary-key">Reason for application</dt>
+            <dd class="data-summary-value">
                         <p>{{ data['reason-types'] }}</p>
                     </dd>
                     <!-- < -->
@@ -52,14 +32,14 @@
             </dl>
             <!-- <<< LANDLORD DETAILS >>>-->
             <h2 class="heading-small th">
-      Landlord details   
+      Landlord details
         <p class="payment-link">
-    
+
       <a href="">
         Change
       </a>
-    
-  </p>   
+
+  </p>
       </h2>
             <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
             <!--   * `cya-questions-short` for short questions -->
@@ -95,8 +75,14 @@
                         Address
                     </dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['landlord-address'] }}</p>
-                        <br>
+                      {% if data['landlord-output-address'] %}
+                        {% set landlordAddress = data['landlord-output-address'] | split(',') %}
+                      {% else %}
+                        {% set landlordAddress = data['landlord-manual-address'] %}</p>
+                      {% endif %}
+                      {% for line in landlordAddress %}
+                        <p>{{line}}</p>
+                      {% endfor %}
                     </dd>
                 </div>
                 <div>
@@ -129,14 +115,14 @@
             </dl>
             <!-- <<< TENANT DETAILS >>>-->
             <h2 class="heading-small th">
-      Tenant details   
+      Tenant details
         <p class="payment-link">
-    
+
       <a href="">
         Change
       </a>
-    
-  </p>   
+
+  </p>
       </h2>
             <dl class="data-summary">
                 <div>
@@ -169,9 +155,14 @@
                         Address
                     </dt>
                     <dd class="data-summary-value">
-                        72 Guild Street
-                        <br> London
-                        <br> SE23 6FH
+                      {% if data['tenant-output-address'] %}
+                        {% set tenantAddress = data['tenant-output-address'] | split(',') %}
+                      {% else %}
+                        {% set tenantAddress = data['tenant-manual-address'] %}</p>
+                      {% endif %}
+                      {% for line in tenantAddress %}
+                        <p>{{line}}</p>
+                      {% endfor %}
                     </dd>
                 </div>
                 <div>
@@ -179,14 +170,14 @@
                 </div>
             </dl>
             <h2 class="heading-small th">
-      Rent details   
+              Rent details
         <p class="payment-link">
-    
+
       <a href="">
         Change
       </a>
-    
-  </p>   
+
+  </p>
       </h2>
             <dl class="data-summary">
                 <div>
@@ -225,7 +216,7 @@
             </dl>
             <!-- <<< MISSING PAYMENTS >>>-->
             <h2 class="heading-medium">
-      
+
             <h2 class="heading-medium">Continue with your application</h2>
             <!-- <h1 class="heading-xlarge">Declaration</h1>
  -->

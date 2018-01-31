@@ -13,7 +13,7 @@ module.exports = {
     useAuth: 'true',
 
     // Automatically stores form data, and send to all views
-    useAutoStoreData: 'false',
+    useAutoStoreData: 'true',
 
     // Enable or disable built-in docs and examples.
     useDocumentation: 'false',

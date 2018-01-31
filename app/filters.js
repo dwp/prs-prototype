@@ -7,6 +7,8 @@ module.exports = function (env) {
    */
   var filters = {}
 
+  filters.split = (input, delim) => input.split(delim)
+
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
     @example:
