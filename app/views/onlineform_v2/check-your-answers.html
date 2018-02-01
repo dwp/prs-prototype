@@ -1,10 +1,20 @@
 {% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+
+{% if(data['request-types']) %}
+  {% set requestTypes = data['request-types'].join(',') %}
+{% else %}
+  {% set requestTypes = '' %}
+{% endif %}
+
 <main id="content" role="main">
   <div class="grid-row">
     <div class="column-two-thirds">
       <a href="/onlineform_v2/rent-details.html" class="link-back">Back</a>
-        <h1 class="heading-large">Check your answers before continuing with your application</h1>
-
+        {% if requestTypes === 'Direct rent payment' %}
+          <h1 class="heading-large">Check your answers before sending</h1>
+        {% else %}
+          <h1 class="heading-large">Check your answers before continuing with your application</h1>
+        {% endif %}
         <h2 class="heading-small th">Application details
           <p class="payment-link">
             <a href="">Change</a>
@@ -218,8 +228,6 @@
             <h2 class="heading-medium">
 
             <h2 class="heading-medium">Continue with your application</h2>
-
-            {% set requestTypes = data['request-types'].join(',') %}
 
             {% if requestTypes === 'Direct rent payment' %}
 
