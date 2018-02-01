@@ -288,6 +288,11 @@ $path: "/public/images/"; // Import GOV.UK elements from /govuk-modules/, this w
   }
 }
 
+#reasons_div + p {
+  margin-top: 0.5em;
+  margin-left: 0.65em;
+}
+
 @media (max-width: 640px) {
     .remove-link {
         top: 2.5em;
@@ -305,7 +310,7 @@ $path: "/public/images/"; // Import GOV.UK elements from /govuk-modules/, this w
         margin-bottom: 1em;
     }
     #reasons_div {
-      margin-bottom: 0.8em;
+      margin-bottom: 0.0em;
     }
     #other-reason {
       width: 100%;
