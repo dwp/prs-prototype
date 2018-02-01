@@ -9,6 +9,13 @@ module.exports = function (env) {
 
   filters.split = (input, delim) => input.split(delim)
 
+  filters.removeOther = input => {
+    if(Array.isArray(input) && input[0] === 'other') {
+      return input[1] || ''
+    }
+    return input
+  }
+
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
     @example:
