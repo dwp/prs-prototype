@@ -19,7 +19,7 @@ router.get('/', function(req, res) {
 
 // Route index page v1
 router.post('/postcode/redirect', function(req, res) {
-    res.render('./postcode/request-form', {
+    res.render('./postcode/request -form', {
         postcode: (req.body.postcode ? req.body.postcode : 'not entered')
     })
 })
@@ -171,20 +171,6 @@ router.get('/onlineform/joint-tenancy-partner', function(req, res) {
 })
 
 
-router.get('/onlineform_v2/landlord-details', function(req, res) {
-    // get the answer from the query string (eg. ?over18=false)
-    // req.session.jointtenancy = req.query.jointtenancy
-    console.dir(req)
-    var arrears = req.query.arrears
-    console.log(arrears)
-
-    if (arrears === 'false') { // redirect to the relevant page
-        res.redirect('/onlineform_v2/request-reason')
-    } else {
-        // if over18 is any other value (or is missing) render the page requested
-        res.render('onlineform_v2/landlord-details')
-    }
-})
 
 // <<< creditor reference >>>
 
@@ -253,6 +239,22 @@ router.get('/onlineform/rent-statement-upload', function(req, res) {
 
 /////// Online form v2 ///////
 
+router.get('/onlineform_v2/landlord-details', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    // req.session.jointtenancy = req.query.jointtenancy
+    console.dir(req)
+    var arrears = req.query.arrears
+    console.log(arrears)
+
+    if (arrears === 'false') { // redirect to the relevant page
+        res.redirect('/onlineform_v2/request-reason')
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v2/landlord-details')
+    }
+})
+
+
 router.get('/onlineform_v2/joint-tenancy-partner', function(req, res) {
     // get the answer from the query string (eg. ?over18=false)
     // req.session.jointtenancy = req.query.jointtenancy
@@ -315,5 +317,29 @@ router.get('/onlineform_v2/rent-statement-upload', function(req, res) {
 
 router.use('/postcode', require('./postcodes'))
 
+
+/////// Online form v3 ///////
+
+
+
+router.get('/onlineform_v3/landlord-details', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    // req.session.jointtenancy = req.query.jointtenancy
+    console.dir(req)
+    var arrears = req.query.arrears
+    console.log(arrears)
+
+    if (arrears === 'false') { // redirect to the relevant page
+        res.redirect('/onlineform_v3/request-reason')
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v3/landlord-details')
+    }
+})
+
+
+
+
+router.use('/postcode', require('./postcodes'))
 
 module.exports = router

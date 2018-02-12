@@ -1,0 +1,66 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <a href="/onlineform_v3/landlord-bank.html" class="link-back">Back</a>
+            <h1 class="heading-large">Tenant's details</h1>
+            <!--         <p>We need this so we can pay you.</p>
+ -->
+            <form action="/onlineform_v3/rent-details" method="post" class="form">
+                <div class="form-group">
+                    <label class="form-label" for="first-name-1">First name</label>
+                    <input class="form-control" id="first-name-1" name="first-name-1" type="text">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="surname-1">Surname</label>
+                    <input class="form-control" id="surname-1" name="surname-1" type="text">
+                </div>
+                <div class="form-group">
+                    <fieldset>
+                        <legend>
+                            <label class="form-label" for="first-name-2">Date of birth</label>
+                            <span class="form-hint">For example, 31 3 1980</span>
+                        </legend>
+                        <div class="form-date">
+                            <div class="form-group form-group-day">
+                                <label class="form-label" for="dob-day">Day</label>
+                                <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                            </div>
+                            <div class="form-group form-group-month">
+                                <label class="form-label" for="dob-month">Month</label>
+                                <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                            </div>
+                            <div class="form-group form-group-year">
+                                <label class="form-label" for="dob-year">Year</label>
+                                <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="tenant-phone">Phone number</label>
+                    <input class="form-control" id="tenant-phone" name="tenant-phone" type="text">
+                </div>
+                <!--                 <form action="address-postcode" method="" autocomplete="off">
+ -->
+                <div class="form-group" data-required data-error="Enter your postcode">
+                    {% import "onlineform_v2/addressPicker.html" as addressPicker %} {{ addressPicker.get("tenant") }}
+                    <!--      <div class="c-field-submit__row">
+                        <div class="c-field-submit__capture">
+                            <input class="form-control form-control-1-1" id="postcode" type="text" name="postcode" class="form-control form-control-1-4" value="{{ postcode }}">
+                        </div>
+                        <div class="c-field-submit__action">
+                            <input type="submit" class="button" value="Find UK address">
+                        </div>
+                    </div> -->
+                    <!-- </div> -->
+                    <!--<p><a href="contact-details">Enter address manually</a></p>
+ -->
+                    <!--                 </form>
+ -->
+                    <input type="submit" class="button" value="Continue">
+            </form>
+            </div>
+        </div>
+</main>
+{% endblock %}
