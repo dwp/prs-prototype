@@ -1,71 +1,89 @@
 {% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
 <main id="content" role="main">
-  <div class="grid-row">
-    <div class="column-two-thirds">
-      <a href="/onlineform_v3/request-type.html" class="link-back">Back</a>
-      <h1 class="heading-large">What is the reason for this request?</h1>
-      <p>Please select all that apply:</p>
-      <form action="/onlineform_v2/landlord-details" method="post" class="form">
-        <div class="form-group">
-          <fieldset>
-            <div id="reasons_div">
-              <div class="multiple-choice">
-                <input id="reason-type-2" name="reason_for_request" type="checkbox" value="arrears" data-uncheck="['other']">
-                <label for="reason-type-2">The tenant has history of being in arrears</label>
-              </div>
-              <div class="multiple-choice">
-                <input id="reason-type-3" name="reason_for_request" type="checkbox" value="credit" data-uncheck="['other']">
-                <label for="reason-type-3">The tenant has history of bad credit</label>
-              </div>
-              <div class="multiple-choice">
-                <input id="reason-type-4" name="reason_for_request" type="checkbox" value="health" data-uncheck="['other']">
-                <label for="reason-type-4">The tenant has health problems</label>
-              </div>
-              <div class="multiple-choice">
-                <input id="reason-type-5" name="reason_for_request" type="checkbox" value="care" data-uncheck="['other']">
-                <label for="reason-type-5">The tenant has recently left care</label>
-              </div>
-              <div class="multiple-choice">
-                <input id="reason-type-6" name="reason_for_request" type="checkbox" value="addiction" data-uncheck="['other']">
-                <label for="reason-type-6">The tenant has addiction problems</label>
-              </div>
-            </div>
-            <p class="form-block">or</p>
-            <div class="multiple-choice" data-target="other-reason">
-              <input id="reason-type-7" name="reason_for_request" type="checkbox" value="other" data-uncheck="['arrears', 'credit', 'health', 'care', 'addiction']">
-              <label for="reason-type-7">None of the above</label>
-            </div>
-            <div class="panel panel-border-narrow js-hidden" id="other-reason">
-              <label class="form-label" for="none">Please tell us more about your reason for application</label>
-              <textarea class="form-control" name="reason_for_request" rows="5"></textarea>
-            </div>
-          </fieldset>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <a href="/onlineform_v3/request-type.html" class="link-back">Back</a>
+            <h1 class="heading-large">What is the reason for this request?</h1>
+            <p>Please select all that apply:</p>
+            <form action="/onlineform_v2/landlord-details" method="post" class="form">
+                <div class="form-group">
+                    <fieldset>
+                        <div id="reasons_div">
+                            <div class="multiple-choice">
+                                <input id="reason-type-2" name="reason_for_request" type="checkbox" value="arrears" data-uncheck="['other']">
+                                <label for="reason-type-2">Drug, alcohol or other addiction problems</label>
+                            </div>
+                            <div class="multiple-choice">
+                                <input id="reason-type-3" name="reason_for_request" type="checkbox" value="credit" data-uncheck="['other']">
+                                <label for="reason-type-3">Learning difficulties including problems with literacy and/or numeracy</label>
+                            </div>
+                            <div class="multiple-choice">
+                                <input id="reason-type-4" name="reason_for_request" type="checkbox" value="health" data-uncheck="['other']">
+                                <label for="reason-type-4">Severe/multiple debt problems</label>
+                            </div>
+                            <div class="multiple-choice">
+                                <input id="reason-type-5" name="reason_for_request" type="checkbox" value="care" data-uncheck="['other']">
+                                <label for="reason-type-5">In temporary and/or supported accommodation</label>
+                            </div>
+                            <div class="multiple-choice">
+                                <input id="reason-type-6" name="reason_for_request" type="checkbox" value="addiction" data-uncheck="['other']">
+                                <label for="reason-type-6">Homeless</label>
+                            </div>
+                            <div class="multiple-choice">
+                                <input id="reason-type-7" name="reason_for_request" type="checkbox" value="addiction" data-uncheck="['other']">
+                                <label for="reason-type-7">Domestic violence or abuse</label>
+                            </div>
+                            <div class="multiple-choice">
+                                <input id="reason-type-8" name="reason_for_request" type="checkbox" value="addiction" data-uncheck="['other']">
+                                <label for="reason-type-8">Mental health condition</label>
+                            </div>
+                            <div class="multiple-choice">
+                                <input id="reason-type-9" name="reason_for_request" type="checkbox" value="addiction" data-uncheck="['other']">
+                                <label for="reason-type-9">At threat of eviction or repossesion</label>
+                            </div>
+                            <div class="multiple-choice">
+                                <input id="reason-type-10" name="reason_for_request" type="checkbox" value="addiction" data-uncheck="['other']">
+                                <label for="reason-type-10">Claimant is young either a 16/17 year old and/or a care leaver</label>
+                            </div>
+                            <div class="multiple-choice">
+                                <input id="reason-type-11" name="reason_for_request" type="checkbox" value="addiction" data-uncheck="['other']">
+                                <label for="reason-type-11">Families with multiple complex needs</label>
+                            </div>
+                        </div>
+                        <p class="form-block">or</p>
+                        <div class="multiple-choice" data-target="other-reason">
+                            <input id="reason-type-12" name="reason_for_request" type="checkbox" value="other" data-uncheck="['arrears', 'credit', 'health', 'care', 'addiction']">
+                            <label for="reason-type-12">None of the above</label>
+                        </div>
+                        <div class="panel panel-border-narrow js-hidden" id="other-reason">
+                            <label class="form-label" for="none">Please tell us more about your reason for application</label>
+                            <textarea class="form-control" name="reason_for_request" rows="5"></textarea>
+                        </div>
+                    </fieldset>
+                </div>
+                <br>
+                <br>
+                <input type="submit" class="button" value="Continue">
+            </form>
         </div>
-        <br>
-        <br>
-        <input type="submit" class="button" value="Continue">
-      </form>
     </div>
-  </div>
 </main>
-{% endblock %}
-
-{% block page_scripts %}
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      window.CHECKBOX_UNCHECK.setup()
-      var inputs = document.querySelectorAll('#reasons_div input')
-      var textdiv = document.querySelector('#other-reason')
-      var textarea = textdiv.querySelector('textarea')
-      for(var i = 0; i < inputs.length; i++) {
+{% endblock %} {% block page_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    window.CHECKBOX_UNCHECK.setup()
+    var inputs = document.querySelectorAll('#reasons_div input')
+    var textdiv = document.querySelector('#other-reason')
+    var textarea = textdiv.querySelector('textarea')
+    for (var i = 0; i < inputs.length; i++) {
         inputs[i].addEventListener('click', function(e) {
-          if(textdiv.className.indexOf('js-hidden') === -1) {
-            textdiv.setAttribute('aria-hidden', true)
-            textdiv.className += ' js-hidden'
-            textarea.value = ''
-          }
+            if (textdiv.className.indexOf('js-hidden') === -1) {
+                textdiv.setAttribute('aria-hidden', true)
+                textdiv.className += ' js-hidden'
+                textarea.value = ''
+            }
         })
-      }
-    })
-  </script>
+    }
+})
+</script>
 {% endblock %}
