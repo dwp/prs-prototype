@@ -322,7 +322,7 @@ router.use('/postcode', require('./postcodes'))
 
 
 
-router.get('/onlineform_v3/landlord-details', function(req, res) {
+router.get('/onlineform_v3/rent-arrears-details', function(req, res) {
     // get the answer from the query string (eg. ?over18=false)
     // req.session.jointtenancy = req.query.jointtenancy
     console.dir(req)
@@ -333,7 +333,7 @@ router.get('/onlineform_v3/landlord-details', function(req, res) {
         res.redirect('/onlineform_v3/request-reason')
     } else {
         // if over18 is any other value (or is missing) render the page requested
-        res.render('onlineform_v3/landlord-details')
+        res.render('onlineform_v3/rent-arrears-details')
     }
 })
 
