@@ -2,7 +2,7 @@
 <main id="content" role="main">
     <div class="grid-row">
         <div class="column-two-thirds">
-            <a href="/onlineform_v3/rent-details.html" class="link-back">Back</a>
+            <a href="/onlineform_v3/landlord-bank.html" class="link-back">Back</a>
             <h1 class="heading-large">Check your answers before sending</h1>
             <h2 class="heading-small th">Application details
           <p class="payment-link">
@@ -29,9 +29,7 @@
 </dd> -->
                 </div>
             </dl>
-
-
-             <h2 class="heading-small th">
+            <h2 class="heading-small th">
               Missing payment details
         <p class="payment-link">
 
@@ -47,7 +45,7 @@
                         Total rent outstanding
                     </dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['rent-amount'] }}</p>
+                        <p>{{ data['outstanding-rent-amount'] }}</p>
                     </dd>
                 </div>
                 <div>
@@ -55,7 +53,7 @@
                         Date of first missing payment
                     </dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['rent-frequency'] }}</p>
+                        <p>{{ data['missing-payment-start-day'] }} {{ data['missing-payment-start-month'] }} {{ data['missing-payment-start-year'] }}</p>
                     </dd>
                     </dd>
                 </div>
@@ -68,11 +66,9 @@
                     </dd>
                 </div>
                 <div>
-                    
                 </div>
             </dl>
-
-             <h2 class="heading-small th">
+            <h2 class="heading-small th">
               Rent details
         <p class="payment-link">
 
@@ -114,6 +110,57 @@
                     </dt>
                     <dd class="data-summary-value">
                         <p>{{ data['bedrooms'] }}</p>
+                    </dd>
+                </div>
+            </dl>
+            <h2 class="heading-small th">
+      Tenant details
+        <p class="payment-link">
+
+      <a href="">
+        Change
+      </a>
+
+  </p>
+      </h2>
+            <dl class="data-summary">
+                <div>
+                    <dt class="data-summary-key">
+                        Name
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['first-name-1'] }} {{ data['surname-1'] }}</p>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Date of birth
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['dob-day'] }} {{ data['dob-month'] }} {{ data['dob-year'] }}</p>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Phone number
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['tenant-phone'] }}</p>
+                        <br>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Address
+                    </dt>
+                    <dd class="data-summary-value">
+                        {% if data['tenant-output-address'] %} {% set tenantAddress = data['tenant-output-address'] | split(',') %} {% else %} {% set tenantAddress = data['tenant-manual-address'] %}</p>
+                        {% endif %} {% for line in tenantAddress %}
+                        <p>{{line}}</p>
+                        {% endfor %}
+                    </dd>
+                </div>
+                <div>
                     </dd>
                 </div>
             </dl>
@@ -197,58 +244,6 @@
                 </div>
             </dl>
             <!-- <<< TENANT DETAILS >>>-->
-            <h2 class="heading-small th">
-      Tenant details
-        <p class="payment-link">
-
-      <a href="">
-        Change
-      </a>
-
-  </p>
-      </h2>
-            <dl class="data-summary">
-                <div>
-                    <dt class="data-summary-key">
-                        Name
-                    </dt>
-                    <dd class="data-summary-value">
-                        <p>{{ data['first-name-1'] }} {{ data['surname-1'] }}</p>
-                    </dd>
-                </div>
-                <div>
-                    <dt class="data-summary-key">
-                        Date of birth
-                    </dt>
-                    <dd class="data-summary-value">
-                        <p>{{ data['dob-day'] }} {{ data['dob-month'] }} {{ data['dob-year'] }}</p>
-                    </dd>
-                </div>
-                <div>
-                    <dt class="data-summary-key">
-                        Phone number
-                    </dt>
-                    <dd class="data-summary-value">
-                        <p>{{ data['tenant-phone'] }}</p>
-                        <br>
-                    </dd>
-                </div>
-                <div>
-                    <dt class="data-summary-key">
-                        Address
-                    </dt>
-                    <dd class="data-summary-value">
-                        {% if data['tenant-output-address'] %} {% set tenantAddress = data['tenant-output-address'] | split(',') %} {% else %} {% set tenantAddress = data['tenant-manual-address'] %}</p>
-                        {% endif %} {% for line in tenantAddress %}
-                        <p>{{line}}</p>
-                        {% endfor %}
-                    </dd>
-                </div>
-                <div>
-                    </dd>
-                </div>
-            </dl>
-           
             <!-- <<< MISSING PAYMENTS >>>-->
             <h2 class="heading-medium">
 
@@ -258,7 +253,6 @@
                 You could be prosecuted or have to pay a financial penalty if you deliberately give the wrong or incomplete information or don&rsquo;t report changes.
             </div>
             <p><a href="/onlineform_v3/confirmation" class="button">I agree - send my application</a></p>
-            
         </div>
 </main>
 {% endblock %}

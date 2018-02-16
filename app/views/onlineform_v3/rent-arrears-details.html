@@ -2,44 +2,44 @@
 <main id="content" role="main">
     <div class="grid-row">
         <div class="column-two-thirds">
-            <a href="/onlineform_v3/check-your-answers.html" class="link-back">Back</a>
+            <a href="/onlineform_v3/arrears.html" class="link-back">Back</a>
             <form action="/onlineform_v3/rent-details" method="post" class="form">
                 <h1 class="heading-large">Missing rent payments</h1>
                 <label class="form-label" for="total-rent-outstanding">Total outstanding rent amount</label>
                 <div class="govuk-currency-input">
                     <div class="govuk-currency-input__inner">
                         <span class="govuk-currency-input__inner__unit">£</span>
-                        <input class="govuk-currency-input__inner__input form-control form-control-1-4" aria-label="Enter amount in pounds" name="rent-amount" data-non-numeric="" type="text" id="rent-amount" pattern="[0-9]\d*(\.\d+)?">
+                        <input class="govuk-currency-input__inner__input form-control form-control-1-4" aria-label="Enter amount in pounds" name="outstanding-rent-amount" data-non-numeric="" type="text" id="outstanding-rent-amount" pattern="[0-9]\d*(\.\d+)?">
                     </div>
                     <br>
                     <fieldset>
                         <legend>
-                            <label class="form-label" for="first-name-2">Date of first missing payment</label>
+                            <label class="form-label" for="missing-payment-start">Date of first missing payment</label>
                         </legend>
                         <div class="form-date">
                             <div class="form-group form-group-day">
-                                <label class="form-label" for="dob-day">Day</label>
-                                <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                                <label class="form-label" for="missing-payment-start-day">Day</label>
+                                <input class="form-control" id="missing-payment-start-day" name="missing-payment-start-day" type="number" pattern="[0-9]*" min="0" max="31">
                             </div>
                             <div class="form-group form-group-month">
-                                <label class="form-label" for="dob-month">Month</label>
-                                <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                                <label class="form-label" for="missing-payment-start-month">Month</label>
+                                <input class="form-control" id="missing-payment-start-month" name="missing-payment-start-month" type="number" pattern="[0-9]*" min="0" max="12">
                             </div>
                             <div class="form-group form-group-year">
-                                <label class="form-label" for="dob-year">Year</label>
-                                <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
+                                <label class="form-label" for="missing-payment-start-year">Year</label>
+                                <input class="form-control" id="missing-payment-start-year" name="missing-payment-start-year" type="number" pattern="[0-9]*" min="0" max="2016">
                             </div>
                     </fieldset>
                     <br>
                     <div class="form-group">
                         <label class="form-label" for="ref-number">Is the tenant still missing payments?</label>
                         <div class="multiple-choice">
-                            <input id="creditorRefYes" type="radio" name="creditor" value="true">
-                            <label for="creditorRefYes">Yes</label>
+                            <input id="stillArrearsYes" type="radio" name="arrears" value="true">
+                            <label for="stillArrearsYes">Yes</label>
                         </div>
                         <div class="multiple-choice" data-target="creditor-ref">
-                            <input id="creditorRefNo" type="radio" name="creditor" value="false">
-                            <label for="creditorRefNo">No</label>
+                            <input id="stillArrearsNo" type="radio" name="arrears" value="false">
+                            <label for="stillArrearsNo">No</label>
                         </div>
                         <div class="panel panel-border-narrow js-hidden" id="creditor-ref">
                             <fieldset>
@@ -48,16 +48,16 @@
                                 </legend>
                                 <div class="form-date">
                                     <div class="form-group form-group-day">
-                                        <label class="form-label" for="dob-day">Day</label>
-                                        <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                                        <label class="form-label" for="missing-payment-end-day">Day</label>
+                                        <input class="form-control" id="missing-payment-end-day" name="missing-payment-end-day" type="number" pattern="[0-9]*" min="0" max="31">
                                     </div>
                                     <div class="form-group form-group-month">
-                                        <label class="form-label" for="dob-month">Month</label>
-                                        <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                                        <label class="form-label" for="missing-payment-end-month">Month</label>
+                                        <input class="form-control" id="missing-payment-end-month" name="missing-payment-end-month" type="number" pattern="[0-9]*" min="0" max="12">
                                     </div>
                                     <div class="form-group form-group-year">
-                                        <label class="form-label" for="dob-year">Year</label>
-                                        <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
+                                        <label class="form-label" for="missing-payment-end-year">Year</label>
+                                        <input class="form-control" id="missing-payment-end-year" name="missing-payment-end-year" type="number" pattern="[0-9]*" min="0" max="2016">
                                     </div>
                             </fieldset>
                             </div>
@@ -65,8 +65,8 @@
                         </details>
                         <br>
                     </div>
+                    <input type="submit" class="button" value="Continue">
             </form>
-            <input type="submit" class="button" value="Continue">
             </div>
             </div>
         </div>
