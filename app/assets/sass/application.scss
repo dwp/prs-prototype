@@ -265,31 +265,30 @@ $path: "/public/images/"; // Import GOV.UK elements from /govuk-modules/, this w
 }
 
 #other-reason {
-  width: 150%;
+    width: 150%;
 }
 
 .manual-address {
-  width: 100%;
+    width: 100%;
 }
 
 .missingRentPayment-row {
 
-  .form-date {
+    .form-date {
 
-    input {
+        input {
 
-      width: 4.5rem;
+            width: 4.5rem;
 
-      &:last-child {
-        width: 7rem;
-      }
-
+            &:last-child {
+                width: 7rem;
+            }
+        }
     }
-  }
 }
 
-#reasons_div + p {
-  margin-top: 0.5em;
+#reasons_div+p {
+    margin-top: 0.5em;
 }
 
 @media (max-width: 640px) {
@@ -309,10 +308,10 @@ $path: "/public/images/"; // Import GOV.UK elements from /govuk-modules/, this w
         margin-bottom: 1em;
     }
     #reasons_div {
-      margin-bottom: 0.0em;
+        margin-bottom: 0.0em;
     }
     #other-reason {
-      width: 100%;
+        width: 100%;
     }
 }
 
