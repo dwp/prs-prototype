@@ -61,7 +61,7 @@ router.get('/postcode_v3_1/email-type', function(req, res) {
 // add your routes here
 
 router.post('/postcode_v5/email', function(req, res) {
-    console.log(req.body.email)
+    // console.log(req.body.email)
     if (req.body.email === 'emailyes') {
         res.redirect('/postcode_v5/email-type')
     } else {
@@ -70,7 +70,7 @@ router.post('/postcode_v5/email', function(req, res) {
 })
 
 router.post('/postcode_v6/email', function(req, res) {
-    console.log(req.body.email)
+    // console.log(req.body.email)
     if (req.body.email === 'emailyes') {
         res.redirect('/postcode_v6/email-type')
     } else {
@@ -120,7 +120,7 @@ router.get('/notify-automated/submitted', function(req, res) {
     const messagesToSend = []
     const personalisation = { 'refno': 'AA123' }
     if (req.session.contactType.includes('sms')) {
-        console.log('sms triggered');
+        // console.log('sms triggered');
         messagesToSend.push({
             type: 'sms',
             template: '6a1aebbc-78f7-49c2-9313-ddccb9164bce',
@@ -129,7 +129,7 @@ router.get('/notify-automated/submitted', function(req, res) {
         });
     }
     if (req.session.contactType.includes('email')) {
-        console.log('email triggered');
+        // console.log('email triggered');
         messagesToSend.push({
             type: 'email',
             template: '0f6f2be7-ec6b-4e59-bfa1-207f3aed03fc',
@@ -158,9 +158,9 @@ router.get('/notify-automated/submitted', function(req, res) {
 router.get('/onlineform/joint-tenancy-partner', function(req, res) {
     // get the answer from the query string (eg. ?over18=false)
     // req.session.jointtenancy = req.query.jointtenancy
-    console.dir(req)
+    // console.dir(req)
     var joint = req.query.joint
-    console.log(joint)
+    // console.log(joint)
 
     if (joint === 'false') { // redirect to the relevant page
         res.redirect('onlineform/rent-details')
@@ -194,9 +194,9 @@ router.get('/onlineform/joint-tenancy-partner', function(req, res) {
 router.get('/onlineform/partner-name', function(req, res) {
     // get the answer from the query string (eg. ?over18=false)
     // req.session.jointtenancy = req.query.jointtenancy
-    console.dir(req)
+    // console.dir(req)
     var partner = req.query.partner
-    console.log(partner)
+    // console.log(partner)
 
     if (partner === 'false') { // redirect to the relevant page
         res.redirect('/onlineform/rent-details')
@@ -209,9 +209,9 @@ router.get('/onlineform/partner-name', function(req, res) {
 router.get('/onlineform/service-charge-details', function(req, res) {
     // get the answer from the query string (eg. ?over18=false)
     // req.session.jointtenancy = req.query.jointtenancy
-    console.dir(req)
+    // console.dir(req)
     var servicecharge = req.query.servicecharge
-    console.log(servicecharge)
+    // console.log(servicecharge)
 
     if (servicecharge === 'false') { // redirect to the relevant page
         res.redirect('/onlineform/check-your-answers')
@@ -225,9 +225,9 @@ router.get('/onlineform/service-charge-details', function(req, res) {
 router.get('/onlineform/rent-statement-upload', function(req, res) {
     // get the answer from the query string (eg. ?over18=false)
     // req.session.jointtenancy = req.query.jointtenancy
-    console.dir(req)
+    // console.dir(req)
     var rentstatement = req.query.rentstatement
-    console.log(rentstatement)
+    // console.log(rentstatement)
 
     if (rentstatement === 'false') { // redirect to the relevant page
         res.redirect('/onlineform/rent-arrears-details')
@@ -242,9 +242,9 @@ router.get('/onlineform/rent-statement-upload', function(req, res) {
 router.get('/onlineform_v2/landlord-details', function(req, res) {
     // get the answer from the query string (eg. ?over18=false)
     // req.session.jointtenancy = req.query.jointtenancy
-    console.dir(req)
+    // console.dir(req)
     var arrears = req.query.arrears
-    console.log(arrears)
+    // console.log(arrears)
 
     if (arrears === 'false') { // redirect to the relevant page
         res.redirect('/onlineform_v2/request-reason')
@@ -258,9 +258,9 @@ router.get('/onlineform_v2/landlord-details', function(req, res) {
 router.get('/onlineform_v2/joint-tenancy-partner', function(req, res) {
     // get the answer from the query string (eg. ?over18=false)
     // req.session.jointtenancy = req.query.jointtenancy
-    console.dir(req)
+    // console.dir(req)
     var joint = req.query.joint
-    console.log(joint)
+    // console.log(joint)
 
     if (joint === 'false') { // redirect to the relevant page
         res.redirect('/onlineform_v2/rent-details')
@@ -273,9 +273,9 @@ router.get('/onlineform_v2/joint-tenancy-partner', function(req, res) {
 router.get('/onlineform_v2/partner-name', function(req, res) {
     // get the answer from the query string (eg. ?over18=false)
     // req.session.jointtenancy = req.query.jointtenancy
-    console.dir(req)
+    // console.dir(req)
     var partner = req.query.partner
-    console.log(partner)
+    // console.log(partner)
 
     if (partner === 'false') { // redirect to the relevant page
         res.redirect('/onlineform_v2/rent-details')
@@ -288,9 +288,9 @@ router.get('/onlineform_v2/partner-name', function(req, res) {
 router.get('/onlineform_v2/service-charge-details', function(req, res) {
     // get the answer from the query string (eg. ?over18=false)
     // req.session.jointtenancy = req.query.jointtenancy
-    console.dir(req)
+    // console.dir(req)
     var servicecharge = req.query.servicecharge
-    console.log(servicecharge)
+    // console.log(servicecharge)
 
     if (servicecharge === 'false') { // redirect to the relevant page
         res.redirect('/onlineform_v2/check-your-answers')
@@ -303,9 +303,9 @@ router.get('/onlineform_v2/service-charge-details', function(req, res) {
 router.get('/onlineform_v2/rent-statement-upload', function(req, res) {
     // get the answer from the query string (eg. ?over18=false)
     // req.session.jointtenancy = req.query.jointtenancy
-    console.dir(req)
+    // console.dir(req)
     var rentstatement = req.query.rentstatement
-    console.log(rentstatement)
+    // console.log(rentstatement)
 
     if (rentstatement === 'false') { // redirect to the relevant page
         res.redirect('/onlineform_v2/rent-arrears-details')
@@ -325,9 +325,9 @@ router.use('/postcode', require('./postcodes'))
 router.get('/onlineform_v3/rent-arrears-details', function(req, res) {
     // get the answer from the query string (eg. ?over18=false)
     // req.session.jointtenancy = req.query.jointtenancy
-    console.dir(req)
+    // console.dir(req)
     var arrears = req.query.arrears
-    console.log(arrears)
+    // console.log(arrears)
 
     if (arrears === 'false') { // redirect to the relevant page
         res.redirect('/onlineform_v3/request-reason')
@@ -337,10 +337,22 @@ router.get('/onlineform_v3/rent-arrears-details', function(req, res) {
     }
 })
 
+router.post('/onlineform_v3/actual_arrears', (req, res) => {
+  const answers = req.session.data
+  if(answers['request-types'] && answers.arrears) {
 
+    const isDirectRentPaymentOnly = answers['request-types'].length === 1 && answers['request-types'][0] === 'Direct rent payment'
+    const isArrears = answers.arrears === 'true'
 
-
-
+    const skip = isDirectRentPaymentOnly && isArrears
+    res.redirect(skip
+      ? '/onlineform_v3/rent-details'
+      : '/onlineform_v3/rent-arrears-details'
+    )
+  } else {
+    res.redirect('/onlineform_v3/rent-arrears-details')
+  }
+})
 
 
 router.use('/postcode', require('./postcodes'))
