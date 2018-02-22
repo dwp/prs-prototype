@@ -338,7 +338,6 @@ router.get('/onlineform_v3/rent-arrears-details', function(req, res) {
 })
 
 router.post('/onlineform_v3/actual_arrears', (req, res) => {
-<<<<<<< HEAD
     const answers = req.session.data
     if (answers['request-types'] && answers.arrears) {
 
@@ -353,24 +352,8 @@ router.post('/onlineform_v3/actual_arrears', (req, res) => {
     } else {
         res.redirect('/onlineform_v3/rent-arrears-details')
     }
-=======
-  const answers = req.session.data
-  if(answers['request-types'] && answers.arrears) {
-    const isArrears = answers.arrears === 'true'
-    const isDirectRentPaymentOnly = answers['request-types'].length === 1 && answers['request-types'][0] === 'Direct rent payment'
-    if(isArrears) {
-      res.redirect(isDirectRentPaymentOnly
-        ? '/onlineform_v3/rent-details'
-        : '/onlineform_v3/rent-arrears-details'
-      )
-    } else {
-      res.redirect('request-reason')
-    }
-  } else {
-    res.redirect('/onlineform_v3/rent-arrears-details')
-  }
->>>>>>> origin/master
 })
+
 
 router.use('/postcode', require('./postcodes'))
 
