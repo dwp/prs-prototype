@@ -1,0 +1,30 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <a href="/onlineform_v4/start.html" class="link-back">Back</a>
+            <div class="form-group">
+                <h2 class="heading-large">What type of payment are you applying for?</h2>
+                <form action="/onlineform_v4/arrears" method="get" class="form">
+                    <fieldset>
+                        <div class="multiple-choice">
+                            <input id="directRent" name="requestType" type="radio" value="Direct rent payment">
+                            <label for="directRent">Direct rent payment</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="arrearsPayment" name="requestType" type="radio" value="Re-payment of arrears and third party deductions">
+                            <label for="arrearsPayment">Missing rent</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="both" name="requestType" type="radio" value="Both">
+                            <label for="aboth">Both direct rent payment and missing rent</label>
+                        </div>
+                    </fieldset>
+                    <br>
+                    </br>
+                    <input type="submit" class="button" value="Continue">
+                </form>
+            </div>
+        </div>
+</main>
+{% endblock %}

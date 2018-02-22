@@ -1,0 +1,219 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %} {% if(data['request-types']) %} {% set requestTypes = data['request-types'].join(',') %} {% else %} {% set requestTypes = '' %} {% endif %}
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <a href="/onlineform_v3/landlord-bank.html" class="link-back">Back</a>
+            <h1 class="heading-large">Check your answers before sending</h1>
+            <h2 class="heading-small th">Application details
+          <p class="payment-link">
+            <a href="">Change</a>
+          </p>
+        </h2>
+            <dl class="data-summary">
+                <div>
+                    <dt class="data-summary-key">Type of payment</dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['request-types'] }}</p>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">Reason for application</dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['reason_for_request'] | removeOther }}</p>
+                    </dd>
+                    <!-- < -->
+                    <!-- dd class="cya-change">
+<a href="#">
+              Change<span class="visually-hidden"> date of birth</span>
+            </a>
+</dd> -->
+                </div>
+            </dl>
+            <h2 class="heading-small th">
+              Rent details
+        <p class="payment-link">
+
+      <a href="">
+        Change
+      </a>
+
+  </p>
+      </h2>
+            <dl class="data-summary">
+                <div>
+                    <dt class="data-summary-key">
+                        Rent amount
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['rent-amount'] }}</p>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Rent frequency
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['rent-frequency'] }}</p>
+                    </dd>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Rent free weeks
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['rent-free-weeks'] }}</p>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Number of bedrooms
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['bedrooms'] }}</p>
+                    </dd>
+                </div>
+            </dl>
+            <h2 class="heading-small th">
+      Tenant details
+        <p class="payment-link">
+
+      <a href="">
+        Change
+      </a>
+
+  </p>
+      </h2>
+            <dl class="data-summary">
+                <div>
+                    <dt class="data-summary-key">
+                        Name
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['first-name-1'] }} {{ data['surname-1'] }}</p>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Date of birth
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['dob-day'] }} {{ data['dob-month'] }} {{ data['dob-year'] }}</p>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Phone number
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['tenant-phone'] }}</p>
+                        <br>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Address
+                    </dt>
+                    <dd class="data-summary-value">
+                        {% if data['tenant-output-address'] %} {% set tenantAddress = data['tenant-output-address'] | split(',') %} {% else %} {% set tenantAddress = data['tenant-manual-address'] %}</p>
+                        {% endif %} {% for line in tenantAddress %}
+                        <p>{{line}}</p>
+                        {% endfor %}
+                    </dd>
+                </div>
+                <div>
+                    </dd>
+                </div>
+            </dl>
+            <!-- <<< LANDLORD DETAILS >>>-->
+            <h2 class="heading-small th">
+      Landlord details
+        <p class="payment-link">
+
+      <a href="">
+        Change
+      </a>
+
+  </p>
+      </h2>
+            <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+            <!--   * `cya-questions-short` for short questions -->
+            <!--   * `cya-questions-long` for long questions -->
+            <!--   * none for single group of q&a -->
+            <dl class="data-summary">
+                <div>
+                    <dt class="data-summary-key">
+                        Name
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['landlord-name'] }}</p>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Phone number
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['landlord-phone'] }}</p>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Email address
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['landlord-email'] }}</p>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Address
+                    </dt>
+                    <dd class="data-summary-value">
+                        {% if data['landlord-output-address'] %} {% set landlordAddress = data['landlord-output-address'] | split(',') %} {% else %} {% set landlordAddress = data['landlord-manual-address'] %}</p>
+                        {% endif %} {% for line in landlordAddress %}
+                        <p>{{line}}</p>
+                        {% endfor %}
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Bank details
+                    </dt>
+                    <dd class="data-summary-value">
+                        {{ data['account-name'] }}
+                        <br> {{ data['sortcode-1'] }} {{ data['sortcode-2'] }} {{ data['sortcode-3'] }}
+                        <br> {{ data['account-number'] }}
+                        <br> {{ data['creditor-ref'] }}
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Tenant reference number
+                    </dt>
+                    <dd class="data-summary-value">
+                        {{ data['tenant-ref'] }}
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Creditor reference number
+                    </dt>
+                    <dd class="data-summary-value">
+                        {{ data['creditor-ref'] }}
+                    </dd>
+                </div>
+            </dl>
+            <!-- <<< TENANT DETAILS >>>-->
+            <!-- <<< MISSING PAYMENTS >>>-->
+            <h2 class="heading-medium">
+
+            <h2 class="heading-medium">Send your application</h2>
+            <p class="text">By sending the application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+            <div class="legal_message">
+                You could be prosecuted or have to pay a financial penalty if you deliberately give the wrong or incomplete information or don&rsquo;t report changes.
+            </div>
+            <p><a href="/onlineform_v4/dr-confirmation" class="button">I agree - send my application</a></p>
+        </div>
+</main>
+{% endblock %}

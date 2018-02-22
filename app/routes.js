@@ -338,23 +338,70 @@ router.get('/onlineform_v3/rent-arrears-details', function(req, res) {
 })
 
 router.post('/onlineform_v3/actual_arrears', (req, res) => {
-  const answers = req.session.data
-  if(answers['request-types'] && answers.arrears) {
+    const answers = req.session.data
+    if (answers['request-types'] && answers.arrears) {
 
-    const isDirectRentPaymentOnly = answers['request-types'].length === 1 && answers['request-types'][0] === 'Direct rent payment'
-    const isArrears = answers.arrears === 'true'
+        const isDirectRentPaymentOnly = answers['request-types'].length === 1 && answers['request-types'][0] === 'Direct rent payment'
+        const isArrears = answers.arrears === 'true'
 
-    const skip = isDirectRentPaymentOnly && isArrears
-    res.redirect(skip
-      ? '/onlineform_v3/rent-details'
-      : '/onlineform_v3/rent-arrears-details'
-    )
-  } else {
-    res.redirect('/onlineform_v3/rent-arrears-details')
-  }
+        const skip = isDirectRentPaymentOnly && isArrears
+        res.redirect(skip ?
+            '/onlineform_v3/rent-details' :
+            '/onlineform_v3/rent-arrears-details'
+        )
+    } else {
+        res.redirect('/onlineform_v3/rent-arrears-details')
+    }
 })
 
 
 router.use('/postcode', require('./postcodes'))
+
+/////// Online form v4 ///////
+
+
+router.get('/onlineform_v4/arrears', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    var requestType = req.query.requestType
+
+    if (requestType === 'Direct rent payment') {
+        // redirect to the relevant page
+        res.redirect('/onlineform_v4/dr-arrears')
+
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v4/arrears')
+    }
+})
+
+
+router.get('/onlineform_v4/dr-rent-details', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    var drarrears = req.query.drarrears
+
+    if (drarrears === 'false') {
+        // redirect to the relevant page
+        res.redirect('/onlineform_v4/dr-request-reason')
+
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v4/dr-rent-details')
+    }
+})
+
+router.get('/onlineform_v4/rent-arrears-details', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    var arrears = req.query.arrears
+
+    if (arrears === 'false') {
+        // redirect to the relevant page
+        res.redirect('/onlineform_v4/request-reason')
+
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v4/rent-arrears-details')
+    }
+})
+
 
 module.exports = router
