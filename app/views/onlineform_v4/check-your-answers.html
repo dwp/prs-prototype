@@ -13,13 +13,13 @@
                 <div>
                     <dt class="data-summary-key">Type of payment</dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['request-types'] }}</p>
+                        <p>{{ data['requestType'] }}</p>
                     </dd>
                 </div>
                 <div>
                     <dt class="data-summary-key">Reason for application</dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['reason_for_request'] | removeOther }}</p>
+                        <p>{{ data['arrears'] | removeOther }}</p>
                     </dd>
                     <!-- < -->
                     <!-- dd class="cya-change">
@@ -62,7 +62,7 @@
                         Date of last missing payment
                     </dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['rent-free-weeks'] }}</p>
+                        <p>{{ data['missing-payment-end-day'] }} {{ data['missing-payment-end-month'] }} {{ data['missing-payment-end-year'] }}</p>
                     </dd>
                 </div>
                 <div>
@@ -94,14 +94,6 @@
                     <dd class="data-summary-value">
                         <p>{{ data['rent-frequency'] }}</p>
                     </dd>
-                    </dd>
-                </div>
-                <div>
-                    <dt class="data-summary-key">
-                        Rent free weeks
-                    </dt>
-                    <dd class="data-summary-value">
-                        <p>{{ data['rent-free-weeks'] }}</p>
                     </dd>
                 </div>
                 <div>
