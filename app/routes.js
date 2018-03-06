@@ -404,4 +404,27 @@ router.get('/onlineform_v4/rent-arrears-details', function(req, res) {
 })
 
 
+//  postal route
+
+router.post('/onlineform_v4/redirect', function(req, res) {
+    var fullservicepostcodes = [
+        'a', 'b', 'c'
+    ]
+    var firstCharacterInPostcode = req.body.postcode.charAt(0)
+    firstCharacterInPostcode = firstCharacterInPostcode.toLowerCase()
+    console.log('firstcharacter is ' + firstCharacterInPostcode)
+
+
+    if (fullservicepostcodes.includes(firstCharacterInPostcode)) {
+        console.log('this isa full service postcode!')
+        res.redirect('/onlineform_v4/full-post')
+    } else {
+        console.log('this is not a fullservice postcode')
+        res.redirect('/onlineform_v4/live-post')
+    }
+    // res.render('./onlineform_v4/email', {
+    //     postcode: (req.body.postcode ? req.body.postcode : 'not entered')
+    // })
+})
+
 module.exports = router
