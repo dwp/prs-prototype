@@ -3,8 +3,8 @@ function handlePostcodeLookup(pickers) {
         return function(e) {
             e.preventDefault()
             var manualInputs = picker.querySelectorAll('#manual input')
-            for(var i = 0; i < manualInputs.length; i++) {
-              manualInputs[i].value = ''
+            for (var i = 0; i < manualInputs.length; i++) {
+                manualInputs[i].value = ''
             }
             var postcode = picker.querySelector('input').value
             if (!postcode || postcode.length === 0) {

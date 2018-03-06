@@ -1,43 +1,22 @@
-{% extends "layout.html" %}
-
-{% block page_title %}
-  GOV.UK prototype kit
-{% endblock %}
-
-{% block content %}
-
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
 <main id="content" role="main">
-  <div class="grid-row">
-    <div class="column-two-thirds">
-
-      <form action="redirect" method="post">
-
-        <div class="c-field-submit">
-
-          <h1 class="heading-large c-field-submit__heading">Enter your tenant's postcode</h1>
-
-          <label for="postcode" class="c-field-submit__label">Enter their full postcode, for example SK4 1EZ or LS11 5BD</label>
-
-          <div class="c-field-submit__row">
-
-            <div class="c-field-submit__capture">
-              <input class="form-control form-control-1-1" id="postcode" type="text" name="postcode">
-            </div>
-
-            <div class="c-field-submit__action">
-              <input type="submit" class="button" value="Continue">
-            </div>
-
-          </div>
-
-      </div>
-
-        
-
-      </form>
-
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <form action="redirect" method="post">
+                <div class="c-field-submit">
+                    <h1 class="heading-large c-field-submit__heading">Enter your tenant's postcode</h1>
+                    <label for="postcode" class="c-field-submit__label">Enter their full postcode, for example SK4 1EZ or LS11 5BD</label>
+                    <div class="c-field-submit__row">
+                        <div class="c-field-submit__capture">
+                            <input class="form-control form-control-1-1" id="postcode" type="text" name="postcode">
+                        </div>
+                        <div class="c-field-submit__action">
+                            <input type="submit" class="button" value="Continue">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-  </div>
 </main>
-
 {% endblock %}
