@@ -198,6 +198,9 @@ $path: "/public/images/"; // Import GOV.UK elements from /govuk-modules/, this w
     float: left;
     padding: .63158em 1.05263em .47368em 0;
     width: 50%;
+    p {
+        margin-top: 0;
+    }
 }
 
 .data-summary-key {
