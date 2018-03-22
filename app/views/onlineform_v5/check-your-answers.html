@@ -30,7 +30,7 @@
                 </div>
             </dl>
             <h2 class="heading-small th">
-              Rent arrears details
+      Landlord details
         <p class="payment-link">
 
       <a href="">
@@ -39,73 +39,49 @@
 
   </p>
       </h2>
+            <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+            <!--   * `cya-questions-short` for short questions -->
+            <!--   * `cya-questions-long` for long questions -->
+            <!--   * none for single group of q&a -->
             <dl class="data-summary">
                 <div>
                     <dt class="data-summary-key">
-                        Total rent outstanding
+                        Name
                     </dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['outstanding-rent-amount'] }}</p>
+                        <p>{{ data['landlord-name'] }}</p>
                     </dd>
                 </div>
                 <div>
                     <dt class="data-summary-key">
-                        Date of first missing payment
+                        Phone number
                     </dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['missing-payment-start-day'] }} {{ data['missing-payment-start-month'] }} {{ data['missing-payment-start-year'] }}</p>
-                    </dd>
+                        <p>{{ data['landlord-phone'] }}</p>
                     </dd>
                 </div>
                 <div>
                     <dt class="data-summary-key">
-                        Date of last missing payment
+                        Email address
                     </dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['missing-payment-end-day'] }} {{ data['missing-payment-end-month'] }} {{ data['missing-payment-end-year'] }}</p>
-                    </dd>
-                </div>
-                <div>
-                </div>
-            </dl>
-            <h2 class="heading-small th">
-              Rent details
-        <p class="payment-link">
-
-      <a href="">
-        Change
-      </a>
-
-  </p>
-      </h2>
-            <dl class="data-summary">
-                <div>
-                    <dt class="data-summary-key">
-                        Rent amount
-                    </dt>
-                    <dd class="data-summary-value">
-                        <p>{{ data['rent-amount'] }}</p>
+                        <p>{{ data['landlord-email'] }}</p>
                     </dd>
                 </div>
                 <div>
                     <dt class="data-summary-key">
-                        Rent frequency
+                        Address
                     </dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['rent-frequency'] }}</p>
-                    </dd>
-                    </dd>
-                </div>
-                <div>
-                    <dt class="data-summary-key">
-                        Number of bedrooms
-                    </dt>
-                    <dd class="data-summary-value">
-                        <p>{{ data['bedrooms'] }}</p>
+                        {% if data['landlord-output-address'] %} {% set landlordAddress = data['landlord-output-address'] | split(',') %} {% else %} {% set landlordAddress = data['landlord-manual-address'] %}</p>
+                        {% endif %} {% for line in landlordAddress %}
+                        <p>{{line}}</p>
+                        {% endfor %}
                     </dd>
                 </div>
             </dl>
-            <h2 class="heading-small th">
+
+<h2 class="heading-small th">
       Tenant details
         <p class="payment-link">
 
@@ -156,9 +132,175 @@
                     </dd>
                 </div>
             </dl>
-            <!-- <<< LANDLORD DETAILS >>>-->
+
+
+
+<h2 class="heading-small th">
+              Rent details
+        <p class="payment-link">
+
+      <a href="">
+        Change
+      </a>
+
+  </p>
+      </h2>
+            <dl class="data-summary">
+                <div>
+                    <dt class="data-summary-key">
+                        Rent amount
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['rent-amount'] }}</p>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Rent frequency
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['rent-frequency'] }}</p>
+                    </dd>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Number of bedrooms
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['bedrooms'] }}</p>
+                    </dd>
+                </div>
+            </dl>
+
+
+
             <h2 class="heading-small th">
-      Landlord details
+              Rent arrears details
+        <p class="payment-link">
+
+      <a href="">
+        Change
+      </a>
+
+  </p>
+      </h2>
+            <dl class="data-summary">
+                <div>
+                    <dt class="data-summary-key">
+                        Total rent outstanding
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['outstanding-rent-amount'] }}</p>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Date of first missing payment
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['missing-payment-start-day'] }} {{ data['missing-payment-start-month'] }} {{ data['missing-payment-start-year'] }}</p>
+                    </dd>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Date of last missing payment
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['missing-payment-end-day'] }} {{ data['missing-payment-end-month'] }} {{ data['missing-payment-end-year'] }}</p>
+                    </dd>
+                </div>
+                <div>
+                </div>
+            </dl>
+
+
+
+
+            <h2 class="heading-small th">
+              Service charge details
+        <p class="payment-link">
+
+      <a href="">
+        Change
+      </a>
+
+  </p>
+      </h2>
+            <dl class="data-summary">
+                <div>
+                    <dt class="data-summary-key">
+                        Rent amount
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['rent-amount'] }}</p>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Rent frequency
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['rent-frequency'] }}</p>
+                    </dd>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Number of bedrooms
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['bedrooms'] }}</p>
+                    </dd>
+                </div>
+            </dl>
+
+
+
+            <h2 class="heading-small th">
+              Service charge arrears 
+        <p class="payment-link">
+
+      <a href="">
+        Change
+      </a>
+
+  </p>
+      </h2>
+            <dl class="data-summary">
+                <div>
+                    <dt class="data-summary-key">
+                        Total rent outstanding
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['outstanding-rent-amount'] }}</p>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Date of first missing payment
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['missing-payment-start-day'] }} {{ data['missing-payment-start-month'] }} {{ data['missing-payment-start-year'] }}</p>
+                    </dd>
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Date of last missing payment
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['missing-payment-end-day'] }} {{ data['missing-payment-end-month'] }} {{ data['missing-payment-end-year'] }}</p>
+                    </dd>
+                </div>
+                <div>
+                </div>
+            </dl>
+            
+            
+            <h2 class="heading-small th">
+      Bank details
         <p class="payment-link">
 
       <a href="">
@@ -174,51 +316,31 @@
             <dl class="data-summary">
                 <div>
                     <dt class="data-summary-key">
-                        Name
+                        Account name
                     </dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['landlord-name'] }}</p>
+                        <p>{{ data['account-name'] }}</p>
+                    </dd>
+                </div>
+                
+                <div>
+                    <dt class="data-summary-key">
+                        Sort code
+                    </dt>
+                    <dd class="data-summary-value">
+                        <p>{{ data['sortcode-1'] }} {{ data['sortcode-2'] }} {{ data['sortcode-3'] }}</p>
                     </dd>
                 </div>
                 <div>
                     <dt class="data-summary-key">
-                        Phone number
+                        Account number
                     </dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['landlord-phone'] }}</p>
+                        <p>{{ data['account-number'] }}</p>
                     </dd>
                 </div>
-                <div>
-                    <dt class="data-summary-key">
-                        Email address
-                    </dt>
-                    <dd class="data-summary-value">
-                        <p>{{ data['landlord-email'] }}</p>
-                    </dd>
-                </div>
-                <div>
-                    <dt class="data-summary-key">
-                        Address
-                    </dt>
-                    <dd class="data-summary-value">
-                        {% if data['landlord-output-address'] %} {% set landlordAddress = data['landlord-output-address'] | split(',') %} {% else %} {% set landlordAddress = data['landlord-manual-address'] %}</p>
-                        {% endif %} {% for line in landlordAddress %}
-                        <p>{{line}}</p>
-                        {% endfor %}
-                    </dd>
-                </div>
-                <div>
-                    <dt class="data-summary-key">
-                        Bank details
-                    </dt>
-                    <dd class="data-summary-value">
-                        {{ data['account-name'] }}
-                        <br> {{ data['sortcode-1'] }} {{ data['sortcode-2'] }} {{ data['sortcode-3'] }}
-                        <br> {{ data['account-number'] }}
-                        <br> {{ data['creditor-ref'] }}
-                    </dd>
-                </div>
-                <div>
+
+<div>
                     <dt class="data-summary-key">
                         Tenant reference number
                     </dt>
@@ -226,15 +348,19 @@
                         {{ data['tenant-ref'] }}
                     </dd>
                 </div>
+
                 <div>
                     <dt class="data-summary-key">
                         Creditor reference number
                     </dt>
                     <dd class="data-summary-value">
-                        {{ data['creditor-ref'] }}
+                    {{ data['creditor-ref'] }}
                     </dd>
                 </div>
+                
+                
             </dl>
+            <!-- <<< LANDLORD DETAILS >>>-->
             <!-- <<< TENANT DETAILS >>>-->
             <!-- <<< MISSING PAYMENTS >>>-->
             <h2 class="heading-medium">

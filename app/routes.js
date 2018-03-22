@@ -460,8 +460,12 @@ router.get('/onlineform_v5/dr-rent-details', function(req, res) {
     }
 })
 
-router.get('/onlineform_v5/rent-arrears-details', function(req, res) {
+
+
+
+router.get('/onlineform_v5/rent-details', function(req, res) {
     // get the answer from the query string (eg. ?over18=false)
+    console.log('yes')
     var arrears = req.query.arrears
 
     if (arrears === 'false') {
@@ -470,9 +474,26 @@ router.get('/onlineform_v5/rent-arrears-details', function(req, res) {
 
     } else {
         // if over18 is any other value (or is missing) render the page requested
-        res.render('onlineform_v5/rent-arrears-details')
+        res.render('onlineform_v5/rent-details')
     }
 })
+
+
+
+
+// router.get('/onlineform_v5/rent-arrears-details', function(req, res) {
+//     // get the answer from the query string (eg. ?over18=false)
+//     var arrears = req.query.arrears
+
+//     if (arrears === 'false') {
+//         // redirect to the relevant page
+//         res.redirect('/onlineform_v5/request-reason')
+
+//     } else {
+//         // if over18 is any other value (or is missing) render the page requested
+//         res.render('onlineform_v5/rent-details')
+//     }
+// })
 
 router.route('/onlineform_v5/tenant-details').get(function(req, res) {
 
@@ -505,6 +526,20 @@ router.get('/onlineform_v5/dr-service-charge-details', function(req, res) {
     } else {
         // if over18 is any other value (or is missing) render the page requested
         res.render('onlineform_v5/dr-service-charge-details')
+    }
+})
+
+router.get('/onlineform_v5/service-charge-details', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    var service = req.query.service
+
+    if (service === 'false') {
+        // redirect to the relevant page
+        res.redirect('/onlineform_v5/landlord-bank')
+
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v5/service-charge-details')
     }
 })
 
