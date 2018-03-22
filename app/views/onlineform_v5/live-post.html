@@ -1,0 +1,26 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-large">Send your request by post</h1>
+            <ul class="list list-number">
+                <li>Download, print and fill in this form:
+                    <p><i class="icon icon-file-download" style="vertical-align: middle; margin-right: 10px;"></i> <a href="https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/667477/uc47-secure-landlord-request-for-a-managed-payment-rent-arrears-deduction.pdf" class="bold-xsmall">Request form</a></p>
+                    <li>And send to:
+                        <br>FREEPOST
+                        <br>DWP
+                        <br>Universal Credit Live Service</br>
+                    </li>
+            </ul>
+            <ul class="list">
+            </ul>
+            <form action="/onlineform_v4/live-post" method="get" class="form">
+                <div class="form-group">
+                    <fieldset class="inline">
+                        <br/>
+                        <a class="button" href="/onlineform_v4/start" role="button">Start again</a>
+            </form>
+            </div>
+        </div>
+</main>
+{% endblock %}

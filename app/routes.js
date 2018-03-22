@@ -427,4 +427,88 @@ router.post('/onlineform_v4/redirect', function(req, res) {
     // })
 })
 
+
+/////// Online form v5 ///////
+
+
+router.get('/onlineform_v5/arrears', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    var requestType = req.query.requestType
+
+    if (requestType === 'Direct rent payment') {
+        // redirect to the relevant page
+        res.redirect('/onlineform_v5/dr-arrears')
+
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v5/arrears')
+    }
+})
+
+
+router.get('/onlineform_v5/dr-rent-details', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    var drarrears = req.query.drarrears
+
+    if (drarrears === 'false') {
+        // redirect to the relevant page
+        res.redirect('/onlineform_v5/dr-request-reason')
+
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v5/dr-rent-details')
+    }
+})
+
+router.get('/onlineform_v5/rent-arrears-details', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    var arrears = req.query.arrears
+
+    if (arrears === 'false') {
+        // redirect to the relevant page
+        res.redirect('/onlineform_v5/request-reason')
+
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v5/rent-arrears-details')
+    }
+})
+
+router.route('/onlineform_v5/tenant-details').get(function(req, res) {
+
+    res.render('onlineform_v5/tenant-details')
+
+}).post(function(req, res) {
+
+
+    var requestType = req.session.data.requestType
+    console.dir(req.session)
+    console.log('requestType is ' + requestType)
+    if (requestType === 'Direct rent payment') {
+        console.log('drarrears')
+        res.redirect('/onlineform_v5/dr-arrears')
+
+    } else {
+        console.log('arrears')
+        res.redirect('/onlineform_v5/arrears')
+    }
+})
+
+router.get('/onlineform_v5/dr-service-charge-details', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    var drservice = req.query.drservice
+
+    if (drservice === 'false') {
+        // redirect to the relevant page
+        res.redirect('/onlineform_v5/dr-landlord-bank')
+
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v5/dr-service-charge-details')
+    }
+})
+
+
+
+
 module.exports = router
