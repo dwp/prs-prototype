@@ -2,6 +2,7 @@
 <main id="content" role="main">
     <div class="grid-row">
         <div class="column-two-thirds">
+
             <a href="/onlineform_v3/landlord-bank.html" class="link-back">Back</a>
             <h1 class="heading-large">Check your answers before sending</h1>
             <h2 class="heading-small th">Application details
@@ -19,7 +20,10 @@
                 <div>
                     <dt class="data-summary-key">Reason for application</dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['arrears'] | removeOther }}</p>
+                      {% for reason in data['reason_for_request'] | d(['2 months or more arrears']) | mutateReason %}
+                        <p>{{ reason }}</p>
+                      {% endfor %}
+
                     </dd>
                     <!-- < -->
                     <!-- dd class="cya-change">

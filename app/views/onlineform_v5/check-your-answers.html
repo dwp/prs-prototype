@@ -19,7 +19,9 @@
                 <div>
                     <dt class="data-summary-key">Reason for application</dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['arrears'] | removeOther }}</p>
+                      {% for reason in data['arrears'] | d(['2 months or more arrears']) | mutateReason %}
+                        <p>{{ reason }}</p>
+                      {% endfor %}
                     </dd>
                     <!-- < -->
                     <!-- dd class="cya-change">
@@ -236,7 +238,7 @@
                 </div>
             </dl>
             <h2 class="heading-small th">
-              Service charge arrears 
+              Service charge arrears
         <p class="payment-link">
 
       <a href="">
