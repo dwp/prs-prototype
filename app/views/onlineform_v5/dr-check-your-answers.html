@@ -20,9 +20,10 @@
                 <div>
                     <dt class="data-summary-key">Reason for application</dt>
                     <dd class="data-summary-value">
-                        {% for reason in data['reason_for_request'] | d(['missed 2 months or more of rent']) | removeOther %}
-                          <p>{{ reason }}</p>
-                        {% endfor %}
+                      {% for reason in data['reason_for_request'] | d(['2 months or more arrears']) | mutateReason %}
+                        <p>{{ reason }}</p>
+                      {% endfor %}
+
                     </dd>
                     <!-- < -->
                     <!-- dd class="cya-change">

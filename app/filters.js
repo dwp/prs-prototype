@@ -9,12 +9,19 @@ module.exports = function (env) {
 
   filters.split = (input, delim) => input.split(delim)
 
+  // should remove this, but not sure where its used...
   filters.removeOther = input => {
     if(Array.isArray(input) && input[0] === 'other') {
       return input[1] || ''
     }
     return input
   }
+
+  filters.mutateReason = input => Array.isArray(input)
+    ? input[0] === 'other'
+      ? [ input[1].charAt(0).toUpperCase() + input[1].slice(1) ] || ''
+      : input
+    : [ input ]
 
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
