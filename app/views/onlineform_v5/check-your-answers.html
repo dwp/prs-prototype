@@ -213,27 +213,19 @@
             <dl class="data-summary">
                 <div>
                     <dt class="data-summary-key">
-                        Rent amount
+                        Service charge amount
                     </dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['rent-amount'] }}</p>
+                        <p>{{ data['service-charge-amount'] }}</p>
                     </dd>
                 </div>
                 <div>
                     <dt class="data-summary-key">
-                        Rent frequency
+                        Service charge frequency
                     </dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['rent-frequency'] }}</p>
+                        <p>{{ data['service-charge-frequency'] }}</p>
                     </dd>
-                    </dd>
-                </div>
-                <div>
-                    <dt class="data-summary-key">
-                        Number of bedrooms
-                    </dt>
-                    <dd class="data-summary-value">
-                        <p>{{ data['bedrooms'] }}</p>
                     </dd>
                 </div>
             </dl>
@@ -253,7 +245,7 @@
                         Total rent outstanding
                     </dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['outstanding-rent-amount'] }}</p>
+                        <p>{{ data['outstanding-service-charge-amount'] }}</p>
                     </dd>
                 </div>
                 <div>
@@ -261,7 +253,7 @@
                         Date of first missing payment
                     </dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['missing-payment-start-day'] }} {{ data['missing-payment-start-month'] }} {{ data['missing-payment-start-year'] }}</p>
+                        <p>{{ data['missing-service-charge-start-day'] }} {{ data['missing-service-charge-start-month'] }} {{ data['missing-service-charge-start-year'] }}</p>
                     </dd>
                     </dd>
                 </div>
@@ -270,7 +262,7 @@
                         Date of last missing payment
                     </dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['missing-payment-end-day'] }} {{ data['missing-payment-end-month'] }} {{ data['missing-payment-end-year'] }}</p>
+                        <p>{{ data['missing-service-charge-end-day'] }} {{ data['missing-service-charge-end-month'] }} {{ data['missing-service-charge-end-year'] }}</p>
                     </dd>
                 </div>
                 <div>
