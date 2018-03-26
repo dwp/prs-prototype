@@ -1,0 +1,94 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <a href="/onlineform_v5/arrears.html" class="link-back">Back</a>
+            <h1 class="heading-large">What type of service charges do you ask for?</h1>
+            <p>Please select all that apply:</p>
+            <form action="/onlineform_v5/rent-details" method="post" class="form">
+                <!--                     << health >>
+ -->
+                <div class="form-group">
+                    <fieldset>
+                        <div id="reasons_div">
+                            <h4 class="heading-small">Maintainance of the property</h4>
+                            <div class="multiple-choice">
+                                <input id="reason-type-2" name="arrears" type="checkbox" value="Mental health condition" data-uncheck="['other']">
+                                <label for="reason-type-2">internal and external repairs</label>
+                            </div>
+                            <div class="multiple-choice">
+                                <input id="reason-type-2" name="arrears" type="checkbox" value="Mental health condition" data-uncheck="['other']">
+                                <label for="reason-type-2">window cleaning on upper floors of a multi-storey building</label>
+                            </div>
+                    </fieldset>
+                    <!--                     << addiction and domestic violence >>
+ -->
+                    <!--                     << family >>
+ -->
+                    <fieldset>
+                        <h4 class="heading-small">Communal areas</h4>
+                        <div class="multiple-choice">
+                            <input id="reason-type-5" name="arrears" type="checkbox" value="Learning difficulties" data-uncheck="['other']">
+                            <label for="reason-type-5">general upkeep of communal areas
+                            </label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="reason-type-6" name="arrears" type="checkbox" value="Family with multiple, complex needs" data-uncheck="['other']">
+                            <label for="reason-type-6">utility costs for internal and external areas such as laundry rooms
+                            </label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="reason-type-7" name="arrears" type="checkbox" value="Young claimant" data-uncheck="['other']">
+                            <label for="reason-type-7">basic communal services such as refuse collection and communal lifts</label>
+                        </div>
+                    </fieldset>
+                    <!--                     << money and housing >>
+ -->
+                    <fieldset>
+                        <h4 class="heading-small">Essential items</h4>
+                        <div class="multiple-choice">
+                            <input id="reason-type-13" name="arrears" type="checkbox" value="Severe or multiple debt problems" data-uncheck="['other']">
+                            <label for="reason-type-12">In 1 month of arrears, built up over time
+                            </label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="reason-type-8" name="arrears" type="checkbox" value="Severe or multiple debt problems" data-uncheck="['other']">
+                            <label for="reason-type-8">furniture or domestic appliances
+                            </label>
+                        </div>
+                        <fieldset>
+                            <br>
+                            <h4 class="paragraph form-group">Or</h4>
+                            <div class="multiple-choice" data-target="other-reason">
+                                <input id="reason-type-12" name="none" type="checkbox" value="other" data-uncheck="['Mental health condition', 'Drug, alcohol or addiction problems', 'Learning difficulties', 'Family with multiple, complex needs', 'Young claimant', 'Severe or multiple debt problems', 'In temporary and/or supported accommodation', 'Homeless', 'At threat of eviction or repossession']">
+                                <label for="reason-type-12">None of the above</label>
+                            </div>
+                            <div class="panel panel-border-narrow js-hidden" id="other-reason">
+                                <label class="form-label" for="none">Please tell us more about the reason for your application</label>
+                                <textarea class="form-control" name="arrears" rows="5"></textarea>
+                            </div>
+                        </fieldset>
+                        <br>
+                        <input type="submit" class="button" value="Continue">
+            </form>
+            </div>
+</main>
+{% endblock %} {% block page_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    window.CHECKBOX_UNCHECK.setup()
+    var inputs = document.querySelectorAll('#reasons_div input')
+    var textdiv = document.querySelector('#other-reason')
+    var textarea = textdiv.querySelector('textarea')
+    for (var i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener('click', function(e) {
+            if (textdiv.className.indexOf('js-hidden') === -1) {
+                textdiv.setAttribute('aria-hidden', true)
+                textdiv.className += ' js-hidden'
+                textarea.value = ''
+            }
+        })
+    }
+})
+</script>
+{% endblock %}
