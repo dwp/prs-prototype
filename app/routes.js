@@ -529,6 +529,11 @@ router.get('/onlineform_v5/dr-service-charge-type', function(req, res) {
     }
 })
 
+router.get('/onlineform_v5/dr-check-your-answers', (req, res) => {
+    console.dir(req.session.data)
+    res.render('onlineform_v5/dr-check-your-answers')
+})
+
 router.get('/onlineform_v5/service-charge-type', function(req, res) {
     // get the answer from the query string (eg. ?over18=false)
     var service = req.query.service
