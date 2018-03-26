@@ -515,7 +515,7 @@ router.route('/onlineform_v5/tenant-details').get(function(req, res) {
     }
 })
 
-router.get('/onlineform_v5/dr-service-charge-details', function(req, res) {
+router.get('/onlineform_v5/dr-service-charge-type', function(req, res) {
     // get the answer from the query string (eg. ?over18=false)
     var drservice = req.query.drservice
 
@@ -525,11 +525,11 @@ router.get('/onlineform_v5/dr-service-charge-details', function(req, res) {
 
     } else {
         // if over18 is any other value (or is missing) render the page requested
-        res.render('onlineform_v5/dr-service-charge-details')
+        res.render('onlineform_v5/dr-service-charge-type')
     }
 })
 
-router.get('/onlineform_v5/service-charge-details', function(req, res) {
+router.get('/onlineform_v5/service-charge-type', function(req, res) {
     // get the answer from the query string (eg. ?over18=false)
     var service = req.query.service
 
@@ -539,7 +539,7 @@ router.get('/onlineform_v5/service-charge-details', function(req, res) {
 
     } else {
         // if over18 is any other value (or is missing) render the page requested
-        res.render('onlineform_v5/service-charge-details')
+        res.render('onlineform_v5/service-charge-type')
     }
 })
 
