@@ -550,5 +550,248 @@ router.get('/onlineform_v5/service-charge-type', function(req, res) {
 
 
 
+/////// Online form v6 social ///////
+
+
+router.get('/onlineform_v6_social/arrears', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    var requestType = req.query.requestType
+
+    if (requestType === 'Direct rent payment') {
+        // redirect to the relevant page
+        res.redirect('/onlineform_v6_social/dr-arrears')
+
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v6_social/arrears')
+    }
+})
+
+
+router.get('/onlineform_v6_social/dr-rent-details', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    var drarrears = req.query.drarrears
+
+    if (drarrears === 'false') {
+        // redirect to the relevant page
+        res.redirect('/onlineform_v6_social/dr-request-reason')
+
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v6_social/dr-rent-details')
+    }
+})
+
+
+
+
+router.get('/onlineform_v6_social/rent-details', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    console.log('yes')
+    var arrears = req.query.arrears
+
+    if (arrears === 'false') {
+        // redirect to the relevant page
+        res.redirect('/onlineform_v6_social/request-reason')
+
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v6_social/rent-details')
+    }
+})
+
+
+
+
+// router.get('/onlineform_v5/rent-arrears-details', function(req, res) {
+//     // get the answer from the query string (eg. ?over18=false)
+//     var arrears = req.query.arrears
+
+//     if (arrears === 'false') {
+//         // redirect to the relevant page
+//         res.redirect('/onlineform_v5/request-reason')
+
+//     } else {
+//         // if over18 is any other value (or is missing) render the page requested
+//         res.render('onlineform_v5/rent-details')
+//     }
+// })
+
+router.route('/onlineform_v6_social/tenant-details').get(function(req, res) {
+
+    res.render('onlineform_v6_social/tenant-details')
+
+}).post(function(req, res) {
+
+
+    var requestType = req.session.data.requestType
+    console.dir(req.session)
+    console.log('requestType is ' + requestType)
+    if (requestType === 'Direct rent payment') {
+        console.log('drarrears')
+        res.redirect('/onlineform_v6_social/dr-arrears')
+
+    } else {
+        console.log('arrears')
+        res.redirect('/onlineform_v6_social/arrears')
+    }
+})
+
+router.get('/onlineform_v6_social/dr-service-charge-type', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    var drservice = req.query.drservice
+
+    if (drservice === 'false') {
+        // redirect to the relevant page
+        res.redirect('/onlineform_v6_social/dr-landlord-bank')
+
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v6_social/dr-service-charge-type')
+    }
+})
+
+router.get('/onlineform_v6_social/dr-check-your-answers', (req, res) => {
+    console.dir(req.session.data)
+    res.render('onlineform_v6_social/dr-check-your-answers')
+})
+
+router.get('/onlineform_v6_social/service-charge-type', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    var service = req.query.service
+
+    if (service === 'false') {
+        // redirect to the relevant page
+        res.redirect('/onlineform_v6_social/rent-arrears-details')
+
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v6_social/service-charge-type')
+    }
+})
+
+
+/////// Online form v6 private ///////
+
+
+router.get('/onlineform_v6_private/arrears', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    var requestType = req.query.requestType
+
+    if (requestType === 'Direct rent payment') {
+        // redirect to the relevant page
+        res.redirect('/onlineform_v6_private/dr-arrears')
+
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v6_private/arrears')
+    }
+})
+
+
+router.get('/onlineform_v6_private/dr-rent-details', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    var drarrears = req.query.drarrears
+
+    if (drarrears === 'false') {
+        // redirect to the relevant page
+        res.redirect('/onlineform_v6_private/dr-request-reason')
+
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v6_private/dr-rent-details')
+    }
+})
+
+
+
+
+router.get('/onlineform_v6_private/rent-details', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    console.log('yes')
+    var arrears = req.query.arrears
+
+    if (arrears === 'false') {
+        // redirect to the relevant page
+        res.redirect('/onlineform_v6_private/request-reason')
+
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v6_private/rent-details')
+    }
+})
+
+
+
+
+// router.get('/onlineform_v5/rent-arrears-details', function(req, res) {
+//     // get the answer from the query string (eg. ?over18=false)
+//     var arrears = req.query.arrears
+
+//     if (arrears === 'false') {
+//         // redirect to the relevant page
+//         res.redirect('/onlineform_v5/request-reason')
+
+//     } else {
+//         // if over18 is any other value (or is missing) render the page requested
+//         res.render('onlineform_v5/rent-details')
+//     }
+// })
+
+router.route('/onlineform_v6_private/tenant-details').get(function(req, res) {
+
+    res.render('onlineform_v6_private/tenant-details')
+
+}).post(function(req, res) {
+
+
+    var requestType = req.session.data.requestType
+    console.dir(req.session)
+    console.log('requestType is ' + requestType)
+    if (requestType === 'Direct rent payment') {
+        console.log('drarrears')
+        res.redirect('/onlineform_v6_private/dr-arrears')
+
+    } else {
+        console.log('arrears')
+        res.redirect('/onlineform_v6_private/arrears')
+    }
+})
+
+router.get('/onlineform_v6_private/dr-service-charge-type', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    var drservice = req.query.drservice
+
+    if (drservice === 'false') {
+        // redirect to the relevant page
+        res.redirect('/onlineform_v6_private/dr-landlord-bank')
+
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v6_private/dr-service-charge-type')
+    }
+})
+
+router.get('/onlineform_v6_private/dr-check-your-answers', (req, res) => {
+    console.dir(req.session.data)
+    res.render('onlineform_v6_private/dr-check-your-answers')
+})
+
+router.get('/onlineform_v6_private/service-charge-type', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    var service = req.query.service
+
+    if (service === 'false') {
+        // redirect to the relevant page
+        res.redirect('/onlineform_v6_private/rent-arrears-details')
+
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v6_private/service-charge-type')
+    }
+})
+
+
+
 
 module.exports = router

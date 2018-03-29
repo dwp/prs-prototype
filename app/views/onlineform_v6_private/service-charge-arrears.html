@@ -1,0 +1,67 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <a href="/onlineform_v5/service-charge-details" class="link-back">Back</a>
+            <form action="/onlineform_v5/landlord-bank" method="post" class="form">
+                <h1 class="heading-large">Service charge arrears</h1>
+                <label class="form-label" for="total-rent-outstanding">How much does the tenant currently owe you in service charges?</label>
+                <div class="govuk-currency-input">
+                    <div class="govuk-currency-input__inner">
+                        <span class="govuk-currency-input__inner__unit">£</span>
+                        <input class="govuk-currency-input__inner__input form-control form-control-1-4" aria-label="Enter amount in pounds" name="outstanding-service-charge-amount" data-non-numeric="" type="text" id="outstanding-service-charge-amount" pattern="[0-9]\d*(\.\d+)?">
+                    </div>
+                    <br>
+                    <fieldset>
+                        <legend>
+                            <label class="form-label" for="missing-payment-start">Date of first missing service charge:</label>
+                            <span class="form-hint">For example, 31 3 1980</span>
+                        </legend>
+                        <div class="form-date">
+                            <div class="form-group form-group-day">
+                                <label class="form-label" for="missing-service-charge-start-day">Day</label>
+                                <input class="form-control" id="missing-service-charge-start-day" name="missing-payment-start-day" type="number" pattern="[0-9]*" min="0" max="31">
+                            </div>
+                            <div class="form-group form-group-month">
+                                <label class="form-label" for="missing-service-charge-start-month">Month</label>
+                                <input class="form-control" id="missing-service-charge-start-month" name="missing-service-charge-start-month" type="number" pattern="[0-9]*" min="0" max="12">
+                            </div>
+                            <div class="form-group form-group-year">
+                                <label class="form-label" for="missing-service-charge-start-year">Year</label>
+                                <input class="form-control" id="missing-service-charge-payment-start-year" name="missing-service-charge-start-year" type="number" pattern="[0-9]*" min="0" max="2018">
+                            </div>
+                    </fieldset>
+                    <br>
+                    <div class="form-group">
+                        <fieldset>
+                            <legend>
+                                <label class="form-label" for="first-name-2">Date of most recent missing service charge:</label>
+                            </legend>
+                            <div class="form-date">
+                                <div class="form-group form-group-day">
+                                    <label class="form-label" for="missing-service-charge-end-day">Day</label>
+                                    <input class="form-control" id="missing-service-charge-end-day" name="missing-service-charge-end-day" type="number" pattern="[0-9]*" min="0" max="31">
+                                </div>
+                                <div class="form-group form-group-month">
+                                    <label class="form-label" for="missing-service-charge-end-month">Month</label>
+                                    <input class="form-control" id="missing-service-charge-end-month" name="missing-service-charge-end-month" type="number" pattern="[0-9]*" min="0" max="12">
+                                </div>
+                                <div class="form-group form-group-year">
+                                    <label class="form-label" for="missing-service-charge-end-year">Year</label>
+                                    <input class="form-control" id="missing-service-charge-end-year" name="missing-service-charge-end-year" type="number" pattern="[0-9]*" min="0" max="2019">
+                                </div>
+                        </fieldset>
+                        </div>
+                        </details>
+                        <br>
+                    </div>
+                    <input type="submit" class="button" value="Continue">
+            </form>
+            </div>
+            </div>
+        </div>
+        </form>
+    </div>
+    </div>
+</main>
+{% endblock %} {% block scripts %} {{ super() }} }) {% endblock %}

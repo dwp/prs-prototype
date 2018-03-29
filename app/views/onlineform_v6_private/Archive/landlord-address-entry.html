@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+            <a href="/onlineform/landlord-name.html" class="link-back">Back</a>
+
+
+        <h1 class="heading-large">Landlord's address</h1>
+
+
+   
+
+<div class="form-group">
+  <label class="form-label" for="first-name-2">Postcode</label>
+  <span class="form-hint">
+              This is the contact address of the landlord or letting agency
+            </span>
+  <input class="form-control" id="first-name-2" name="first-name-2" type="text">
+</div>
+<!-- <div class="form-group">
+  <label class="form-label" for="last-name-2">Line 1 of address</label>
+  <input class="form-control" id="last-name-2" name="last-name-2" type="text">
+</div> -->
+
+   <p><a href="/onlineform/landlord-address-select.html" class="button">Find address</a></p>
+        <p>
+
+    <details>
+      <summary><span class="summary">I live outside the UK</span></summary>
+
+      <div class="panel panel-border-narrow">
+
+       <!--  <p>
+          If you’re not sure about your nationality, try to find out from an official document like a passport or national ID card.
+        </p>
+
+        <p>
+          We need to know your nationality so we can work out which elections you’re entitled to vote in. If you can’t provide your nationality, you’ll have to send copies of identity documents through the post.
+        </p> -->
+
+      </div>
+
+    </details>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

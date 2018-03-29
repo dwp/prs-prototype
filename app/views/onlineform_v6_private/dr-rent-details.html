@@ -1,0 +1,47 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <a href="/onlineform_v6_private/dr-arrears.html" class="link-back">Back</a>
+            <h1 class="heading-large">Rent details</h1>
+            <!--         <p>We need this so we can pay you.</p>
+ -->
+            <form action="/onlineform_v6_private/dr-service-charge" method="post" class="form">
+                <label class="form-label" for="total-rent-outstanding">Rent amount</label>
+                <div class="govuk-currency-input">
+                    <div class="govuk-currency-input__inner">
+                        <span class="form-hint">Excluding any service charges</span>
+                        <span class="govuk-currency-input__inner__unit">£</span>
+                        <input class="govuk-currency-input__inner__input form-control form-control-1-4" aria-label="Enter amount in pounds" name="rent-amount" data-non-numeric="" type="text" id="rent-amount" pattern="[0-9]\d*(\.\d+)?">
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <fieldset>
+                        <legend>
+                            <label class="form-label">How often is the rent paid?</label>
+                        </legend>
+                        <div class="multiple-choice">
+                            <input id="rent-frequency-1" type="radio" name="rent-frequency" value="Weekly">
+                            <label for="rent-frequency-1">Weekly</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="rent-frequency-2" type="radio" name="rent-frequency" value="Fornightly">
+                            <label for="rent-frequency-2">Every 2 weeks</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="rent-frequency-3" type="radio" name="rent-frequency" value="Monthly">
+                            <label for="rent-frequency-3">Monthly</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="bedrooms">Number of bedrooms</label>
+                    <input class="form-control narrow" id="bedrooms" name="bedrooms" type="number">
+                </div>
+                <input type="submit" class="button" value="Continue">
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}
