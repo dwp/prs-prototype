@@ -85,7 +85,6 @@
                         <p>{{ data['dob-day'] }} {{ data['dob-month'] }} {{ data['dob-year'] }}</p>
                     </dd>
                 </div>
-                
                 <div>
                     <dt class="data-summary-key">
                         Address
@@ -152,20 +151,49 @@
                         {% endfor %}
                     </dd>
                 </div>
+            </dl>
+            <h2 class="heading-small th">
+      Landlord bank details
+        <p class="payment-link">
+
+      <a href="">
+        Change
+      </a>
+
+  </p>
+      </h2>
+            <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+            <!--   * `cya-questions-short` for short questions -->
+            <!--   * `cya-questions-long` for long questions -->
+            <!--   * none for single group of q&a -->
+            <dl class="data-summary">
                 <div>
                     <dt class="data-summary-key">
-                        Bank details
+                        Account holder
                     </dt>
                     <dd class="data-summary-value">
                         {{ data['account-name'] }}
-                        <br> {{ data['sortcode-1'] }} {{ data['sortcode-2'] }} {{ data['sortcode-3'] }}
-                        <br> {{ data['account-number'] }}
-                        <br> {{ data['creditor-ref'] }}
                     </dd>
                 </div>
                 <div>
                     <dt class="data-summary-key">
-                        Tenant reference number
+                        Sort code
+                    </dt>
+                    <dd class="data-summary-value">
+                        {{ data['sortcode-1'] }} {{ data['sortcode-2'] }} {{ data['sortcode-3'] }}
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Account number
+                    </dt>
+                    <dd class="data-summary-value">
+                        <br> {{ data['account-number'] }}
+                    </dd>
+                </div>
+                <div>
+                    <dt class="data-summary-key">
+                        Payment reference
                     </dt>
                     <dd class="data-summary-value">
                         {{ data['tenant-ref'] }}
