@@ -159,11 +159,12 @@ $path: "/public/images/"; // Import GOV.UK elements from /govuk-modules/, this w
 
 
 
-
-
 .modified-govuk-box {
-    padding-top: 0.5rem;
-    padding-bottom: 1rem;
+    padding: 2em;
+}
+
+.modified-govuk-box h1 {
+    margin: 0;
 }
 
 .govuk-currency-input__inner {
