@@ -13,16 +13,14 @@
                 <div>
                     <dt class="data-summary-key">Type of payment</dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['requestType'] }}</p>
+                        {{ data['requestType'] }}
                     </dd>
                 </div>
                 <div>
                     <dt class="data-summary-key">Reason for application</dt>
                     <dd class="data-summary-value">
-                        {% for reason in data['reason_for_request'] | d(['2 months or more arrears']) | mutateReason -%}
-                        {% if not loop.first %}<br>{% endif %}
-                        {{ reason }}
-                        {%- endfor %}
+                        {% for reason in data['reason_for_request'] | d(['2 months or more arrears']) | mutateReason -%} {% if not loop.first %}
+                        <br>{% endif %} {{ reason }} {%- endfor %}
                     </dd>
                     <!-- < -->
                     <!-- dd class="cya-change">
@@ -48,7 +46,7 @@
                         Rent amount
                     </dt>
                     <dd class="data-summary-value">
-                        <p>£{{ data['rent-amount'] }}</p>
+                        £{{ data['rent-amount'] }}
                     </dd>
                 </div>
                 <div>
@@ -56,7 +54,7 @@
                         Rent frequency
                     </dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['rent-frequency'] }}</p>
+                        {{ data['rent-frequency'] }}
                     </dd>
                     </dd>
                 </div>
@@ -77,7 +75,7 @@
                         Name
                     </dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['first-name-1'] }} {{ data['surname-1'] }}</p>
+                        {{ data['first-name-1'] }} {{ data['surname-1'] }}
                     </dd>
                 </div>
                 <div>
@@ -85,7 +83,7 @@
                         Date of birth
                     </dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['dob-day'] }} {{ data['dob-month'] }} {{ data['dob-year'] }}</p>
+                        {{ data['dob-day'] }} {{ data['dob-month'] }} {{ data['dob-year'] }}
                     </dd>
                 </div>
                 <div>
@@ -94,9 +92,7 @@
                     </dt>
                     <dd class="data-summary-value">
                         {% if data['tenant-output-address'] %} {% set tenantAddress = data['tenant-output-address'] | split(',') %} {% else %} {% set tenantAddress = data['tenant-manual-address'] %}</p>
-                        {% endif %} {% for line in tenantAddress %}
-                        <p>{{line}}</p>
-                        {% endfor %}
+                        {% endif %} {% for line in tenantAddress %} {{line}} {% endfor %}
                     </dd>
                 </div>
                 <div>
@@ -124,7 +120,7 @@
                         Name
                     </dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['landlord-name'] }}</p>
+                        {{ data['landlord-name'] }}
                     </dd>
                 </div>
                 <div>
@@ -132,7 +128,7 @@
                         Phone number
                     </dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['landlord-phone'] }}</p>
+                        {{ data['landlord-phone'] }}
                     </dd>
                 </div>
                 <div>
@@ -140,7 +136,7 @@
                         Email address
                     </dt>
                     <dd class="data-summary-value">
-                        <p>{{ data['landlord-email'] }}</p>
+                        {{ data['landlord-email'] }}
                     </dd>
                 </div>
                 <div>
@@ -149,9 +145,7 @@
                     </dt>
                     <dd class="data-summary-value">
                         {% if data['landlord-output-address'] %} {% set landlordAddress = data['landlord-output-address'] | split(',') %} {% else %} {% set landlordAddress = data['landlord-manual-address'] %}</p>
-                        {% endif %} {% for line in landlordAddress %}
-                        <p>{{line}}</p>
-                        {% endfor %}
+                        {% endif %} {% for line in landlordAddress %} {{line}} {% endfor %}
                     </dd>
                 </div>
             </dl>
