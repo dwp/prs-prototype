@@ -31,13 +31,32 @@
                                 <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
                             </div>
                         </div>
+                    </div>
                     </fieldset>
-                </div>
+                    <div class="form-group">
+                        <label class="form-label" for="tenant-address">Address</label>
+                        <label class="form-label" for="tenant-street">Building or street</label>
+                        <input class="form-control" id="tenant-street" name="tenant-street" type="text">
+                        <p></p>
+                        <input class="form-control" id="tenant-street-2" name="tenant-street-2" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="tenant-address">Town or City</label>
+                        <input class="form-control" id="tenant-town" name="tenant-town" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="tenant-address">County</label>
+                        <input class="form-control" id="tenant-county" name="tenant-county" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="tenant-address">Postcode</label>
+                        <input class="form-control" id="tenant-postcode" name="tenant-postcode" type="text">
+                    </div>
                 <!--                 <form action="address-postcode" method="" autocomplete="off">
  -->
-                <div class="form-group" data-required data-error="Enter your postcode">
-                    {% import "onlineform_v2/addressPicker.html" as addressPicker %} {{ addressPicker.get("tenant") }}
-                    <!--      <div class="c-field-submit__row">
+                <!-- <div class="form-group" data-required data-error="Enter your postcode">
+    {% import "onlineform_v2/addressPicker.html" as addressPicker %} {{ addressPicker.get("tenant") }} -->
+                <!--      <div class="c-field-submit__row">
                         <div class="c-field-submit__capture">
                             <input class="form-control form-control-1-1" id="postcode" type="text" name="postcode" class="form-control form-control-1-4" value="{{ postcode }}">
                         </div>
@@ -45,14 +64,15 @@
                             <input type="submit" class="button" value="Find UK address">
                         </div>
                     </div> -->
-                    <!-- </div> -->
-                    <!--<p><a href="contact-details">Enter address manually</a></p>
+                <!-- </div> -->
+                <!--<p><a href="contact-details">Enter address manually</a></p>
  -->
-                    <!--                 </form>
+                <!--                 </form>
  -->
-                    <input type="submit" class="button" value="Continue">
+                <input type="submit" class="button" value="Continue">
             </form>
-            </div>
         </div>
+    </div>
+    </div>
 </main>
 {% endblock %}

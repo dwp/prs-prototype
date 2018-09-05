@@ -91,8 +91,13 @@
                         Address
                     </dt>
                     <dd class="data-summary-value">
-                        {% if data['tenant-output-address'] %} {% set tenantAddress = data['tenant-output-address'] | split(',') %} {% else %} {% set tenantAddress = data['tenant-manual-address'] %}</p>
-                        {% endif %} {% for line in tenantAddress %} {{line}} {% endfor %}
+                        <!-- {% if data['tenant-output-address'] %} {% set tenantAddress = data['tenant-output-address'] | split(',') %} {% else %} {% set tenantAddress = data['tenant-manual-address'] %}</p>
+                        {% endif %} {% for line in tenantAddress %} {{line}} {% endfor %} -->
+                        {{ data['tenant-street'] }}
+                        <br> {{ data['tenant-street-2'] }}
+                        <br> {{ data['tenant-town'] }}
+                        <br> {{ data['tenant-county'] }}
+                        <br> {{ data['tenant-postcode'] }}
                     </dd>
                 </div>
                 <div>

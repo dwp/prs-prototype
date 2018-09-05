@@ -134,10 +134,10 @@
                         {% endif %} {% for line in tenantAddress %} {{line}} {% endfor %}
                          -->
                         {{ data['tenant-street'] }}
-<br> {{ data['tenant-street-2'] }}
-<br> {{ data['tenant-town'] }}
-<br> {{ data['tenant-county'] }}
-<br> {{ data['tenant-postcode'] }}
+                        <br> {{ data['tenant-street-2'] }}
+                        <br> {{ data['tenant-town'] }}
+                        <br> {{ data['tenant-county'] }}
+                        <br> {{ data['tenant-postcode'] }}
                     </dd>
                 </div>
                 <div>
@@ -189,10 +189,15 @@
                         Address
                     </dt>
                     <dd class="data-summary-value">
-                        {% if data['landlord-output-address'] %} {% set landlordAddress = data['landlord-output-address'] | split(',') %} {% else %} {% set landlordAddress = data['landlord-manual-address'] %}</p>
+                        <!--   {% if data['landlord-output-address'] %} {% set landlordAddress = data['landlord-output-address'] | split(',') %} {% else %} {% set landlordAddress = data['landlord-manual-address'] %}</p>
                         {% endif %} {% for line in landlordAddress %}
                         <p>{{line}}</p>
-                        {% endfor %}
+                        {% endfor %} -->
+                        {{ data['landlord-street'] }}
+                        <br> {{ data['landlord-street-2'] }}
+                        <br> {{ data['landlord-town'] }}
+                        <br> {{ data['landlord-county'] }}
+                        <br> {{ data['landlord-postcode'] }}
                     </dd>
                 </div>
             </dl>
