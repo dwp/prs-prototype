@@ -19,9 +19,28 @@
                     <label class="form-label" for="first-name-2">Email address</label>
                     <input class="form-control" id="landlord-email" name="landlord-email" type="text">
                 </div>
-                <div class="form-group" data-required data-error="Enter your postcode">
-                    {% import "onlineform_v2/addressPicker.html" as addressPicker %} {{ addressPicker.get("landlord") }}
-                </div>
+                <!-- <div class="form-group" data-required data-error="Enter your postcode">
+    {% import "onlineform_v2/addressPicker.html" as addressPicker %} {{ addressPicker.get("landlord") }}
+</div> -->
+               <div class="form-group">
+    <label class="form-label" for="landlord-address">Address</label>
+    <label class="form-label" for="landlord-street">Building or street</label>
+    <input class="form-control" id="landlord-street" name="landlord-street" type="text">
+    <p></p>
+    <input class="form-control" id="landlord-street-2" name="landlord-street-2" type="text">
+</div>
+<div class="form-group">
+    <label class="form-label" for="landlord-address">Town or City</label>
+    <input class="form-control" id="landlord-town" name="landlord-town" type="text">
+</div>
+<div class="form-group">
+    <label class="form-label" for="landlord-address">County</label>
+    <input class="form-control" id="landlord-county" name="landlord-county" type="text">
+</div>
+<div class="form-group">
+    <label class="form-label" for="landlord-address">Postcode</label>
+    <input class="form-control" id="landlord-postcode" name="landlord-postcode" type="text">
+</div>
                 <input type="submit" class="button" value="Continue">
             </form>
         </div>
