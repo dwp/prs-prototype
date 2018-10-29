@@ -1,0 +1,78 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <a href="/onlineform_v7/dr-rent-details.html" class="link-back">Back</a>
+            <h1 class="heading-large">Tenant details</h1>
+            <!--         <p>We need this so we can pay you.</p>
+ -->
+            <form action="/onlineform_v7/dr-landlord-details" method="post" class="form">
+                <div class="form-group">
+                    <label class="form-label" for="first-name-1">Full name</label>
+                    <input class="form-control" id="first-name-1" name="first-name-1" type="text">
+                </div>
+                <div class="form-group">
+                    <fieldset>
+                        <legend>
+                            <label class="form-label" for="first-name-2">Date of birth</label>
+                            <span class="form-hint">For example, 31 3 1980</span>
+                        </legend>
+                        <div class="form-date">
+                            <div class="form-group form-group-day">
+                                <label class="form-label" for="dob-day">Day</label>
+                                <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                            </div>
+                            <div class="form-group form-group-month">
+                                <label class="form-label" for="dob-month">Month</label>
+                                <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                            </div>
+                            <div class="form-group form-group-year">
+                                <label class="form-label" for="dob-year">Year</label>
+                                <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
+                            </div>
+                        </div>
+                </div>
+                </fieldset>
+                <div class="form-group">
+                    <label class="form-label" for="tenant-address">Address</label>
+                    <label class="form-label" for="tenant-street">Building or street</label>
+                    <input class="form-control" id="tenant-street" name="tenant-street" type="text">
+                    <p></p>
+                    <input class="form-control" id="tenant-street-2" name="tenant-street-2" type="text">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="tenant-address">Town or City</label>
+                    <input class="form-control" id="tenant-town" name="tenant-town" type="text">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="tenant-address">County</label>
+                    <input class="form-control" id="tenant-county" name="tenant-county" type="text">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="tenant-address">Postcode</label>
+                    <input class="form-control" id="tenant-postcode" name="tenant-postcode" type="text">
+                </div>
+                <!--                 <form action="address-postcode" method="" autocomplete="off">
+ -->
+                <!-- <div class="form-group" data-required data-error="Enter your postcode">
+    {% import "onlineform_v2/addressPicker.html" as addressPicker %} {{ addressPicker.get("tenant") }} -->
+                <!--      <div class="c-field-submit__row">
+                        <div class="c-field-submit__capture">
+                            <input class="form-control form-control-1-1" id="postcode" type="text" name="postcode" class="form-control form-control-1-4" value="{{ postcode }}">
+                        </div>
+                        <div class="c-field-submit__action">
+                            <input type="submit" class="button" value="Find UK address">
+                        </div>
+                    </div> -->
+                <!-- </div> -->
+                <!--<p><a href="contact-details">Enter address manually</a></p>
+ -->
+                <!--                 </form>
+ -->
+                <input type="submit" class="button" value="Continue">
+            </form>
+        </div>
+    </div>
+    </div>
+</main>
+{% endblock %}

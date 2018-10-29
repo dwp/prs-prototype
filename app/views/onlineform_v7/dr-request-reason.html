@@ -1,0 +1,107 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <a href="/onlineform_v7/dr-arrears.html" class="link-back">Back</a>
+            <h1 class="heading-large">What is the reason for this request?</h1>
+            <p>Please select all that apply for your tenant.</p>
+            <form action="/onlineform_v7/dr-rent-details" method="post" class="form">
+                <!--                     << health >>
+ -->
+                <div class="form-group">
+                    <fieldset>
+                        <div id="reasons_div">
+                            <h4 class="heading-small">Health</h4>
+                            <div class="multiple-choice">
+                                <input id="reason-type-2" name="reason_for_request" type="checkbox" value="Mental health condition" data-uncheck="['other']">
+                                <label for="reason-type-2">Mental health condition</label>
+                            </div>
+                    </fieldset>
+                    <!--                     << addiction and domestic violence >>
+ -->
+                    <fieldset>
+                        <h4 class="heading-small">Addiction and domestic violence</h4>
+                        <div class="multiple-choice">
+                            <input id="reason-type-3" name="reason_for_request" type="checkbox" value="Drug, alcohol or other addiction problems" data-uncheck="['other']">
+                            <label for="reason-type-3">Drug, alcohol or addiction problems
+                            </label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="reason-type-4" name="reason_for_request" type="checkbox" value="Domestic violence or abuse" data-uncheck="['other']">
+                            <label for="reason-type-4">Domestic violence or abuse</label>
+                        </div>
+                    </fieldset>
+                    <!--                     << family >>
+ -->
+                    <fieldset>
+                        <h4 class="heading-small">Family</h4>
+                        <div class="multiple-choice">
+                            <input id="reason-type-5" name="reason_for_request" type="checkbox" value="Learning difficulties" data-uncheck="['other']">
+                            <label for="reason-type-5">Learning difficulties (including literacy or numeracy problems)
+                            </label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="reason-type-7" name="reason_for_request" type="checkbox" value="Young claimant" data-uncheck="['other']">
+                            <label for="reason-type-7">Young claimant (16 to 17 year old or care leaver)</label>
+                        </div>
+                    </fieldset>
+                    <!--                     << money and housing >>
+ -->
+                    <fieldset>
+                        <h4 class="heading-small">Money and housing</h4>
+                        <div class="multiple-choice">
+                            <input id="reason-type-8" name="reason_for_request" type="checkbox" value="Severe or multiple debt problems" data-uncheck="['other']">
+                            <label for="reason-type-8">Debt problems
+                            </label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="reason-type-9" name="reason_for_request" type="checkbox" value="In temporary and/or supported accommodation" data-uncheck="['other']">
+                            <label for="reason-type-9">Previously in temporary and/or supported accommodation
+                            </label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="reason-type-10" name="reason_for_request" type="checkbox" value="Homeless" data-uncheck="['other']">
+                            <label for="reason-type-10">Previously homeless or in and out of homelessness</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="reason-type-11" name="reason_for_request" type="checkbox" value="At risk of eviction or repossession" data-uncheck="['other']">
+                            <label for="reason-type-11">At risk of eviction or repossession
+                            </label>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <br>
+                        <h4 class="heading-small form-group">Or</h4>
+                        <div class="multiple-choice" data-target="other-reason">
+                            <input id="reason-type-12" name="reason_for_request" type="checkbox" value="other" data-uncheck="['Mental health condition', 'Drug, alcohol or addiction problems', 'Learning difficulties', 'Family with multiple, complex needs', 'Young claimant', 'Severe or multiple debt problems', 'In temporary and/or supported accommodation', 'Homeless', 'At threat of eviction or repossession']">
+                            <label for="reason-type-12">None of the above</label>
+                        </div>
+                        <div class="panel panel-border-narrow js-hidden" id="other-reason">
+                            <label class="form-label" for="none">Tell us more about your reason for application</label>
+                            <textarea class="form-control" name="reason_for_request" rows="5"></textarea>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <input type="submit" class="button" value="Continue">
+            </form>
+            </div>
+</main>
+{% endblock %} {% block page_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    window.CHECKBOX_UNCHECK.setup()
+    var inputs = document.querySelectorAll('#reasons_div input')
+    var textdiv = document.querySelector('#other-reason')
+    var textarea = textdiv.querySelector('textarea')
+    for (var i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener('click', function(e) {
+            if (textdiv.className.indexOf('js-hidden') === -1) {
+                textdiv.setAttribute('aria-hidden', true)
+                textdiv.className += ' js-hidden'
+                textarea.value = ''
+            }
+        })
+    }
+})
+</script>
+{% endblock %}

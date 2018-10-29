@@ -1,0 +1,67 @@
+{% extends "layout.html" %} {% block page_title %} GOV.UK prototype kit {% endblock %} {% block content %}
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <a href="/onlineform_v7/arrears.html" class="link-back">Back</a>
+            <form action="/onlineform_v7/rent-details" method="post" class="form">
+                <h1 class="heading-large">Rent arrears</h1>
+                <label class="form-label" for="total-rent-outstanding">How much rent does the tenant currently owe you?</label>
+                <div class="govuk-currency-input">
+                    <div class="govuk-currency-input__inner">
+                        <span class="govuk-currency-input__inner__unit">£</span>
+                        <input class="govuk-currency-input__inner__input form-control form-control-1-4" aria-label="Enter amount in pounds" name="outstanding-rent-amount" data-non-numeric="" type="text" id="outstanding-rent-amount" pattern="[0-9]\d*(\.\d+)?">
+                    </div>
+                    <br>
+                    <fieldset>
+                        <legend>
+                            <label class="form-label" for="missing-payment-start">Date of first missing payment</label>
+                            <span class="form-hint">For example, 31 3 1980</span>
+                        </legend>
+                        <div class="form-date">
+                            <div class="form-group form-group-day">
+                                <label class="form-label" for="missing-payment-start-day">Day</label>
+                                <input class="form-control" id="missing-payment-start-day" name="missing-payment-start-day" type="number" pattern="[0-9]*" min="0" max="31">
+                            </div>
+                            <div class="form-group form-group-month">
+                                <label class="form-label" for="missing-payment-start-month">Month</label>
+                                <input class="form-control" id="missing-payment-start-month" name="missing-payment-start-month" type="number" pattern="[0-9]*" min="0" max="12">
+                            </div>
+                            <div class="form-group form-group-year">
+                                <label class="form-label" for="missing-payment-start-year">Year</label>
+                                <input class="form-control" id="missing-payment-start-year" name="missing-payment-start-year" type="number" pattern="[0-9]*" min="0" max="2018">
+                            </div>
+                    </fieldset>
+                    <br>
+                    <div class="form-group">
+                        <fieldset>
+                            <legend>
+                                <label class="form-label" for="first-name-2">Date of most recent missing payment</label>
+                            </legend>
+                            <div class="form-date">
+                                <div class="form-group form-group-day">
+                                    <label class="form-label" for="missing-payment-end-day">Day</label>
+                                    <input class="form-control" id="missing-payment-end-day" name="missing-payment-end-day" type="number" pattern="[0-9]*" min="0" max="31">
+                                </div>
+                                <div class="form-group form-group-month">
+                                    <label class="form-label" for="missing-payment-end-month">Month</label>
+                                    <input class="form-control" id="missing-payment-end-month" name="missing-payment-end-month" type="number" pattern="[0-9]*" min="0" max="12">
+                                </div>
+                                <div class="form-group form-group-year">
+                                    <label class="form-label" for="missing-payment-end-year">Year</label>
+                                    <input class="form-control" id="missing-payment-end-year" name="missing-payment-end-year" type="number" pattern="[0-9]*" min="0" max="2018">
+                                </div>
+                        </fieldset>
+                        </div>
+                        </details>
+                        <br>
+                    </div>
+                    <input type="submit" class="button" value="Continue">
+            </form>
+            </div>
+            </div>
+        </div>
+        </form>
+    </div>
+    </div>
+</main>
+{% endblock %} {% block scripts %} {{ super() }} }) {% endblock %}
