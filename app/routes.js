@@ -792,6 +792,52 @@ router.get('/onlineform_v6_private/service-charge-type', function(req, res) {
 })
 
 
+////// Online form v7 ///////
+
+
+router.get('/onlineform_v7/arrears', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    var requestType = req.query.requestType
+
+    if (requestType === 'Direct rent payment') {
+        // redirect to the relevant page
+        res.redirect('/onlineform_v7/dr-arrears')
+
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v7/arrears')
+    }
+})
+
+
+router.get('/onlineform_v7/dr-rent-details', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    var drarrears = req.query.drarrears
+
+    if (drarrears === 'false') {
+        // redirect to the relevant page
+        res.redirect('/onlineform_v7/dr-request-reason')
+
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v7/dr-rent-details')
+    }
+})
+
+router.get('/onlineform_v7/rent-arrears-details', function(req, res) {
+    // get the answer from the query string (eg. ?over18=false)
+    var arrears = req.query.arrears
+
+    if (arrears === 'false') {
+        // redirect to the relevant page
+        res.redirect('/onlineform_v7/request-reason')
+
+    } else {
+        // if over18 is any other value (or is missing) render the page requested
+        res.render('onlineform_v7/rent-arrears-details')
+    }
+})
+
 
 
 module.exports = router
