@@ -1,0 +1,33 @@
+.govuk-currency-input__inner {
+  position: relative;
+}
+
+.govuk-currency-input__input {
+  min-width: 150px;
+  padding-left: 25px;
+}
+
+.govuk-currency-input__unit {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: block;
+  width: 21px;
+  height: 40px;
+
+  box-sizing: border-box;
+  border: solid transparent;
+  border-width: 2px 0 2px 2px;
+  padding: 5px 0;
+
+  @include govuk-font($size: 19, $weight: bold);
+  line-height: 28px;
+  text-align: right;
+}
+
+@include govuk-media-query($from: tablet) {
+  .govuk-currency-input__unit {
+    line-height: 26px;
+  }
+}
