@@ -8,3 +8,10 @@ if (window.console && window.console.info) {
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 })
+
+// Check and uncheck checkbox groups
+// E.g. When a checkbox is checked, others are un-checked
+var container = $(document.body)
+var checkboxGroup = new window.GOVUK.CheckboxGroup()
+container.on('click', 'input[type=checkbox][data-check]', checkboxGroup.handle)
+container.on('click', 'input[type=checkbox][data-uncheck]', checkboxGroup.handle)
