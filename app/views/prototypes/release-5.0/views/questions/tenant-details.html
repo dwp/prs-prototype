@@ -1,0 +1,121 @@
+{% extends "../question.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+
+      <h1 class="govuk-heading-l">Tenant details</h1>
+
+      {{ govukInput({
+        label: {
+          text: "Full name"
+        },
+        id: "tenant-full-name",
+        name: "tenantFullName",
+        classes: "govuk-input--width-20",
+        value: data.tenantFullName
+      }) }}
+
+      {{ govukDateInput({
+        id: "tenant-birth-date",
+        fieldset: {
+          legend: {
+            text: "Date of birth"
+          }
+        },
+        hint: {
+          text: "For example, 31 3 1980"
+        },
+        items: [
+          {
+            label: "Day",
+            name: "tenantBirthDate[day]",
+            id: "tenant-birth-date-day",
+            classes: "govuk-input--width-2",
+            value: data.tenantBirthDate.day
+          },
+          {
+            label: "Month",
+            name: "tenantBirthDate[month]",
+            id: "tenant-birth-date-month",
+            classes: "govuk-input--width-2",
+            value: data.tenantBirthDate.month
+          },
+          {
+            label: "Year",
+            name: "tenantBirthDate[year]",
+            id: "tenant-birth-date-year",
+            classes: "govuk-input--width-4",
+            value: data.tenantBirthDate.year
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-body govuk-!-margin-bottom-1">Address</h2>
+
+      {{ govukInput({
+        label: {
+          html: 'Building or street<span class="govuk-visually-hidden"> line 1</span>'
+        },
+        formGroup: {
+          classes: 'govuk-!-margin-bottom-2'
+        },
+        id: "tenant-address1",
+        name: "tenantAddress1",
+        value: data.tenantAddress1
+      }) }}
+
+      {{ govukInput({
+        label: {
+          html: 'Building or street<span class="govuk-visually-hidden"> line 2</span>',
+          classes: "govuk-visually-hidden"
+        },
+        formGroup: {
+          classes: "govuk-!-margin-bottom-4"
+        },
+        id: "tenant-address2",
+        name: "tenantAddress2",
+        value: data.tenantAddress2
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Town or city"
+        },
+        id: "tenant-town",
+        name: "tenantTown",
+        classes: "govuk-input--width-20",
+        value: data.tenantTown
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "County"
+        },
+        id: "tenant-county",
+        name: "tenantCounty",
+        classes: "govuk-input--width-20",
+        value: data.tenantCounty
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Postcode"
+        },
+        id: "tenant-postcode",
+        name: "tenantPostcode",
+        classes: "govuk-input--width-10",
+        value: data.tenantPostcode
+      }) }}
+
+      {{ govukButton({
+        text: "Save Changes" if isEditMode else "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

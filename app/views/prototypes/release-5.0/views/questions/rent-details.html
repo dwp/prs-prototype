@@ -1,0 +1,56 @@
+{% extends "../question.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+
+      <h1 class="govuk-heading-l">Rent details</h1>
+
+      <div class="govuk-form-group govuk-currency-input">
+        <label class="govuk-label" for="rent-amount">
+          Rent amount
+        </label>
+        <div class="govuk-currency-input__inner">
+          <span class="govuk-currency-input__unit">£</span>
+          <input class="govuk-input govuk-currency-input__input govuk-!-width-one-quarter" aria-describedby="Enter amount in pounds" name="rentAmount" id="rent-amount" type="number" step="0.01" value="{{ data.rentAmount }}">
+        </div>
+      </div>
+
+      {{ govukRadios({
+        idPrefix: "rent-frequency",
+        name: "rentFrequency",
+        fieldset: {
+          legend: {
+            text: "How often is the rent paid?"
+          }
+        },
+        items: [
+          {
+            value: "Weekly",
+            text: "Weekly",
+            checked: checked("rentFrequency", "Weekly")
+          },
+          {
+            value: "Every 2 weeks",
+            text: "Every 2 weeks",
+            checked: checked("rentFrequency", "Every 2 weeks")
+          },
+          {
+            value: "Monthly",
+            text: "Monthly",
+            checked: checked("rentFrequency", "Monthly")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save Changes" if isEditMode else "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

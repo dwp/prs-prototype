@@ -1,0 +1,187 @@
+{% extends "../question.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">What is the reason for this request?</h1>
+      <p class="govuk-!-margin-bottom-7">Select all that apply for your tenant:</p>
+
+      {{ govukCheckboxes({
+        idPrefix: "reason-health",
+        name: "reason",
+        fieldset: {
+          legend: {
+            text: "Health",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Mental health condition",
+            text: "Mental health condition",
+            checked: checked("reason", "Mental health condition"),
+            attributes: {
+              "data-uncheck": '["reason-none-1"]'
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukCheckboxes({
+        idPrefix: "reason-addiction-violence",
+        name: "reason",
+        fieldset: {
+          legend: {
+            text: "Addiction and domestic violence",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Drug, alcohol or addiction problems",
+            text: "Drug, alcohol or addiction problems",
+            checked: checked("reason", "Drug, alcohol or addiction problems"),
+            attributes: {
+              "data-uncheck": '["reason-none-1"]'
+            }
+          },
+          {
+            value: "Domestic violence or abuse",
+            text: "Domestic violence or abuse",
+            checked: checked("reason", "Domestic violence or abuse"),
+            attributes: {
+              "data-uncheck": '["reason-none-1"]'
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukCheckboxes({
+        idPrefix: "reason-family",
+        name: "reason",
+        fieldset: {
+          legend: {
+            text: "Family",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Learning difficulties",
+            text: "Learning difficulties (including literacy or numeracy problems)",
+            checked: checked("reason", "Learning difficulties"),
+            attributes: {
+              "data-uncheck": '["reason-none-1"]'
+            }
+          },
+          {
+            value: "Young claimant",
+            text: "Young claimant (16 to 17 year old or care leaver)",
+            checked: checked("reason", "Young claimant"),
+            attributes: {
+              "data-uncheck": '["reason-none-1"]'
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukCheckboxes({
+        idPrefix: "reason-money-housing",
+        name: "reason",
+        fieldset: {
+          legend: {
+            text: "Money and housing",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "In one month of arrears, built up over time",
+            text: "In one month of arrears, built up over time",
+            checked: checked("reason", "In one month of arrears, built up over time"),
+            attributes: {
+              "data-uncheck": '["reason-none-1"]'
+            }
+          },
+          {
+            value: "Debt problems",
+            text: "Debt problems",
+            checked: checked("reason", "Debt problems"),
+            attributes: {
+              "data-uncheck": '["reason-none-1"]'
+            }
+          },
+          {
+            value: "Previously in temporary and/or supported accommodation",
+            text: "Previously in temporary and/or supported accommodation",
+            checked: checked("reason", "Previously in temporary and/or supported accommodation"),
+            attributes: {
+              "data-uncheck": '["reason-none-1"]'
+            }
+          },
+          {
+            value: "Previously homeless or in and out of homelessness",
+            text: "Previously homeless or in and out of homelessness",
+            checked: checked("reason", "Previously homeless or in and out of homelessness"),
+            attributes: {
+              "data-uncheck": '["reason-none-1"]'
+            }
+          },
+          {
+            value: "At risk of eviction or repossession",
+            text: "At risk of eviction or repossession",
+            checked: checked("reason", "At risk of eviction or repossession"),
+            attributes: {
+              "data-uncheck": '["reason-none-1"]'
+            }
+          }
+        ]
+      }) }}
+
+      {% set reasonNotesHtml %}
+      {{ govukTextarea({
+        id: "reason-notes",
+        name: "reasonNotes",
+        label: {
+          text: "Tell us more about the reason for your application"
+        },
+        value: data.reasonNotes
+      }) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+        idPrefix: "reason-none",
+        name: "reason",
+        fieldset: {
+          legend: {
+            text: "Or",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "None",
+            text: "None of the above",
+            checked: checked("reason", "None"),
+            attributes: {
+              "data-uncheck": '["reason-health-1", "reason-addiction-violence-1", "reason-addiction-violence-2", "reason-family-1", "reason-family-2", "reason-money-housing-1", "reason-money-housing-2", "reason-money-housing-3", "reason-money-housing-4"]'
+            },
+            conditional: {
+              html: reasonNotesHtml
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save Changes" if isEditMode else "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}
