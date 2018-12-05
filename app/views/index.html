@@ -40,24 +40,20 @@
           <div class="govuk-grid-column-one-third">
             <dl>
               <dt class="govuk-heading-s">Feature</dt>
-              <dd class="govuk-body">Release 4.2</dd>
+              <dd class="govuk-body">Release 5.0</dd>
             </dl>
           </div>
 
           <div class="govuk-grid-column-one-third">
             <dl>
               <dt class="govuk-heading-s">Related stories</dt>
-              <dd class="govuk-body">
-                PL-827<br>
-                PL-856
-              </dd>
+              <dd class="govuk-body">PL-854</dd>
             </dl>
           </div>
         </div>
 
         <h3 class="govuk-heading-s">Changes</h3>
-        <p>Various content changes to remove please, apostrophes and button hyphen.</p>
-        <p>Enable support for brackets in various fields.</p>
+        <p>Check answers content changes (no warning) and updated button text.</p>
 
         <h3 class="govuk-heading-s">Hypothesis</h3>
         <p>None.</p>
@@ -67,7 +63,7 @@
 
         {{ govukButton({
           text: "View prototype",
-          href: "/release-4.2",
+          href: "/release-5.0",
           classes: "govuk-button--start"
         }) }}
       </div>
@@ -75,6 +71,67 @@
 
     </div>
     {# End of most recent box #}
+
+    <h2 class="govuk-heading-l">All versions</h2>
+
+    {# Start of hidden panel #}
+    <details class="govuk-details all-versions">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Show all versions
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+
+        {# Start of prototype write up #}
+        <div class="prototype-write-up">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+              <dl>
+                <dt class="govuk-heading-s">Date of release</dt>
+                <dd class="govuk-body">TBC</dd>
+              </dl>
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+              <dl>
+                <dt class="govuk-heading-s">Feature</dt>
+                <dd class="govuk-body">Release 4.2</dd>
+              </dl>
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+              <dl>
+                <dt class="govuk-heading-s">Related stories</dt>
+                <dd class="govuk-body">
+                  PL-827<br>
+                  PL-856
+                </dd>
+              </dl>
+            </div>
+          </div>
+
+          <h3 class="govuk-heading-s">Changes</h3>
+          <p>Various content changes to remove please, apostrophes and button hyphen.</p>
+          <p>Enable support for brackets in various fields.</p>
+
+          <h3 class="govuk-heading-s">Hypothesis</h3>
+          <p>None.</p>
+
+          <h3 class="govuk-heading-s">Research notes</h3>
+          <p>Research done with private and social landlords.</p>
+
+          {{ govukButton({
+            text: "View prototype",
+            href: "/release-4.2",
+            classes: "govuk-button--start"
+          }) }}
+        </div>
+        {# End of prototype write up #}
+
+      </div>
+    </details>
+    {# End of hidden panel #}
 
   </div>
 </div>
