@@ -1,0 +1,34 @@
+{% extends "../outcome.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukPanel({
+      titleText: "Application complete",
+      html: "20th December 2018",
+      classes: "outcome"
+    }) }}
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-7">What happens next</h2>
+
+    <p>We’ve received your application.</p>
+    <p>If your tenant gets Universal Credit, we’ll try to deal with your application before their next payment date.</p>
+    <p>Sometimes we cannot manage this. For example, if:</p>
+    <ul class="govuk-list govuk-list--bullet">
+  <li>we got your application too close to your tenant’s next payment date</li>
+  <li>they dispute the APA application</li>
+  <li>other action is needed on their Universal Credit claim</li>
+  <li>they do not get Universal Credit</li>
+</ul>
+<p>Do not make another application for the same tenant until we’ve told you the outcome of this application.</p>
+
+
+
+
+
+    <p><a class="govuk-link" href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a></p>
+
+  </div>
+</div>
+{% endblock %}
