@@ -170,7 +170,7 @@ router.all('/questions/landlord-bank-details', (req, res) => {
  */
 router.all('/questions/check-answers', (req, res) => {
   if (req.method === 'POST') {
-    return res.redirect('../outcome/complete-v3')
+    return res.redirect('../outcome/complete-v2')
   }
 
   res.render(`${__dirname}/views/questions/check-answers`, {
