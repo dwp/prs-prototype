@@ -1,0 +1,290 @@
+{% extends "../question.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Check your answers before sending</h1>
+
+    <dl class="app-check-your-answers app-check-your-answers--long">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question govuk-heading-s govuk-!-margin-bottom-2">
+          Application details
+        </dt>
+        <dd class="app-check-your-answers__change">
+          <a href="{{ basePath + "/questions/type-of-payment" }}?change">
+            Change<span class="govuk-visually-hidden"> application details</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Type of payment
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{ data.typeOfPayment }}
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Reason for application
+        </dt>
+        <dd class="app-check-your-answers__answer">
+      {% if data.twoMonthsArrears === "yes" -%}
+        Two months or more of rent arrears
+      {% else %}
+        {% if (data.reason and "None" in data.reason) %}
+          {{ data.reasonNotes }}
+        {% else %}
+          {% for item in data.reason %}{% if not loop.first %}
+          <br>{% endif %} {{ item }} {%- endfor %}
+        {% endif %}
+      {%- endif %}
+        </dd>
+      </div>
+    </dl>
+
+    {% if data.typeOfPayment and data.typeOfPayment !== "Direct rent payment" %}
+    <dl class="app-check-your-answers app-check-your-answers--long">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question govuk-heading-s govuk-!-margin-bottom-2">
+          Rent arrears details
+        </dt>
+        <dd class="app-check-your-answers__change">
+          <a href="{{ basePath + "/questions/rent-arrears" }}?change">
+            Change<span class="govuk-visually-hidden"> rent arrears details</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Total rent outstanding
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          £{{ data.rentOutstandingFormatted }}
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Date of first missing payment
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{ data.rentFirstMissingDate.formatted }}
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Date of last missing payment
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{ data.rentLastMissingDate.formatted }}
+        </dd>
+      </div>
+    </dl>
+    {% endif %}
+
+    <dl class="app-check-your-answers app-check-your-answers--long">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question govuk-heading-s govuk-!-margin-bottom-2">
+          Rent details
+        </dt>
+        <dd class="app-check-your-answers__change">
+          <a href="{{ basePath + "/questions/rent-details" }}?change">
+            Change<span class="govuk-visually-hidden"> rent details</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Rent amount
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          £{{ data.rentAmountFormatted }}
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Rent frequency
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{ data.rentFrequency }}
+        </dd>
+      </div>
+    </dl>
+
+    <dl class="app-check-your-answers app-check-your-answers--long">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question govuk-heading-s govuk-!-margin-bottom-2">
+          Tenant details
+        </dt>
+        <dd class="app-check-your-answers__change">
+          <a href="{{ basePath + "/questions/tenant-details" }}?change">
+            Change<span class="govuk-visually-hidden"> tenant details</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Name
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{ data.tenantFullName }}
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Date of birth
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{ data.tenantBirthDate.formatted }}
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Address
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{ data.tenantAddress1 }}
+          {% if data.tenantAddress2 %}<br>{{ data.tenantAddress2 }}{% endif %}
+          {% if data.tenantTown %}<br>{{ data.tenantTown }}{% endif %}
+          {% if data.tenantCounty %}<br>{{ data.tenantCounty }}{% endif %}
+          {% if data.tenantPostcode %}<br>{{ data.tenantPostcode }}{% endif %}
+        </dd>
+      </div>
+    </dl>
+
+    <dl class="app-check-your-answers app-check-your-answers--long">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question govuk-heading-s govuk-!-margin-bottom-2">
+          Landlord details
+        </dt>
+        <dd class="app-check-your-answers__change">
+          <a href="{{ basePath + "/questions/landlord-details" }}?change">
+            Change<span class="govuk-visually-hidden"> landlord details</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Name
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{ data.landlordFullName }}
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Phone number
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{ data.landlordTelephone }}
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Email address
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{ data.landlordEmail }}
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Address
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{ data.landlordAddress1 }}
+          {% if data.landlordAddress2 %}<br>{{ data.landlordAddress2 }}{% endif %}
+          {% if data.landlordTown %}<br>{{ data.landlordTown }}{% endif %}
+          {% if data.landlordCounty %}<br>{{ data.landlordCounty }}{% endif %}
+          {% if data.landlordPostcode %}<br>{{ data.landlordPostcode }}{% endif %}
+        </dd>
+      </div>
+    </dl>
+
+    <dl class="app-check-your-answers app-check-your-answers--long">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question govuk-heading-s govuk-!-margin-bottom-2">
+          Landlord bank details
+        </dt>
+        <dd class="app-check-your-answers__change">
+          <a href="{{ basePath + "/questions/landlord-bank-details" }}?change">
+            Change<span class="govuk-visually-hidden"> landlord bank details</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Account holder
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{ data.landlordAccountHolder }}
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Sort code
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{ data.landlordSortCode1 }}–{{ data.landlordSortCode2 }}–{{ data.landlordSortCode3 }}
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Account number
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{ data.landlordAccountNumber }}
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Payment reference
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{ data.landlordPaymentReference }}
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Creditor reference number (if known)
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{ data.landlordCreditorReference }}
+        </dd>
+      </div>
+    </dl>
+
+    <form method="post">
+
+      <h2 class="govuk-heading-m">Now send your application</h2>
+      <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+      {{ govukButton({
+        text: "Accept and send application"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

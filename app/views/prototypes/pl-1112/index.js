@@ -41,6 +41,10 @@ router.all('/questions/two-months-arrears', (req, res) => {
     return res.redirect('./check-arrears')
   }
 
+  if (submitted.twoMonthsArrears === 'no' && saved.typeOfPayment === 'Rent arrears') {
+    return res.redirect('change' in req.query ? './check-answers' : '../outcome/reject-v1')
+  }
+
   if (submitted.twoMonthsArrears === 'no') {
     return res.redirect('change' in req.query ? './check-answers' : './reason-for-request')
   }
@@ -171,7 +175,7 @@ router.all('/questions/landlord-bank-details', (req, res) => {
  */
 router.all('/questions/check-answers', (req, res) => {
   if (req.method === 'POST') {
-    return res.redirect('../outcome/complete-v2')
+    return res.redirect('../outcome/complete')
   }
 
   res.render(`${__dirname}/views/questions/check-answers`, {
