@@ -35,9 +35,14 @@ router.all('/questions/type-of-payment', (req, res) => {
  */
 router.all('/questions/two-months-arrears', (req, res) => {
   const submitted = req.body
+  const saved = req.session.data
 
   if (submitted.twoMonthsArrears === 'yes') {
     return res.redirect('./check-arrears')
+  }
+
+  if (submitted.twoMonthsArrears === 'no' && saved.typeOfPayment === 'Rent arrears') {
+    return res.redirect('change' in req.query ? './check-answers' : '../outcome/reject-v1')
   }
 
   if (submitted.twoMonthsArrears === 'no') {
