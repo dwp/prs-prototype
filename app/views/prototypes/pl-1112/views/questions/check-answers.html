@@ -277,7 +277,18 @@
     <form method="post">
 
       <h2 class="govuk-heading-m">Now send your application</h2>
-      <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+      <p>By sending the application you’re confirming that:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+      <li>the information you’re giving is correct and complete</li>
+      <li>you’ll report any changes to your tenant’s circumstances which might be relevant to their housing by calling 0800 328 5644</li>
+      <li>you’ll pay back any money you’re overpaid if you’re asked to</li>
+    </ul>
+
+ {{ govukWarningText({
+        text: "You could be prosecuted or have your payments stopped if you deliberately give wrong or incomplete information.",
+        iconFallbackText: "Important"
+      }) }}
 
       {{ govukButton({
         text: "Accept and send application"
