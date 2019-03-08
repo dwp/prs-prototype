@@ -1,0 +1,180 @@
+{% extends "../page.html" %}
+
+{% block pageTitle -%}
+  Cookies – {{ serviceName }}
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Cookies
+    </h1>
+
+    <p>‘Apply for direct rent payments’ puts small files (known as ‘cookiesʼ) on to your computer or other device to collect information about how you browse the site.</p>
+
+    <p>We use cookies to:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>remember the notifications youʼve seen so that we donʼt show them to you again</li>
+      <li>remember your progress while youʼre using the online service for security purposes</li>
+      <li>measure how you use our service so that we can improve it for you</li>
+    </ul>
+
+    <p>We donʼt use cookies to identify you personally.</p>
+
+    {{ govukTable({
+      caption: "Cookies we use on ‘Apply for direct rent payments’",
+      captionClasses: "govuk-heading-m",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Name"
+        },
+        {
+          text: "Purpose"
+        },
+        {
+          text: "Expires",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "seen_cookie_message"
+          },
+          {
+            text: "Saves a message to let us know that you’ve seen our cookie message"
+          },
+          {
+            text: "1 month",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "myappsessionid"
+          },
+          {
+            text: "Saves the information entered during the session in an encrypted format"
+          },
+          {
+            text: "Once the form is submitted",
+            format: "numeric"
+          }
+        ]
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">
+      Measuring website usage (Google Analytics)
+    </h2>
+
+    <p>We use Google Analytics to collect information about how you use ‘Apply for direct rent payments’. We do this to help make sure the service is meeting the needs of its users and to help make improvements.</p>
+    <p>Google Analytics stores information about:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>the pages you visit on ‘Apply for direct rent payments’</li>
+      <li>how long you spend on each ‘Apply for direct rent payments’ page</li>
+      <li>how you got to the service</li>
+      <li>what you click on while you’re using the service</li>
+    </ul>
+
+    <p>We do not collect or store your personal information (for example your name or address) so this information can’t be used to identify who you are.</p>
+    <p>We do not allow Google to use or share our analytics data.</p>
+
+    {{ govukTable({
+      caption: "Google Analytics sets the following cookies.",
+      captionClasses: "govuk-body govuk-!-font-weight-regular",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Name"
+        },
+        {
+          text: "Purpose"
+        },
+        {
+          text: "Expires",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "_ga"
+          },
+          {
+            text: "This helps us count how many people visit GOV.UK by tracking if you’ve visited before"
+          },
+          {
+            text: "2 years",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "_gid"
+          },
+          {
+            text: "This helps us count how many people visit GOV.UK by tracking if you’ve visited before"
+          },
+          {
+            text: "24 hours",
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "_gat"
+          },
+          {
+            text: "Used to manage the rate at which page view requests are made"
+          },
+          {
+            text: "10 minutes",
+            format: "numeric"
+          }
+        ]
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">
+      If your cookies are switched off
+    </h2>
+
+    <p>You’ll see an error message when you try to use the service if your cookies are disabled.</p>
+    <p>You cannot complete the application for direct rent payments if cookies are switched off.</p>
+
+    <h2 class="govuk-heading-m">
+      If your cookies are switched on
+    </h2>
+
+    <p>How to turn on cookies depends on the <a href="https://whatbrowser.org/">browser you’re using</a> and how up to date it is.</p>
+    <p>Find out how to change your settings for the most popular browsers, including:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="https://support.microsoft.com/en-gb/help/17442">Internet Explorer</a></li>
+      <li><a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences">Mozilla Firefox</a></li>
+      <li><a href="https://support.google.com/accounts/answer/61416?hl=en">Google Chrome</a></li>
+      <li><a href="https://support.apple.com/en-gb/guide/safari/manage-cookies-and-website-data-sfri11471/mac">Safari</a>, commonly used on iPads, iPhones and other Apple computers</li>
+    </ul>
+
+    <p>Find out how to <a href="https://ico.org.uk/your-data-matters/online/cookies/">manage cookies</a>, for other browsers.</p>
+
+    <h2 class="govuk-heading-m">
+      If you do not want to accept our cookie policy
+    </h2>
+
+    <p>If you do not want to accept our cookie policy on your own computer or device you can:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>use a computer or device belonging to someone else (with their permission)</li>
+      <li>use a computer or device at a public facility such as a library or internet cafe</li>
+    </ul>
+
+  </div>
+</div>
+{% endblock %}
