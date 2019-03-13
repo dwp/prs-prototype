@@ -42,7 +42,7 @@ router.all('/questions/two-months-arrears', (req, res) => {
   }
 
   if (submitted.twoMonthsArrears === 'no' && saved.typeOfPayment === 'Rent arrears') {
-    return res.redirect('change' in req.query ? './check-answers' : '../outcome/reject-v1')
+    return res.redirect('change' in req.query ? './check-answers' : '../outcome/reject-v2')
   }
 
   if (submitted.twoMonthsArrears === 'no') {
