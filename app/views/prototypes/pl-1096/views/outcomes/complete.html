@@ -1,0 +1,19 @@
+{% extends "../outcome.html" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukPanel({
+      titleText: "Application complete"
+    }) }}
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-7">What happens next</h2>
+
+    <p>We’ve received your application.</p>
+    <p>We’ll process your application and let you know whether it’s successful.</p>
+    <p><a class="govuk-link" href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a></p>
+
+  </div>
+</div>
+{% endblock %}
