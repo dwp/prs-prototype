@@ -39,9 +39,11 @@
 
 {% block header %}
   {% include "includes/cookie-banner.html" %}
+  {% set productName = release if release else null %}
   {# Set serviceName in config.js. #}
   {{ govukHeader({
     homepageUrl: "/",
+    productName: productName,
     serviceName: serviceName,
     serviceUrl: basePath,
     containerClasses: "govuk-width-container"
