@@ -1,39 +1,20 @@
 {% extends "../question.html" %}
 
+{% block pageTitle -%}
+  Check answers – {{ serviceName }} – GOV.UK
+{%- endblock %}
+
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
 
     <h1 class="govuk-heading-l">Check your answers before sending</h1>
 
-    <dl class="app-check-your-answers app-check-your-answers--long">
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question govuk-heading-s govuk-!-margin-bottom-2">
-          Application details
-        </dt>
-        <dd class="app-check-your-answers__change">
-          <a href="{{ basePath + "/questions/type-of-payment" }}?change">
-            Change<span class="govuk-visually-hidden"> application details</span>
-          </a>
-        </dd>
-      </div>
+    <h2 class="govuk-heading-m">Application details</h2>
 
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Type of payment
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          {{ data.typeOfPayment }}
-        </dd>
-      </div>
-
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Reason for application
-        </dt>
-        <dd class="app-check-your-answers__answer">
+    {% set reasonFormatted %}
       {% if data.twoMonthsArrears === "yes" -%}
-        Two months or more of rent arrears
+        Two months or more of rent arrears
       {% else %}
         {% if (data.reason and "None" in data.reason) %}
           {{ data.reasonNotes }}
@@ -42,250 +23,434 @@
           <br>{% endif %} {{ item }} {%- endfor %}
         {% endif %}
       {%- endif %}
-        </dd>
-      </div>
-    </dl>
+    {% endset %}
+
+    {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+      rows: [
+        {
+          key: {
+            text: 'Type of payment'
+          },
+          value: {
+            text: data.typeOfPayment
+          },
+          actions: {
+            items: [
+              {
+                href: basePath + "/questions/type-of-payment?change#type-of-payment-1",
+                text: 'Change',
+                visuallyHiddenText: 'type of payment',
+                classes: 'govuk-link--no-visited-state'
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: 'Reason for application'
+          },
+          value: {
+            html: reasonFormatted
+          },
+          actions: {
+            items: [
+              {
+                href: basePath + "/questions/two-months-arrears?change#two-months-arrears-1",
+                text: 'Change',
+                visuallyHiddenText: 'reason for application',
+                classes: 'govuk-link--no-visited-state'
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
 
     {% if data.typeOfPayment and data.typeOfPayment !== "Direct rent payment" %}
-    <dl class="app-check-your-answers app-check-your-answers--long">
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question govuk-heading-s govuk-!-margin-bottom-2">
-          Rent arrears details
-        </dt>
-        <dd class="app-check-your-answers__change">
-          <a href="{{ basePath + "/questions/rent-arrears" }}?change">
-            Change<span class="govuk-visually-hidden"> rent arrears details</span>
-          </a>
-        </dd>
-      </div>
+    <h2 class="govuk-heading-m">Rent arrears details</h2>
 
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Total rent outstanding
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          £{{ data.rentOutstandingFormatted }}
-        </dd>
-      </div>
-
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Date of first missing payment
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          {{ data.rentFirstMissingDate.formatted }}
-        </dd>
-      </div>
-
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Date of last missing payment
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          {{ data.rentLastMissingDate.formatted }}
-        </dd>
-      </div>
-    </dl>
+    {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+      rows: [
+        {
+          key: {
+            text: 'Total rent outstanding'
+          },
+          value: {
+            text: '£' + data.rentOutstandingFormatted
+          },
+          actions: {
+            items: [
+              {
+                href: basePath + "/questions/rent-arrears?change#rent-outstanding",
+                text: 'Change',
+                visuallyHiddenText: 'total rent outstanding',
+                classes: 'govuk-link--no-visited-state'
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: 'Date of first missing payment'
+          },
+          value: {
+            text: data.rentFirstMissingDate.formatted
+          },
+          actions: {
+            items: [
+              {
+                href: basePath + "/questions/rent-arrears?change#rent-first-missing-date-day",
+                text: 'Change',
+                visuallyHiddenText: 'date of first missing payment',
+                classes: 'govuk-link--no-visited-state'
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: 'Date of last missing payment'
+          },
+          value: {
+            text: data.rentLastMissingDate.formatted
+          },
+          actions: {
+            items: [
+              {
+                href: basePath + "/questions/rent-arrears?change#rent-last-missing-date-day",
+                text: 'Change',
+                visuallyHiddenText: 'date of last missing payment',
+                classes: 'govuk-link--no-visited-state'
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
     {% endif %}
 
-    <dl class="app-check-your-answers app-check-your-answers--long">
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question govuk-heading-s govuk-!-margin-bottom-2">
-          Rent details
-        </dt>
-        <dd class="app-check-your-answers__change">
-          <a href="{{ basePath + "/questions/rent-details" }}?change">
-            Change<span class="govuk-visually-hidden"> rent details</span>
-          </a>
-        </dd>
-      </div>
+    <h2 class="govuk-heading-m">Rent details</h2>
 
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Rent amount
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          £{{ data.rentAmountFormatted }}
-        </dd>
-      </div>
+    {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+      rows: [
+        {
+          key: {
+            text: 'Rent amount'
+          },
+          value: {
+            text: '£' + data.rentAmountFormatted
+          },
+          actions: {
+            items: [
+              {
+                href: basePath + "/questions/rent-details?change#rent-amount",
+                text: 'Change',
+                visuallyHiddenText: 'rent amount',
+                classes: 'govuk-link--no-visited-state'
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: 'Rent frequency'
+          },
+          value: {
+            text: data.rentFrequency
+          },
+          actions: {
+            items: [
+              {
+                href: basePath + "/questions/rent-details?change#rent-frequency-1",
+                text: 'Change',
+                visuallyHiddenText: 'rent frequency',
+                classes: 'govuk-link--no-visited-state'
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
 
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Rent frequency
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          {{ data.rentFrequency }}
-        </dd>
-      </div>
-    </dl>
+    <h2 class="govuk-heading-m">Tenant details</h2>
 
-    <dl class="app-check-your-answers app-check-your-answers--long">
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question govuk-heading-s govuk-!-margin-bottom-2">
-          Tenant details
-        </dt>
-        <dd class="app-check-your-answers__change">
-          <a href="{{ basePath + "/questions/tenant-details" }}?change">
-            Change<span class="govuk-visually-hidden"> tenant details</span>
-          </a>
-        </dd>
-      </div>
+    {% set addressFormatted %}
+      {{ data.tenantAddress1 }}
+      {% if data.tenantAddress2 %}<br>{{ data.tenantAddress2 }}{% endif %}
+      {% if data.tenantTown %}<br>{{ data.tenantTown }}{% endif %}
+      {% if data.tenantCounty %}<br>{{ data.tenantCounty }}{% endif %}
+      {% if data.tenantPostcode %}<br>{{ data.tenantPostcode }}{% endif %}
+    {% endset %}
 
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Name
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          {{ data.tenantFullName }}
-        </dd>
-      </div>
+    {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+      rows: [
+        {
+          key: {
+            text: 'Name'
+          },
+          value: {
+            text: data.tenantFullName
+          },
+          actions: {
+            items: [
+              {
+                href: basePath + "/questions/tenant-details?change#tenant-full-name",
+                text: 'Change',
+                visuallyHiddenText: 'name',
+                classes: 'govuk-link--no-visited-state'
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: 'Date of birth'
+          },
+          value: {
+            text: data.tenantBirthDate.formatted
+          },
+          actions: {
+            items: [
+              {
+                href: basePath + "/questions/tenant-details?change#tenant-birth-date-day",
+                text: 'Change',
+                visuallyHiddenText: 'date of birth',
+                classes: 'govuk-link--no-visited-state'
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: 'Address'
+          },
+          value: {
+            html: addressFormatted
+          },
+          actions: {
+            items: [
+              {
+                href: basePath + "/questions/tenant-details?change#tenant-address1",
+                text: 'Change',
+                visuallyHiddenText: 'address',
+                classes: 'govuk-link--no-visited-state'
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
 
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Date of birth
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          {{ data.tenantBirthDate.formatted }}
-        </dd>
-      </div>
+    <h2 class="govuk-heading-m">Landlord details</h2>
 
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Address
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          {{ data.tenantAddress1 }}
-          {% if data.tenantAddress2 %}<br>{{ data.tenantAddress2 }}{% endif %}
-          {% if data.tenantTown %}<br>{{ data.tenantTown }}{% endif %}
-          {% if data.tenantCounty %}<br>{{ data.tenantCounty }}{% endif %}
-          {% if data.tenantPostcode %}<br>{{ data.tenantPostcode }}{% endif %}
-        </dd>
-      </div>
-    </dl>
+    {% set addressFormatted %}
+      {{ data.landlordAddress1 }}
+      {% if data.landlordAddress2 %}<br>{{ data.landlordAddress2 }}{% endif %}
+      {% if data.landlordTown %}<br>{{ data.landlordTown }}{% endif %}
+      {% if data.landlordCounty %}<br>{{ data.landlordCounty }}{% endif %}
+      {% if data.landlordPostcode %}<br>{{ data.landlordPostcode }}{% endif %}
+    {% endset %}
 
-    <dl class="app-check-your-answers app-check-your-answers--long">
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question govuk-heading-s govuk-!-margin-bottom-2">
-          Landlord details
-        </dt>
-        <dd class="app-check-your-answers__change">
-          <a href="{{ basePath + "/questions/landlord-details" }}?change">
-            Change<span class="govuk-visually-hidden"> landlord details</span>
-          </a>
-        </dd>
-      </div>
+    {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+      rows: [
+        {
+          key: {
+            text: 'Name'
+          },
+          value: {
+            text: data.landlordFullName
+          },
+          actions: {
+            items: [
+              {
+                href: basePath + "/questions/landlord-details?change#landlord-full-name",
+                text: 'Change',
+                visuallyHiddenText: 'name',
+                classes: 'govuk-link--no-visited-state'
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: 'Phone number'
+          },
+          value: {
+            text: data.landlordTelephone
+          },
+          actions: {
+            items: [
+              {
+                href: basePath + "/questions/landlord-details?change#landlord-telephone",
+                text: 'Change',
+                visuallyHiddenText: 'phone number',
+                classes: 'govuk-link--no-visited-state'
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: 'Email address'
+          },
+          value: {
+            text: data.landlordEmail
+          },
+          actions: {
+            items: [
+              {
+                href: basePath + "/questions/landlord-details?change#landlord-email",
+                text: 'Change',
+                visuallyHiddenText: 'email address',
+                classes: 'govuk-link--no-visited-state'
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: 'Address'
+          },
+          value: {
+            html: addressFormatted
+          },
+          actions: {
+            items: [
+              {
+                href: basePath + "/questions/landlord-details?change#landlord-address1",
+                text: 'Change',
+                visuallyHiddenText: 'address',
+                classes: 'govuk-link--no-visited-state'
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
 
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Name
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          {{ data.landlordFullName }}
-        </dd>
-      </div>
+    <h2 class="govuk-heading-m">Landlord bank details</h2>
 
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Phone number
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          {{ data.landlordTelephone }}
-        </dd>
-      </div>
-
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Email address
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          {{ data.landlordEmail }}
-        </dd>
-      </div>
-
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Address
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          {{ data.landlordAddress1 }}
-          {% if data.landlordAddress2 %}<br>{{ data.landlordAddress2 }}{% endif %}
-          {% if data.landlordTown %}<br>{{ data.landlordTown }}{% endif %}
-          {% if data.landlordCounty %}<br>{{ data.landlordCounty }}{% endif %}
-          {% if data.landlordPostcode %}<br>{{ data.landlordPostcode }}{% endif %}
-        </dd>
-      </div>
-    </dl>
-
-    <dl class="app-check-your-answers app-check-your-answers--long">
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question govuk-heading-s govuk-!-margin-bottom-2">
-          Landlord bank details
-        </dt>
-        <dd class="app-check-your-answers__change">
-          <a href="{{ basePath + "/questions/landlord-bank-details" }}?change">
-            Change<span class="govuk-visually-hidden"> landlord bank details</span>
-          </a>
-        </dd>
-      </div>
-
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Account holder
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          {{ data.landlordAccountHolder }}
-        </dd>
-      </div>
-
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Sort code
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          {{ data.landlordSortCode1 }}–{{ data.landlordSortCode2 }}–{{ data.landlordSortCode3 }}
-        </dd>
-      </div>
-
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Account number
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          {{ data.landlordAccountNumber }}
-        </dd>
-      </div>
-
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Payment reference
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          {{ data.landlordPaymentReference }}
-        </dd>
-      </div>
-
-      <div class="app-check-your-answers__contents">
-        <dt class="app-check-your-answers__question">
-          Creditor reference number (if known)
-        </dt>
-        <dd class="app-check-your-answers__answer">
-          {{ data.landlordCreditorReference }}
-        </dd>
-      </div>
-    </dl>
+    {{ govukSummaryList({
+      classes: "govuk-!-margin-bottom-9",
+      rows: [
+        {
+          key: {
+            text: 'Account holder'
+          },
+          value: {
+            text: data.landlordAccountHolder
+          },
+          actions: {
+            items: [
+              {
+                href: basePath + "/questions/landlord-bank-details?change#landlord-account-holder",
+                text: 'Change',
+                visuallyHiddenText: 'account holder',
+                classes: 'govuk-link--no-visited-state'
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: 'Sort code'
+          },
+          value: {
+            text: data.landlordSortCode1 + '–' + data.landlordSortCode2 + '–' + data.landlordSortCode3
+          },
+          actions: {
+            items: [
+              {
+                href: basePath + "/questions/landlord-bank-details?change#landlord-sort-code1",
+                text: 'Change',
+                visuallyHiddenText: 'sort code',
+                classes: 'govuk-link--no-visited-state'
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: 'Account number'
+          },
+          value: {
+            text: data.landlordAccountNumber
+          },
+          actions: {
+            items: [
+              {
+                href: basePath + "/questions/landlord-bank-details?change#landlord-account-number",
+                text: 'Change',
+                visuallyHiddenText: 'account number',
+                classes: 'govuk-link--no-visited-state'
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: 'Payment reference'
+          },
+          value: {
+            text: data.landlordPaymentReference
+          },
+          actions: {
+            items: [
+              {
+                href: basePath + "/questions/landlord-bank-details?change#landlord-payment-reference",
+                text: 'Change',
+                visuallyHiddenText: 'payment reference',
+                classes: 'govuk-link--no-visited-state'
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: 'Creditor reference number (if known)'
+          },
+          value: {
+            text: data.landlordCreditorReference
+          },
+          actions: {
+            items: [
+              {
+                href: basePath + "/questions/landlord-bank-details?change#landlord-creditor-reference",
+                text: 'Change',
+                visuallyHiddenText: 'creditor reference number (if known)',
+                classes: 'govuk-link--no-visited-state'
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
 
     <form method="post">
 
-      <h2 class="govuk-heading-m">Send your application</h2>
-      <p>By sending the application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+      <h2 class="govuk-heading-m">Now send your application</h2>
+      <p>By sending the application you’re confirming that:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the information you’ve given is correct and complete</li>
+        <li>you’ll report any changes to your tenant’s circumstances which might be relevant to their housing by calling 0800 328 5644</li>
+        <li>you’ll pay back any money you’re overpaid if you’re asked to</li>
+        <li>you understand that it’s up to us whether we make arrears or direct rent payments</li>
+        <li>you understand that we’ll regularly review any arrangements we make</li>
+      </ul>
 
       {{ govukWarningText({
-        text: "You could be prosecuted or have to pay a financial penalty if you deliberately give the wrong or incomplete information or don’t report changes.",
+        text: "You could be prosecuted or have your payments stopped if you give wrong or incomplete information.",
         iconFallbackText: "Important"
       }) }}
 
       {{ govukButton({
-        text: "I agree - send my application"
+        text: "Accept and send"
       }) }}
 
     </form>

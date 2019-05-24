@@ -1,5 +1,9 @@
 {% extends "../question.html" %}
 
+{% block pageTitle -%}
+  Reason for request – {{ serviceName }} – GOV.UK
+{%- endblock %}
+
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -179,6 +183,10 @@
       {{ govukButton({
         text: "Save Changes" if isEditMode else "Continue"
       }) }}
+
+      {% if isEditMode %}
+        <a href="{{ basePath }}/questions/check-answers" class="cancel-review govuk-body govuk-link--no-visited-state">Cancel</a>
+      {% endif %}
 
     </form>
 

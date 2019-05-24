@@ -7,7 +7,7 @@ module.exports = {
   serviceName: 'Apply for direct rent payments',
 
   // Latest release number
-  productName: 'v5.1.2',
+  productName: 'v6.0.0',
 
   // Default port that prototype runs on
   port: '3000',

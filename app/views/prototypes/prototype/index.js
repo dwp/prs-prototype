@@ -41,12 +41,10 @@ router.all('/questions/two-months-arrears', (req, res) => {
   }
 
   if (submitted.twoMonthsArrears === 'no') {
-    return res.redirect('change' in req.query ? './check-answers' : './reason-for-request')
+    return res.redirect('./reason-for-request')
   }
 
-  res.render(`${__dirname}/views/questions/two-months-arrears`, {
-    isEditMode: 'change' in req.query
-  })
+  res.render(`${__dirname}/views/questions/two-months-arrears`)
 })
 
 /**
@@ -74,7 +72,7 @@ router.all('/questions/check-arrears', (req, res) => {
     return res.redirect('./rent-details')
   }
 
-  if (['Rent arrears', 'Both direct rent payment and rent arrears'].includes(saved.typeOfPayment)) {
+  if (['Rent arrears', 'Both direct rent payment and rent arrears'].includes(saved.typeOfPayment)) {
     return res.redirect('./rent-arrears')
   }
 
@@ -213,7 +211,7 @@ function formatDate ({ day, month, year } = {}) {
 
   // Apply formatting
   const date = moment.utc(`${year}-${month}-${day}`, 'YYYY-MM-DD', true)
-  const formatted = date.isValid() ? date.format('D MMM YYYY') : ''
+  const formatted = date.isValid() ? date.format('D MMMM YYYY') : ''
 
   return {
     day,
