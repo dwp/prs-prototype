@@ -39,62 +39,63 @@
         value: data.landlordEmail
       }) }}
 
-      <h2 class="govuk-body govuk-!-margin-bottom-1">Address</h2>
+      {% call govukFieldset({
+        legend: {
+          text: "Address",
+          isPageHeading: false
+        }
+      }) %}
 
-      {{ govukInput({
-        label: {
-          html: 'Building or street<span class="govuk-visually-hidden"> line 1</span>'
-        },
-        formGroup: {
-          classes: 'govuk-!-margin-bottom-2'
-        },
-        id: "landlord-address1",
-        name: "landlordAddress1",
-        value: data.landlordAddress1
-      }) }}
+        {{ govukInput({
+          label: {
+            html: 'Building and street<span class="govuk-visually-hidden"> line 1 of 2</span>'
+          },
+          id: "landlord-address1",
+          name: "landlordAddress1",
+          value: data.landlordAddress1
+        }) }}
 
-      {{ govukInput({
-        label: {
-          html: 'Building or street<span class="govuk-visually-hidden"> line 2</span>',
-          classes: "govuk-visually-hidden"
-        },
-        formGroup: {
-          classes: "govuk-!-margin-bottom-4"
-        },
-        id: "landlord-address2",
-        name: "landlordAddress2",
-        value: data.landlordAddress2
-      }) }}
+        {{ govukInput({
+          label: {
+            html: 'Building and street line 2 of 2',
+            classes: "govuk-visually-hidden"
+          },
+          id: "landlord-address2",
+          name: "landlordAddress2",
+          value: data.landlordAddress2
+        }) }}
 
-      {{ govukInput({
-        label: {
-          text: "Town or city"
-        },
-        id: "landlord-town",
-        name: "landlordTown",
-        classes: "govuk-input--width-20",
-        value: data.landlordTown
-      }) }}
+        {{ govukInput({
+          label: {
+            text: "Town or city"
+          },
+          id: "landlord-town",
+          name: "landlordTown",
+          classes: "govuk-!-width-two-thirds",
+          value: data.landlordTown
+        }) }}
 
-      {{ govukInput({
-        label: {
-          text: "County"
-        },
-        id: "landlord-county",
-        name: "landlordCounty",
-        classes: "govuk-input--width-20",
-        value: data.landlordCounty
-      }) }}
+        {{ govukInput({
+          label: {
+            text: "County"
+          },
+          id: "landlord-county",
+          name: "landlordCounty",
+          classes: "govuk-!-width-two-thirds",
+          value: data.landlordCounty
+        }) }}
 
-      {{ govukInput({
-        label: {
-          text: "Postcode"
-        },
-        id: "landlord-postcode",
-        name: "landlordPostcode",
-        classes: "govuk-input--width-10",
-        value: data.landlordPostcode
-      }) }}
+        {{ govukInput({
+          label: {
+            text: "Postcode"
+          },
+          id: "landlord-postcode",
+          name: "landlordPostcode",
+          classes: "govuk-input--width-10",
+          value: data.landlordPostcode
+        }) }}
+
+      {% endcall %}
 
       {{ govukButton({
         text: "Save Changes" if isEditMode else "Continue"
