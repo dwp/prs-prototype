@@ -20,6 +20,14 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/layout-index";
 @import "components/currency-input";
 
+.govuk-input--width-2[min] {
+  min-width: 5.4ex;
+}
+
+.govuk-input--width-4[min] {
+  min-width: 9ex;
+}
+
 .cancel-review {
   margin: 8px 10px;
   display: inline-block;

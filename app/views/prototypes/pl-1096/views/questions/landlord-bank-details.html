@@ -16,7 +16,8 @@
         id: "landlord-account-holder",
         name: "landlordAccountHolder",
         classes: "govuk-input--width-20",
-        value: data.landlordAccountHolder
+        value: data.landlordAccountHolder,
+        autocomplete: "name"
       }) }}
 
       <div class="govuk-form-group">
@@ -28,7 +29,7 @@
                 <label class="govuk-label govuk-date-input__label govuk-visually-hidden" for="landlord-sort-code1">
                   First 2 digits of sort code
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="landlord-sort-code1" name="landlordSortCode1" type="number" pattern="[0-9]*" value="{{ data.landlordSortCode1 }}">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="landlord-sort-code1" name="landlordSortCode1" type="text" pattern="[0-9]*" maxlength="2" value="{{ data.landlordSortCode1 }}">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -36,7 +37,7 @@
                 <label class="govuk-label govuk-date-input__label govuk-visually-hidden" for="landlord-sort-code2">
                   Second 2 digits of sort code
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="landlord-sort-code2" name="landlordSortCode2" type="number" pattern="[0-9]*" value="{{ data.landlordSortCode2 }}">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="landlord-sort-code2" name="landlordSortCode2" type="text" pattern="[0-9]*" maxlength="2" value="{{ data.landlordSortCode2 }}">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -44,7 +45,7 @@
                 <label class="govuk-label govuk-date-input__label govuk-visually-hidden" for="landlord-sort-code3">
                   Last 2 digits of sort code
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="landlord-sort-code3" name="landlordSortCode3" type="number" pattern="[0-9]*" value="{{ data.landlordSortCode3 }}">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="landlord-sort-code3" name="landlordSortCode3" type="text" pattern="[0-9]*" maxlength="2" value="{{ data.landlordSortCode3 }}">
               </div>
             </div>
           </div>
@@ -58,7 +59,10 @@
         id: "landlord-account-number",
         name: "landlordAccountNumber",
         classes: "govuk-input--width-20",
-        value: data.landlordAccountNumber
+        value: data.landlordAccountNumber,
+        attributes: {
+          pattern: "[0-9]*"
+        }
       }) }}
 
       {{ govukInput({

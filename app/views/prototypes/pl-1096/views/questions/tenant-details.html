@@ -15,7 +15,10 @@
         id: "tenant-full-name",
         name: "tenantFullName",
         classes: "govuk-input--width-20",
-        value: data.tenantFullName
+        value: data.tenantFullName,
+        attributes: {
+          autocomplete: "name"
+        }
       }) }}
 
       {{ govukDateInput({
@@ -34,21 +37,36 @@
             name: "tenantBirthDate[day]",
             id: "tenant-birth-date-day",
             classes: "govuk-input--width-2",
-            value: data.tenantBirthDate.day
+            value: data.tenantBirthDate.day,
+            autocomplete: "bday-day",
+            attributes: {
+              min: "1",
+              max: "31"
+            }
           },
           {
             label: "Month",
             name: "tenantBirthDate[month]",
             id: "tenant-birth-date-month",
             classes: "govuk-input--width-2",
-            value: data.tenantBirthDate.month
+            value: data.tenantBirthDate.month,
+            autocomplete: "bday-month",
+            attributes: {
+              min: "1",
+              max: "12"
+            }
           },
           {
             label: "Year",
             name: "tenantBirthDate[year]",
             id: "tenant-birth-date-year",
             classes: "govuk-input--width-4",
-            value: data.tenantBirthDate.year
+            value: data.tenantBirthDate.year,
+            autocomplete: "bday-year",
+            attributes: {
+              min: "1",
+              max: "9999"
+            }
           }
         ]
       }) }}
@@ -66,7 +84,8 @@
           },
           id: "tenant-address1",
           name: "tenantAddress1",
-          value: data.tenantAddress1
+          value: data.tenantAddress1,
+          autocomplete: 'address-line1'
         }) }}
 
         {{ govukInput({
@@ -76,7 +95,8 @@
           },
           id: "tenant-address2",
           name: "tenantAddress2",
-          value: data.tenantAddress2
+          value: data.tenantAddress2,
+          autocomplete: 'address-line2'
         }) }}
 
         {{ govukInput({
@@ -86,7 +106,8 @@
           id: "tenant-town",
           name: "tenantTown",
           classes: "govuk-!-width-two-thirds",
-          value: data.tenantTown
+          value: data.tenantTown,
+          autocomplete: 'address-level2'
         }) }}
 
         {{ govukInput({
@@ -96,7 +117,8 @@
           id: "tenant-county",
           name: "tenantCounty",
           classes: "govuk-!-width-two-thirds",
-          value: data.tenantCounty
+          value: data.tenantCounty,
+          autocomplete: 'address-level1'
         }) }}
 
         {{ govukInput({
@@ -106,9 +128,9 @@
           id: "tenant-postcode",
           name: "tenantPostcode",
           classes: "govuk-input--width-10",
-          value: data.tenantPostcode
+          value: data.tenantPostcode,
+          autocomplete: 'postal-code'
         }) }}
-
       {% endcall %}
 
       {{ govukButton({

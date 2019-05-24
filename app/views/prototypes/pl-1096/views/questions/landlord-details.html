@@ -16,7 +16,8 @@
         id: "landlord-full-name",
         name: "landlordFullName",
         classes: "govuk-input--width-20",
-        value: data.landlordFullName
+        value: data.landlordFullName,
+        autocomplete: "name"
       }) }}
 
       {{ govukInput({
@@ -26,7 +27,8 @@
         id: "landlord-telephone",
         name: "landlordTelephone",
         classes: "govuk-input--width-20",
-        value: data.landlordTelephone
+        value: data.landlordTelephone,
+        type: "tel"
       }) }}
 
       {{ govukInput({
@@ -36,7 +38,8 @@
         id: "landlord-email",
         name: "landlordEmail",
         classes: "govuk-input--width-20",
-        value: data.landlordEmail
+        value: data.landlordEmail,
+        type: "email"
       }) }}
 
       {% call govukFieldset({
@@ -52,7 +55,8 @@
           },
           id: "landlord-address1",
           name: "landlordAddress1",
-          value: data.landlordAddress1
+          value: data.landlordAddress1,
+          autocomplete: 'address-line1'
         }) }}
 
         {{ govukInput({
@@ -62,7 +66,8 @@
           },
           id: "landlord-address2",
           name: "landlordAddress2",
-          value: data.landlordAddress2
+          value: data.landlordAddress2,
+          autocomplete: 'address-line2'
         }) }}
 
         {{ govukInput({
@@ -72,7 +77,8 @@
           id: "landlord-town",
           name: "landlordTown",
           classes: "govuk-!-width-two-thirds",
-          value: data.landlordTown
+          value: data.landlordTown,
+          autocomplete: 'address-level2'
         }) }}
 
         {{ govukInput({
@@ -82,7 +88,8 @@
           id: "landlord-county",
           name: "landlordCounty",
           classes: "govuk-!-width-two-thirds",
-          value: data.landlordCounty
+          value: data.landlordCounty,
+          autocomplete: 'address-level1'
         }) }}
 
         {{ govukInput({
@@ -92,9 +99,9 @@
           id: "landlord-postcode",
           name: "landlordPostcode",
           classes: "govuk-input--width-10",
-          value: data.landlordPostcode
+          value: data.landlordPostcode,
+          autocomplete: 'postal-code'
         }) }}
-
       {% endcall %}
 
       {{ govukButton({

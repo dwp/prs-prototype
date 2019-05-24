@@ -14,7 +14,7 @@
         </label>
         <div class="govuk-currency-input__inner">
           <span class="govuk-currency-input__unit">£</span>
-          <input class="govuk-input govuk-currency-input__input govuk-!-width-one-quarter" aria-describedby="Enter amount in pounds" name="rentOutstanding" id="rent-outstanding" type="number" step="0.01" value="{{ data.rentOutstanding }}">
+          <input class="govuk-input govuk-currency-input__input govuk-!-width-one-quarter" name="rentOutstanding" id="rent-outstanding" type="number" value="{{ data.rentOutstanding }}" min="0" max="20000" inputmode="decimal">
         </div>
       </div>
 
@@ -34,21 +34,33 @@
             name: "rentFirstMissingDate[day]",
             id: "rent-first-missing-date-day",
             classes: "govuk-input--width-2",
-            value: data.rentFirstMissingDate.day
+            value: data.rentFirstMissingDate.day,
+            attributes: {
+              min: "1",
+              max: "31"
+            }
           },
           {
             label: "Month",
             name: "rentFirstMissingDate[month]",
             id: "rent-first-missing-date-month",
             classes: "govuk-input--width-2",
-            value: data.rentFirstMissingDate.month
+            value: data.rentFirstMissingDate.month,
+            attributes: {
+              min: "1",
+              max: "12"
+            }
           },
           {
             label: "Year",
             name: "rentFirstMissingDate[year]",
             id: "rent-first-missing-date-year",
             classes: "govuk-input--width-4",
-            value: data.rentFirstMissingDate.year
+            value: data.rentFirstMissingDate.year,
+            attributes: {
+              min: "1",
+              max: "9999"
+            }
           }
         ]
       }) }}
@@ -66,21 +78,33 @@
             name: "rentLastMissingDate[day]",
             id: "rent-last-missing-date-day",
             classes: "govuk-input--width-2",
-            value: data.rentLastMissingDate.day
+            value: data.rentLastMissingDate.day,
+            attributes: {
+              min: "1",
+              max: "31"
+            }
           },
           {
             label: "Month",
             name: "rentLastMissingDate[month]",
             id: "rent-last-missing-date-month",
             classes: "govuk-input--width-2",
-            value: data.rentLastMissingDate.month
+            value: data.rentLastMissingDate.month,
+            attributes: {
+              min: "1",
+              max: "12"
+            }
           },
           {
             label: "Year",
             name: "rentLastMissingDate[year]",
             id: "rent-last-missing-date-year",
             classes: "govuk-input--width-4",
-            value: data.rentLastMissingDate.year
+            value: data.rentLastMissingDate.year,
+            attributes: {
+              min: "1",
+              max: "9999"
+            }
           }
         ]
       }) }}
