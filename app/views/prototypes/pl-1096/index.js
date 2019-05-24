@@ -41,12 +41,10 @@ router.all('/questions/two-months-arrears', (req, res) => {
   }
 
   if (submitted.twoMonthsArrears === 'no') {
-    return res.redirect('change' in req.query ? './check-answers' : './reason-for-request')
+    return res.redirect('./reason-for-request')
   }
 
-  res.render(`${__dirname}/views/questions/two-months-arrears`, {
-    isEditMode: 'change' in req.query
-  })
+  res.render(`${__dirname}/views/questions/two-months-arrears`)
 })
 
 /**

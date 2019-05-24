@@ -19,3 +19,8 @@ $govuk-assets-path: '/govuk/assets/';
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 @import "patterns/layout-index";
 @import "components/currency-input";
+
+.cancel-review {
+  margin: 8px 10px;
+  display: inline-block;
+}

@@ -115,6 +115,10 @@
         text: "Save Changes" if isEditMode else "Continue"
       }) }}
 
+      {% if isEditMode %}
+        <a href="{{ basePath }}/questions/check-answers" class="cancel-review govuk-body govuk-link--no-visited-state">Cancel</a>
+      {% endif %}
+
     </form>
 
   </div>
