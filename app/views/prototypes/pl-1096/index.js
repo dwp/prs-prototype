@@ -72,7 +72,7 @@ router.all('/questions/check-arrears', (req, res) => {
     return res.redirect('./rent-details')
   }
 
-  if (['Rent arrears', 'Both direct rent payment and rent arrears'].includes(saved.typeOfPayment)) {
+  if (['Rent arrears', 'Both direct rent payment and rent arrears'].includes(saved.typeOfPayment)) {
     return res.redirect('./rent-arrears')
   }
 
