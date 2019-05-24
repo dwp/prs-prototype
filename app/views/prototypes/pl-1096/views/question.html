@@ -10,7 +10,7 @@
     "html": cookieText
   }) }}
 
-  {% if not isStart %}
+  {% if not isStart and not isEditMode %}
     {{ govukBackLink({
       text: "Back",
       href: basePath
