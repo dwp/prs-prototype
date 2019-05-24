@@ -213,7 +213,7 @@ function formatDate ({ day, month, year } = {}) {
 
   // Apply formatting
   const date = moment.utc(`${year}-${month}-${day}`, 'YYYY-MM-DD', true)
-  const formatted = date.isValid() ? date.format('D MMM YYYY') : ''
+  const formatted = date.isValid() ? date.format('D MMMM YYYY') : ''
 
   return {
     day,
