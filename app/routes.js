@@ -36,7 +36,7 @@ for (const directory of prototypes) {
 
   // Prototype router
   router.use(`/${directory}`, (req, res, next) => {
-    res.locals.release = directory === 'prototype' ? productName : directory.toUpperCase()
+    res.locals.release = directory === 'prototype' ? productName : directory.replace(/release-/ig, 'v')
     prototype(req, res, next)
   });
 }
