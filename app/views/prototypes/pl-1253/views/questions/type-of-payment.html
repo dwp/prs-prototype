@@ -1,0 +1,57 @@
+{% extends "../question.html" %}
+
+{% block pageTitle -%}
+  Type of payment – {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+
+      {{ govukRadios({
+        idPrefix: "type-of-payment",
+        name: "typeOfPayment",
+        fieldset: {
+          legend: {
+            text: "What type of payment are you applying for?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Direct rent payment",
+            text: "Direct rent payment",
+            checked: checked("typeOfPayment", "Direct rent payment")
+          },
+          {
+            value: "Rent arrears",
+            text: "Rent arrears",
+            checked: checked("typeOfPayment", "Rent arrears")
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "Both direct rent payment and rent arrears",
+            text: "Both direct rent payment and rent arrears",
+            checked: checked("typeOfPayment", "Both direct rent payment and rent arrears")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save Changes" if isEditMode else "Continue"
+      }) }}
+
+      {% if isEditMode %}
+        <a href="{{ basePath }}/questions/check-answers" class="cancel-review govuk-body govuk-link--no-visited-state">Cancel</a>
+      {% endif %}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

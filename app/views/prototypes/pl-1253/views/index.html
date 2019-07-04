@@ -1,0 +1,36 @@
+{% extends "./question.html" %}
+
+{% block pageTitle -%}
+  {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      We are changing things slightly, so please be patient with us.
+    </h1>
+
+    <p>The service you experience now, might not be the service you see later. We are trialling our new and improved online form, which may be taken on and offline sporadically.</p>
+
+    <p>We aim to get you a consisent service as soon as possible.</p>
+
+    <p>Please feel free to leave us feedback when you’ve used our new service.</p>
+
+    {% from "button/macro.njk" import govukButton %}
+
+
+
+    {{ govukButton({
+      text: "Continue",
+      href: basePath + "/pages/start",
+      classes: "govuk-button-"
+    }) }}
+
+<p><a href="https://directpayment.universal-credit.service.gov.uk/" class="govuk-link">No thanks, take me to the old service</a></p>
+
+
+  </div>
+</div>
+{% endblock %}

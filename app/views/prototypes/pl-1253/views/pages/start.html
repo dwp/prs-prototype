@@ -1,0 +1,36 @@
+{% extends "../page.html" %}
+
+{% block pageTitle -%}
+  {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Apply for direct rent payments
+    </h1>
+
+    <p>You can use this service if you’re a landlord and your tenant is getting Universal Credit.</p>
+
+    <p>You can apply for the following to be paid directly from their monthly payment:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>regular monthly rent</li>
+      <li>rent arrears</li>
+    </ul>
+
+    {{ govukInsetText({
+      "text": "You’ll need to give your bank details to use this service"
+    }) }}
+
+    {{ govukButton({
+      text: "Start now",
+      href: basePath + "/questions",
+      classes: "govuk-button--start"
+    }) }}
+
+  </div>
+</div>
+{% endblock %}

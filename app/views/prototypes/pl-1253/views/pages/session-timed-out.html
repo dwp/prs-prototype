@@ -1,0 +1,25 @@
+{% extends "../page.html" %}
+
+{% block pageTitle -%}
+  Cookies – {{ serviceName }}
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Sorry there is a problem
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Your session has timed out
+    </h2>
+
+    <p>You haven’t entered any details for an hour so we’ve cleared the page to keep your information secure.</p>
+    <p>You can start again by clicking on the link in your invitation email.</p>
+    <p>If you still can’t access the service, contact us by email at <a href="mailto:adpr.pbeta@dwp.gsi.gov.uk" class="govuk-link">adpr.pbeta@dwp.gsi.gov.uk</a></p>
+
+  </div>
+</div>
+{% endblock %}

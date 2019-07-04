@@ -40,22 +40,23 @@
           <div class="govuk-grid-column-one-third">
             <dl>
               <dt class="govuk-heading-s">Feature</dt>
-              <dd class="govuk-body">V6</dd>
+              <dd class="govuk-body">V4 roll out</dd>
             </dl>
           </div>
 
           <div class="govuk-grid-column-one-third">
             <dl>
               <dt class="govuk-heading-s">Related stories</dt>
-              <dd class="govuk-body">PL-1096<br>PL-597</dd>
+              <dd class="govuk-body">PL-1253</dd>
             </dl>
           </div>
         </div>
 
         <h3 class="govuk-heading-s">Changes</h3>
-        <p>Update wording of declaration<br>
-        Update wording of cookies page<br>
-        Update wording of cookies error page</p>
+        <p>Rollout of v4 and controlling access<br>
+          <p>V1 is non-regional<br>
+          <p>V2 is regional<br>
+        </p>
 
         <h3 class="govuk-heading-s">Hypothesis</h3>
         <p>N/A</p>
@@ -64,8 +65,15 @@
         <p>N/A</p>
 
         {{ govukButton({
-          text: "View prototype",
-          href: "/pl-1096",
+          text: "View prototype v1",
+          href: "/PL-1253",
+          classes: "govuk-button--start"
+        }) }}
+        <br>
+
+        {{ govukButton({
+          text: "View prototype v2",
+          href: "/PL-1253",
           classes: "govuk-button--start"
         }) }}
       </div>
@@ -84,6 +92,51 @@
         </span>
       </summary>
       <div class="govuk-details__text">
+
+        {# Start of prototype write up #}
+        <div class="prototype-write-up">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+              <dl>
+                <dt class="govuk-heading-s">Date of release</dt>
+                <dd class="govuk-body">TBC</dd>
+              </dl>
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+              <dl>
+                <dt class="govuk-heading-s">Feature</dt>
+                <dd class="govuk-body">V6</dd>
+              </dl>
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+              <dl>
+                <dt class="govuk-heading-s">Related stories</dt>
+                <dd class="govuk-body">PL-1096<br>PL-597</dd>
+              </dl>
+            </div>
+          </div>
+
+          <h3 class="govuk-heading-s">Changes</h3>
+          <p>Update wording of declaration<br>
+          Update wording of cookies page<br>
+          Update wording of cookies error page</p>
+
+          <h3 class="govuk-heading-s">Hypothesis</h3>
+          <p>N/A</p>
+
+          <h3 class="govuk-heading-s">Research notes</h3>
+          <p>N/A</p>
+
+          {{ govukButton({
+            text: "View prototype",
+            href: "/pl-1096",
+            classes: "govuk-button--start"
+          }) }}
+        </div>
+        {# End of prototype write up #}
+
 
         {# Start of prototype write up #}
         <div class="prototype-write-up">
