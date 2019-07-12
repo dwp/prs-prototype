@@ -1,0 +1,110 @@
+{% extends "../question.html" %}
+
+{% block pageTitle -%}
+  Landlord bank details – {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+
+      <h1 class="govuk-heading-l">Landlord bank details</h1>
+      <p>The rent will be paid into this bank account.</p>
+
+      {{ govukInput({
+        label: {
+          text: "Account holder"
+        },
+        id: "landlord-account-holder",
+        name: "landlordAccountHolder",
+        classes: "govuk-input--width-20",
+        value: data.landlordAccountHolder,
+        autocomplete: "name"
+      }) }}
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+          <legend class="govuk-fieldset__legend">Sort code</legend>
+          <div class="govuk-date-input" id="landlord-sort-code">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label govuk-visually-hidden" for="landlord-sort-code1">
+                  First 2 digits of sort code
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="landlord-sort-code1" name="landlordSortCode1" type="text" pattern="[0-9]*" maxlength="2" value="{{ data.landlordSortCode1 }}">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label govuk-visually-hidden" for="landlord-sort-code2">
+                  Second 2 digits of sort code
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="landlord-sort-code2" name="landlordSortCode2" type="text" pattern="[0-9]*" maxlength="2" value="{{ data.landlordSortCode2 }}">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label govuk-visually-hidden" for="landlord-sort-code3">
+                  Last 2 digits of sort code
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="landlord-sort-code3" name="landlordSortCode3" type="text" pattern="[0-9]*" maxlength="2" value="{{ data.landlordSortCode3 }}">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukInput({
+        label: {
+          text: "Account number"
+        },
+        id: "landlord-account-number",
+        name: "landlordAccountNumber",
+        classes: "govuk-input--width-20",
+        value: data.landlordAccountNumber,
+        attributes: {
+          pattern: "[0-9]*"
+        }
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Customer reference"
+        },
+        hint: {
+          text: "The reference you choose here is what you’ll see on your payment schedule"
+        },
+        id: "landlord-payment-reference",
+        name: "landlordPaymentReference",
+        classes: "govuk-input--width-20",
+        value: data.landlordPaymentReference
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Creditor reference number (if known)"
+        },
+        hint: {
+          text: "You will have this if you’ve previously set up payment schedules with the DWP. It can be found on your last payment schedule. For example 0000012345"
+        },
+        id: "landlord-creditor-reference",
+        name: "landlordCreditorReference",
+        classes: "govuk-input--width-20",
+        value: data.landlordCreditorReference
+      }) }}
+
+      {{ govukButton({
+        text: "Save Changes" if isEditMode else "Continue"
+      }) }}
+
+      {% if isEditMode %}
+        <a href="{{ basePath }}/questions/check-answers" class="cancel-review govuk-body govuk-link--no-visited-state">Cancel</a>
+      {% endif %}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}
