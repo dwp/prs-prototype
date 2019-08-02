@@ -7,7 +7,7 @@
 }
 
 .c-field-submit {
-  background: govuk-colour("grey-3");
+  background: govuk-colour("light-grey", $legacy: "grey-3");
   margin: 0 0 40px;
   padding: 20px;
 
