@@ -1,0 +1,61 @@
+{% extends "../page.html" %}
+
+{% block pageTitle -%}
+  {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+
+      {% set hint %}
+        <p class="govuk-hint">For example: joebloggs@example.gsx.uk</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>.gsi</li>
+          <li>.gsx</li>
+          <li>.gcsx</li>
+          <li>.cjx</li>
+          <li>.cjsm</li>
+          <li>.gse</li>
+        </ul>
+      {% endset %}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "tenant-has-secure-email",
+        name: "tenantHasSecureEmail",
+        fieldset: {
+          legend: {
+            text: "Does your email address contain any of the following:",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: hint
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            checked: checked("tenantHasSecureEmail", "yes")
+          },
+          {
+            value: "no",
+            text: "No",
+            checked: checked("tenantHasSecureEmail", "no")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

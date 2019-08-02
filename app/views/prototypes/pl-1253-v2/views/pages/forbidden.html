@@ -1,0 +1,22 @@
+{% extends "../page.html" %}
+
+{% block pageTitle -%}
+  Sorry, there is a problem with the service – {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Sorry, there is a problem with the service
+    </h1>
+
+    <p>Use the back button on your browser to return to your application.</p>
+    <p>Enter your information again and press 'Continue'.</p>
+    <p><a href "mailto: adpr.pbeta@dwp.gsi.gov.uk"></a></p>
+    <p>If you continue to see this page, contact us by email <a href="mailto:adpr.pbeta@dwp.gsi.gov.uk" class="govuk-link">adpr.pbeta@dwp.gsi.gov.uk</a></p>
+
+  </div>
+</div>
+{% endblock %}

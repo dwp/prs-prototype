@@ -1,4 +1,4 @@
-{% extends "./page.html" %}
+{% extends "../page.html" %}
 
 {% block pageTitle -%}
   {{ serviceName }} – GOV.UK
@@ -21,7 +21,7 @@
       href: basePath + "/pages/start"
     }) }}
 
-    <a href="https://directpayment.universal-credit.service.gov.uk" class="cancel-review govuk-body govuk-link--no-visited-state">No thanks, take me to the old service</a>
+    <a href="{{ basePath }}/questions/has-email" class="cancel-review govuk-body govuk-link--no-visited-state">No thanks, take me to the old service</a>
 
   </div>
 </div>

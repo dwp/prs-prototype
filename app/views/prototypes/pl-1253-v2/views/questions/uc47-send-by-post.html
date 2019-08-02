@@ -1,0 +1,38 @@
+{% extends "../page.html" %}
+
+{% block pageTitle -%}
+  {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+
+      <h1 class="govuk-heading-l">Send your request by post</h1>
+
+      <ul class="govuk-list govuk-list--number">
+        <li>Download, print and fill in this form:
+          <p>
+            <span class="icon icon--file-download" role="presentation"></span>
+            <a href="/public/pdf/UC47_SECURE_FS.pdf" class="govuk-body-s govuk-!-font-weight-bold">Request form</a>
+          </p>
+        </li>
+        <li>And send to:
+          <br>FREEPOST
+          <br>DWP
+          <br>Universal Credit Full Service
+        </li>
+      </ul>
+
+      {{ govukButton({
+        text: "Start again",
+        href: basePath
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

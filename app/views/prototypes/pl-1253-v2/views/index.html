@@ -1,0 +1,41 @@
+{% extends "./question.html" %}
+
+{% block pageTitle -%}
+  {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Apply for a direct payment of rent
+    </h1>
+
+    <p>You can apply for a direct payment of rent, or rent arrears deduction if you’re a landlord.</p>
+    <p>You can ask for rent payments to be made direct from your tenant’s Universal Credit if they’re having difficulty paying you.</p>
+    <p>You’ll be given the form to download and the email address to send it to.</p>
+
+    {{ govukInsetText({
+      "text": "Before you apply, you will need your tenant’s postcode.",
+      "classes": "govuk-!-margin-top-0 govuk-!-margin-bottom-3"
+    }) }}
+
+    {{ govukButton({
+      text: "Start",
+      href: basePath + "/questions/check-postcode",
+      classes: "govuk-button--start"
+    }) }}
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-2 govuk-!-margin-bottom-0">
+      What you need to know
+    </h2>
+
+    {{ govukInsetText({
+      "html": "<p>This service is also available in <a href=\"https://www.gov.uk/government/publications/universal-credit-landlord-request-for-a-managed-payment-or-rent-arrears-deduction.cy\">Welsh (Cymraeg).</a></p>",
+      "classes": "govuk-!-margin-top-4"
+    }) }}
+
+  </div>
+</div>
+{% endblock %}

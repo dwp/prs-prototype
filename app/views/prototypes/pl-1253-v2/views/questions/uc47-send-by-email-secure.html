@@ -1,0 +1,38 @@
+{% extends "../page.html" %}
+
+{% block pageTitle -%}
+  {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+
+      <h1 class="govuk-heading-l">Send your request by email</h1>
+
+      <ul class="govuk-list govuk-list--number">
+        <li>
+          Click the link below and fill in the details:
+          <p style="margin-left: -1em; margin-top: 1em;">
+            <span class="icon icon--file-download" role="presentation"></span>
+            <a href="/public/pdf/UC47_SECURE_FS.pdf" class="govuk-body-s govuk-!-font-weight-bold">Request form</a>
+          </p>
+        </li>
+        <li>
+          Email the form to this address:
+          <a href="mailto:ucfull.service@dwp.gsi.gov.uk">ucfull.service@dwp.gsi.gov.uk</a>
+        </li>
+      </ul>
+
+      {{ govukButton({
+        text: "Start again",
+        href: basePath
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

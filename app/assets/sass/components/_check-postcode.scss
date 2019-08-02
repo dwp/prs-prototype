@@ -1,0 +1,28 @@
+@mixin clearfix {
+  &:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+.c-field-submit {
+  background: govuk-colour("grey-3");
+  margin: 0 0 40px;
+  padding: 20px;
+
+  @include clearfix;
+
+  &__row {
+    @include clearfix;
+  }
+
+  &__capture,
+  &__action {
+    float: left;
+  }
+
+  &__capture {
+    margin-right: 10px;
+  }
+}

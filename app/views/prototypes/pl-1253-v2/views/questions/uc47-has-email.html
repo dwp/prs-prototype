@@ -1,0 +1,46 @@
+{% extends "../page.html" %}
+
+{% block pageTitle -%}
+  {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "tenant-has-email",
+        name: "tenantHasEmail",
+        fieldset: {
+          legend: {
+            text: "Do you have an email address?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            checked: checked("tenantHasEmail", "yes")
+          },
+          {
+            value: "no",
+            text: "No",
+            checked: checked("tenantHasEmail", "no")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}
