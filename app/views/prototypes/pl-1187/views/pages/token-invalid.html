@@ -1,0 +1,25 @@
+{% extends "../page.html" %}
+
+{% block pageTitle -%}
+  Token invalid – {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Sorry there is a problem
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Your token is invalid
+    </h2>
+
+    <p>The token you’ve entered appears to be invalid.</p>
+    <p>You can try again by clicking on the link in your invitation email.</p>
+    <p>If this doesn’t work, contact us by email at <a href="mailto:adpr.pbeta@dwp.gsi.gov.uk" class="govuk-link">adpr.pbeta@dwp.gsi.gov.uk</a> to receive a valid token.</p>
+
+  </div>
+</div>
+{% endblock %}
