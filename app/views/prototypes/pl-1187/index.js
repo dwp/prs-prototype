@@ -155,12 +155,45 @@ router.all('/questions/landlord-details', (req, res) => {
  */
 router.all('/questions/landlord-bank-details', (req, res) => {
   if (req.method === 'POST') {
-    return res.redirect('./check-answers')
+    return res.redirect('change' in req.query ? './check-answers' : './verify')
   }
 
   res.render(`${__dirname}/views/questions/landlord-bank-details`, {
     isEditMode: 'change' in req.query
   })
+})
+
+/**
+ * Verify index
+ */
+router.all('/questions/verify', (req, res) => {
+  return res.redirect('./verify/option')
+})
+
+/**
+ * How would you like to receive the code?
+ */
+router.all('/questions/verify/option', (req, res) => {
+  const submitted = req.body
+
+  if (submitted.verifyOption) {
+    return res.redirect('./sent')
+  }
+
+  res.render(`${__dirname}/views/questions/verify-option`)
+})
+
+/**
+ * We’ve sent you a code
+ */
+router.all('/questions/verify/sent', (req, res) => {
+  const submitted = req.body
+
+  if (submitted.verifyCode === 'AB873') {
+    return res.redirect('../check-answers')
+  }
+
+  res.render(`${__dirname}/views/questions/verify-sent`)
 })
 
 /**

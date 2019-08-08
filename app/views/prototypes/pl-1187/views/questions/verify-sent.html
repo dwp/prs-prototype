@@ -1,0 +1,37 @@
+{% extends "../question.html" %}
+
+{% block pageTitle -%}
+  Confirm verification code – {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+
+      <h1 class="govuk-heading-xl">We’ve sent you {{ "a text message" if data.verifyOption === "text" else "an email" }}</h1>
+      <p>It contains a code and should arrive in a few minutes</p>
+
+      {{ govukInput({
+        label: {
+          text: "Code in " + ("text message" if data.verifyOption === "text" else "email"),
+          classes: "govuk-label--s"
+        },
+        id: "verify-code",
+        name: "verifyCode",
+        classes: "govuk-input--width-10"
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      <p><a class="govuk-link--no-visited-state" href="#">I didn’t receive {{ "a text message" if data.verifyOption === "text" else "an email" }}</a></p>
+      <p><a class="govuk-link--no-visited-state" href="#">Get help with this page</a></p>
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

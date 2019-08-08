@@ -1,0 +1,47 @@
+{% extends "../question.html" %}
+
+{% block pageTitle -%}
+  Verification code – {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+
+      <h1 class="govuk-heading-xl">We need to verify your application</h1>
+      <p>Before we complete your application, we need to send you a code to verify who you are.</p>
+
+      {{ govukRadios({
+        idPrefix: "verify-option",
+        name: "verifyOption",
+        fieldset: {
+          legend: {
+            text: "How would you like to receive the code?",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "email",
+            text: "Email me a code",
+            checked: checked("verifyOption", "email")
+          },
+          {
+            value: "text",
+            text: "Text me a code",
+            checked: checked("verifyOption", "text")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Send me a code"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}
