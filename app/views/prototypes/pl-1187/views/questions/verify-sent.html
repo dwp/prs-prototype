@@ -10,8 +10,8 @@
 
     <form method="post">
 
-      <h1 class="govuk-heading-xl">Check your {{ "a text message" if data.verifyOption === "text" else "emails" }}</h1>
-      <p>We've sent you {{ "a text message" if data.verifyOption === "a text message" else "an email" }} with a code.</p>
+      <h1 class="govuk-heading-xl">Check your {{ "phone" if data.verifyOption === "text" else "emails" }}</h1>
+      <p>We've sent you {{ "a text message" if data.verifyOption === "text" else "an email" }} with a code.</p>
 
       {{ govukInput({
         label: {
