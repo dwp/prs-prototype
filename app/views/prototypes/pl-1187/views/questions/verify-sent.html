@@ -10,12 +10,12 @@
 
     <form method="post">
 
-      <h1 class="govuk-heading-xl">We’ve sent you {{ "a text message" if data.verifyOption === "text" else "an email" }}</h1>
-      <p>It contains a code and should arrive in a few minutes</p>
+      <h1 class="govuk-heading-xl">Check your {{ "a text message" if data.verifyOption === "phone" else "emails" }}</h1>
+      <p>We've sent you {{ "a text message" if data.verifyOption === "a text message" else "an email" }} with a code</p>
 
       {{ govukInput({
         label: {
-          text: "Code in " + ("text message" if data.verifyOption === "text" else "email"),
+          text: "Code",
           classes: "govuk-label--s"
         },
         id: "verify-code",
