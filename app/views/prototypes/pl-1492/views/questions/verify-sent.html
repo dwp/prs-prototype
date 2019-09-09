@@ -1,0 +1,54 @@
+{% extends "../question.html" %}
+
+{% block pageTitle -%}
+  Confirm verification code – {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+
+      <h1 class="govuk-heading-xl">Confirm your email</h1>
+      <p>We have sent you a code to confirm your email.</p>
+
+      {{ govukInput({
+        label: {
+          text: "Code",
+          classes: "govuk-label--s"
+        },
+        id: "verify-code",
+        name: "verifyCode",
+        classes: "govuk-input--width-10"
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I didn't receive an email
+          </span>
+        </summary>
+        <br>
+        <div class="govuk-details__text">
+          <p>If you have not received a code try:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Checking your spam email</li>
+            <li>Waiting up to 20 minutes</li>
+          </ul>
+            <p>If you still don’t get a code, start the form again.</p>
+        </div>
+      </details>
+
+
+      <!-- <p><a class="govuk-link--no-visited-state" href="#">Get help with this page</a></p> -->
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}
