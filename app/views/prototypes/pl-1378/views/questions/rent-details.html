@@ -1,0 +1,69 @@
+{% extends "../question.html" %}
+
+{% block pageTitle -%}
+  Rent details – {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+
+      <h1 class="govuk-heading-l">Rent details</h1>
+
+      <div class="govuk-form-group govuk-currency-input">
+        <label class="govuk-label" for="rent-amount">
+          Rent amount
+        </label>
+        <div class="govuk-currency-input__inner">
+          <span class="govuk-currency-input__unit">£</span>
+          <input class="govuk-input govuk-currency-input__input govuk-!-width-one-quarter" aria-describedby="Enter amount in pounds" name="rentAmount" id="rent-amount" type="number" value="{{ data.rentAmount }}" min="0" max="2500" inputmode="decimal">
+        </div>
+      </div>
+
+      {{ govukRadios({
+        idPrefix: "rent-frequency",
+        name: "rentFrequency",
+        fieldset: {
+          legend: {
+            text: "How often is the rent paid?"
+          }
+        },
+        items: [
+          {
+            value: "Weekly",
+            text: "Weekly",
+            checked: checked("rentFrequency", "Weekly")
+          },
+          {
+            value: "Every 2 weeks",
+            text: "Every 2 weeks",
+            checked: checked("rentFrequency", "Every 2 weeks")
+          },
+          {
+            value: "Every 4 weeks",
+            text: "Every 4 weeks",
+            checked: checked("rentFrequency", "Every 4 weeks")
+          },
+          {
+            value: "Monthly",
+            text: "Monthly",
+            checked: checked("rentFrequency", "Monthly")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save Changes" if isEditMode else "Continue"
+      }) }}
+
+      {% if isEditMode %}
+        <a href="{{ basePath }}/questions/check-answers" class="cancel-review govuk-body govuk-link--no-visited-state">Cancel</a>
+      {% endif %}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}
