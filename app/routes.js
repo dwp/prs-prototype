@@ -31,12 +31,22 @@ const prototypes = fs.readdirSync(search).filter(file => {
 for (const directory of prototypes) {
   const prototype = require(`${search}${directory}`)
 
+  let locals = {};
+
+  // Optional prototype locals
+  if (fs.existsSync(`${search}${directory}/locals.js`)) {
+    locals = require(`${search}${directory}/locals.js`);
+  }
+
   // Prototype static assets
   prototype.use(`/assets`, express.static(`${__dirname}/views/prototypes/${directory}/assets`))
 
   // Prototype router
   router.use(`/${directory}`, (req, res, next) => {
-    res.locals.release = directory === 'prototype' ? productName : directory.replace(/release-/ig, 'v')
+    locals.release = directory === 'prototype' ? productName : directory.replace(/release-/ig, 'v')
+
+    // Add prototype
+    res.locals = locals;
     prototype(req, res, next)
   });
 }
