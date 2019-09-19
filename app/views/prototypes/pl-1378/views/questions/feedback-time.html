@@ -1,0 +1,51 @@
+{% extends "../question.html" %}
+
+{% block pageTitle -%}
+  Type of payment – {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form method="post">
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "feedback-time",
+        name: "feedbackTime",
+        fieldset: {
+          legend: {
+            text: "Was the time it took you to apply for a direct rent payments reasonable? ",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            checked: checked("feedbackTime", "yes")
+          },
+          {
+            value: "no",
+            text: "No",
+            checked: checked("feedbackTime", "no")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save Changes" if isEditMode else "Continue"
+      }) }}
+
+      {% if isEditMode %}
+        <a href="{{ basePath }}/questions/check-answers" class="cancel-review govuk-body govuk-link--no-visited-state">Cancel</a>
+      {% endif %}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}
