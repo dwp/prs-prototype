@@ -211,7 +211,7 @@ router.all('/questions/check-answers', (req, res) => {
        return res.redirect('../questions/feedback-help')
      }
 
-     res.render(`${__dirname}/views/questions/feedback-easy`, {
+     res.render(`${__dirname}/views/questions/feedback-time`, {
        isEditMode: 'change' in req.query
      })
    })
