@@ -46,7 +46,7 @@ for (const directory of prototypes) {
     locals.release = directory === 'prototype' ? productName : directory.replace(/release-/ig, 'v')
 
     // Add prototype
-    res.locals = { ...res.locals, locals };
+    res.locals = { ...res.locals, ...locals };
     prototype(req, res, next)
   });
 }
