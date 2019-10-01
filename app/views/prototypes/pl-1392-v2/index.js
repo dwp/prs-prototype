@@ -166,15 +166,15 @@ router.all('/questions/landlord-bank-details', (req, res) => {
 /**
  * Check answers
  */
-router.all('/questions/check-answers', (req, res) => {
-  if (req.method === 'POST') {
-    return res.redirect('../questions/not-submitted')
-  }
+ router.all('/questions/check-answers', (req, res) => {
+   if (req.method === 'POST') {
+     return res.redirect('../outcome/complete')
+   }
 
-  res.render(`${__dirname}/views/questions/check-answers`, {
-    isEditMode: 'change' in req.query
-  })
-})
+   res.render(`${__dirname}/views/questions/check-answers`, {
+     isEditMode: 'change' in req.query
+   })
+ })
 
 
 /**
