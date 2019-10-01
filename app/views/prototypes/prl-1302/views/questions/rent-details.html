@@ -62,8 +62,51 @@
         <a href="{{ basePath }}/questions/check-answers" class="cancel-review govuk-body govuk-link--no-visited-state">Cancel</a>
       {% endif %}
 
+      {% set timeoutDescription %}
+        <p class="govuk-body">
+          You have not done anything on the service for a while.
+        </p>
+        <p class="govuk-body">
+          Your session will end in 5 minutes if you do not do anything on the
+          page. You’ll need to start your application again if that happens.
+        </p>
+      {% endset %}
+
+      {% call govukModalDialogue({
+        id: "timeout",
+        heading: {
+          text: "Your session is due to expire in 5 minutes"
+        },
+        description: {
+          html: timeoutDescription
+        }
+      }) %}
+        {{ govukButton({
+          text: "Resume application",
+          type: "button",
+          classes: "govuk-modal-dialogue__continue"
+        }) }}
+
+        <a href="{{ basePath }}" class="govuk-modal-dialogue__cancel govuk-body govuk-link--no-visited-state">Start again</a>
+      {% endcall %}
+
     </form>
 
   </div>
 </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script>
+    var $dialogue = document.querySelector('[data-module="govuk-modal-dialogue"]')
+    var $dialogueClose = document.querySelector('.govuk-modal-dialogue__continue');
+
+    if ($dialogue && $dialogueClose) {
+      var modal = new window.ModalDialogue($dialogue)
+        .init({ closeButton: $dialogueClose })
+
+      // Open modal after 10 seconds
+      setTimeout(modal.open, 10000)
+    }
+  </script>
 {% endblock %}
