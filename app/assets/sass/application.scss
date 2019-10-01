@@ -20,6 +20,7 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/layout-index";
 @import "components/check-postcode";
 @import "components/currency-input";
+@import "components/modal-dialogue";
 @import "components/icon";
 
 .govuk-input--width-2[min] {

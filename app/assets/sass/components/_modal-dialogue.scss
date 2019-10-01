@@ -1,0 +1,112 @@
+.govuk-template--modal {
+  overflow-y: hidden;
+}
+
+@include govuk-exports("govuk/component/timeout") {
+  $dialog-width: 640px;
+  $dialog-height: 350px;
+
+  .govuk-modal-dialogue {
+    position: absolute;
+    z-index: 1;
+    top: govuk-spacing(4);
+    right: 5%;
+    left: 5%;
+
+    display: none;
+    width: 90%;
+
+    background: white;
+    border: $govuk-focus-width solid black;
+    box-sizing: border-box;
+    @include govuk-responsive-padding(7);
+
+    // Add focus outline to dialog
+    &:focus {
+      outline: $govuk-focus-width solid $govuk-focus-colour;
+    }
+  }
+
+  // Hide backdrop by default
+  .govuk-modal-dialogue-backdrop,
+  .govuk-modal-dialogue::backdrop {
+    display: none;
+  }
+
+  // Show dialog when opened
+  .govuk-modal-dialogue[open],
+  .govuk-modal-dialogue[open] + .govuk-modal-dialogue-backdrop {
+    display: block;
+  }
+
+  // Custom backdrop
+  .govuk-modal-dialogue-backdrop {
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+    content: '';
+
+    background: black;
+    opacity: 0.8;
+  }
+
+  .govuk-modal-dialogue__continue {
+    margin: govuk-spacing(2) 0 0;
+  }
+
+  .govuk-modal-dialogue__cancel {
+    display: block;
+    text-align: center;
+    margin: govuk-spacing(3) 0 0 0;
+  }
+
+  // New dialog width, inline button + link
+  @include govuk-media-query($from: tablet) {
+    .govuk-modal-dialogue {
+      top: govuk-spacing(8);
+      width: percentage($dialog-width / map-get($govuk-breakpoints, desktop));
+      margin: 0 auto;
+    }
+
+    .govuk-modal-dialogue__continue {
+      margin-top: 0;
+    }
+
+    .govuk-modal-dialogue__cancel {
+      display: inline-block;
+      margin: 7px 0 0 10px;
+    }
+  }
+
+
+  // Vertical alignment only
+  @media (min-width: map-get($govuk-breakpoints, tablet)) and (min-height: $dialog-height + (2 * govuk-spacing(8))) {
+    .govuk-modal-dialogue {
+      top: 50%;
+      margin-top: ($dialog-height / -2);
+    }
+  }
+
+  // Fixed width
+  @include govuk-media-query($from: desktop) {
+    .govuk-modal-dialogue {
+      width: $dialog-width;
+    }
+  }
+
+  // Horizontal + vertical alignment
+  @media (min-width: map-get($govuk-breakpoints, desktop)) and (min-height: $dialog-height + (2 * govuk-spacing(8))) {
+    .govuk-modal-dialogue {
+      left: 50%;
+      margin: ($dialog-height / -2) 0 0 ($dialog-width / -2);
+    }
+  }
+}
