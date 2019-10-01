@@ -1,0 +1,38 @@
+{% extends "../question.html" %}
+
+{% block pageTitle -%}
+  Type of payment – {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form method="post">
+
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+<h1 class="govuk-heading-l">Help us improve this service</h1>
+<p class="govuk-body govuk-!-font-weight-regular">Tell us what was good and what was not so good about your experience.</p>
+
+{{ govukTextarea({
+
+  id: "event-name",
+  name: "event-name"
+}) }}
+
+      {{ govukButton({
+        text: "Save Changes" if isEditMode else "Finish"
+      }) }}
+
+      {% if isEditMode %}
+        <a href="{{ basePath }}/questions/check-answers" class="cancel-review govuk-body govuk-link--no-visited-state">Cancel</a>
+      {% endif %}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

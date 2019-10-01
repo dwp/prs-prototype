@@ -1,0 +1,152 @@
+{% extends "../question.html" %}
+
+{% block pageTitle -%}
+  Tenant details – {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+
+      <h1 class="govuk-heading-l">Tenant details</h1>
+
+      {{ govukInput({
+        label: {
+          text: "Full name"
+        },
+        id: "tenant-full-name",
+        name: "tenantFullName",
+        classes: "govuk-input--width-20",
+        value: data.tenantFullName,
+        attributes: {
+          autocomplete: "name"
+        }
+      }) }}
+
+      {{ govukDateInput({
+        id: "tenant-birth-date",
+        fieldset: {
+          legend: {
+            text: "Date of birth"
+          }
+        },
+        hint: {
+          text: "For example, 31 3 1980"
+        },
+        items: [
+          {
+            label: "Day",
+            name: "tenantBirthDate[day]",
+            id: "tenant-birth-date-day",
+            classes: "govuk-input--width-2",
+            value: data.tenantBirthDate.day,
+            autocomplete: "bday-day",
+            attributes: {
+              min: "1",
+              max: "31"
+            }
+          },
+          {
+            label: "Month",
+            name: "tenantBirthDate[month]",
+            id: "tenant-birth-date-month",
+            classes: "govuk-input--width-2",
+            value: data.tenantBirthDate.month,
+            autocomplete: "bday-month",
+            attributes: {
+              min: "1",
+              max: "12"
+            }
+          },
+          {
+            label: "Year",
+            name: "tenantBirthDate[year]",
+            id: "tenant-birth-date-year",
+            classes: "govuk-input--width-4",
+            value: data.tenantBirthDate.year,
+            autocomplete: "bday-year",
+            attributes: {
+              min: "1",
+              max: "9999"
+            }
+          }
+        ]
+      }) }}
+
+      {% call govukFieldset({
+        legend: {
+          text: "Address",
+          isPageHeading: false
+        }
+      }) %}
+
+        {{ govukInput({
+          label: {
+            html: 'Building and street<span class="govuk-visually-hidden"> line 1 of 2</span>'
+          },
+          id: "tenant-address1",
+          name: "tenantAddress1",
+          value: data.tenantAddress1,
+          autocomplete: 'address-line1'
+        }) }}
+
+        {{ govukInput({
+          label: {
+            html: 'Building and street line 2 of 2',
+            classes: "govuk-visually-hidden"
+          },
+          id: "tenant-address2",
+          name: "tenantAddress2",
+          value: data.tenantAddress2,
+          autocomplete: 'address-line2'
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Town or city"
+          },
+          id: "tenant-town",
+          name: "tenantTown",
+          classes: "govuk-!-width-two-thirds",
+          value: data.tenantTown,
+          autocomplete: 'address-level2'
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "County"
+          },
+          id: "tenant-county",
+          name: "tenantCounty",
+          classes: "govuk-!-width-two-thirds",
+          value: data.tenantCounty,
+          autocomplete: 'address-level1'
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Postcode"
+          },
+          id: "tenant-postcode",
+          name: "tenantPostcode",
+          classes: "govuk-input--width-10",
+          value: data.tenantPostcode,
+          autocomplete: 'postal-code'
+        }) }}
+      {% endcall %}
+
+      {{ govukButton({
+        text: "Save Changes" if isEditMode else "Continue"
+      }) }}
+
+      {% if isEditMode %}
+        <a href="{{ basePath }}/questions/check-answers" class="cancel-review govuk-body govuk-link--no-visited-state">Cancel</a>
+      {% endif %}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

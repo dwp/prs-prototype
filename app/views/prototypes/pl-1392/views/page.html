@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block pageTitle -%}
+  {{ serviceName }}
+{%- endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    "tag": { "text": "beta" },
+    "html": cookieText
+  }) }}
+{% endblock %}

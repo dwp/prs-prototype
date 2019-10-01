@@ -169,7 +169,6 @@
         </div>
         {# End of prototype write up #}
 
-
         {# Start of prototype write up #}
         <div class="prototype-write-up">
           <div class="govuk-grid-row">
@@ -207,6 +206,55 @@
           {{ govukButton({
             text: "View prototype",
             href: "/pl-1187",
+            isStartButton: true
+          }) }}
+          <br>
+        </div>
+        {# End of prototype write up #}
+
+        {# Start of prototype write up #}
+        <div class="prototype-write-up">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+              <dl>
+                <dt class="govuk-heading-s">Date of release</dt>
+                <dd class="govuk-body">TBC</dd>
+              </dl>
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+              <dl>
+                <dt class="govuk-heading-s">Feature</dt>
+                <dd class="govuk-body">Submit fail</dd>
+              </dl>
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+              <dl>
+                <dt class="govuk-heading-s">Related stories</dt>
+                <dd class="govuk-body">PRL-1392</dd>
+              </dl>
+            </div>
+          </div>
+
+          <h3 class="govuk-heading-s">Changes</h3>
+          <p>We tell landlords that their application has been submitted when it hasn't</p>
+
+          <h3 class="govuk-heading-s">Hypothesis</h3>
+
+          <h3 class="govuk-heading-s">Research notes</h3>
+          <p>V1 is where we take them to an additional "sorry" page and ask the user to return.</p>
+          <p>V2 is where we give the user an error on the page.</p>
+
+          {{ govukButton({
+            text: "View prototype v1",
+            href: "/pl-1392",
+            isStartButton: true
+          }) }}
+<br>
+          {{ govukButton({
+            text: "View prototype v2",
+            href: "/pl-1392-v2",
             isStartButton: true
           }) }}
           <br>

@@ -1,0 +1,128 @@
+{% extends "../question.html" %}
+
+{% block pageTitle -%}
+  Rent arrears – {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form method="post">
+
+      <h1 class="govuk-heading-l">Rent arrears</h1>
+
+      <div class="govuk-form-group govuk-currency-input">
+        <label class="govuk-label" for="rent-owed">
+          How much rent does the tenant currently owe you?
+        </label>
+        <div class="govuk-currency-input__inner">
+          <span class="govuk-currency-input__unit">£</span>
+          <input class="govuk-input govuk-currency-input__input govuk-!-width-one-quarter" name="rentOutstanding" id="rent-outstanding" type="number" value="{{ data.rentOutstanding }}" min="0" max="20000" inputmode="decimal">
+        </div>
+      </div>
+
+      {{ govukDateInput({
+        id: "rent-first-missing-date",
+        fieldset: {
+          legend: {
+            text: "Date of first missing payment"
+          }
+        },
+        hint: {
+          text: "For example, 31 3 2018"
+        },
+        items: [
+          {
+            label: "Day",
+            name: "rentFirstMissingDate[day]",
+            id: "rent-first-missing-date-day",
+            classes: "govuk-input--width-2",
+            value: data.rentFirstMissingDate.day,
+            attributes: {
+              min: "1",
+              max: "31"
+            }
+          },
+          {
+            label: "Month",
+            name: "rentFirstMissingDate[month]",
+            id: "rent-first-missing-date-month",
+            classes: "govuk-input--width-2",
+            value: data.rentFirstMissingDate.month,
+            attributes: {
+              min: "1",
+              max: "12"
+            }
+          },
+          {
+            label: "Year",
+            name: "rentFirstMissingDate[year]",
+            id: "rent-first-missing-date-year",
+            classes: "govuk-input--width-4",
+            value: data.rentFirstMissingDate.year,
+            attributes: {
+              min: "1",
+              max: "9999"
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukDateInput({
+        id: "rent-last-missing-date",
+        fieldset: {
+          legend: {
+            text: "Date of most recent missing payment"
+          }
+        },
+        items: [
+          {
+            label: "Day",
+            name: "rentLastMissingDate[day]",
+            id: "rent-last-missing-date-day",
+            classes: "govuk-input--width-2",
+            value: data.rentLastMissingDate.day,
+            attributes: {
+              min: "1",
+              max: "31"
+            }
+          },
+          {
+            label: "Month",
+            name: "rentLastMissingDate[month]",
+            id: "rent-last-missing-date-month",
+            classes: "govuk-input--width-2",
+            value: data.rentLastMissingDate.month,
+            attributes: {
+              min: "1",
+              max: "12"
+            }
+          },
+          {
+            label: "Year",
+            name: "rentLastMissingDate[year]",
+            id: "rent-last-missing-date-year",
+            classes: "govuk-input--width-4",
+            value: data.rentLastMissingDate.year,
+            attributes: {
+              min: "1",
+              max: "9999"
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save Changes" if isEditMode else "Continue"
+      }) }}
+
+      {% if isEditMode %}
+        <a href="{{ basePath }}/questions/check-answers" class="cancel-review govuk-body govuk-link--no-visited-state">Cancel</a>
+      {% endif %}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}
