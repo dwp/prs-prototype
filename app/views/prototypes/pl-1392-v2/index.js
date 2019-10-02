@@ -167,12 +167,15 @@ router.all('/questions/landlord-bank-details', (req, res) => {
  * Check answers
  */
  router.all('/questions/check-answers', (req, res) => {
+  let submission = {}
+
    if (req.method === 'POST') {
-     return res.redirect('../outcome/complete')
+     submission.failed = true
    }
 
    res.render(`${__dirname}/views/questions/check-answers`, {
-     isEditMode: 'change' in req.query
+     isEditMode: 'change' in req.query,
+     submission
    })
  })
 

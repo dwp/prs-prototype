@@ -449,9 +449,11 @@
         iconFallbackText: "Important"
       }) }}
 
+      {% if submission.failed %}
       {{ govukInsetText({
-        "text": "There is a problem with our service and your application has not been submitted. Please try again."
+        text: "There is a problem with our service and your application has not been submitted. Please try again."
       }) }}
+      {% endif %}
 
       {{ govukButton({
         text: "Accept and send"
