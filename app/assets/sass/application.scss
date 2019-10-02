@@ -31,6 +31,17 @@ $govuk-assets-path: '/govuk/assets/';
   min-width: 9ex;
 }
 
+// Add "danger" variant
+.govuk-inset-text--danger {
+  background-color: mix(white, govuk-colour("red"), 90%);
+  border-left-color: govuk-colour("red");
+}
+
+// Add focus outline
+.govuk-inset-text:focus {
+  outline: $govuk-focus-width solid $govuk-focus-colour;
+}
+
 .cancel-review {
   margin: 8px 10px;
   display: inline-block;

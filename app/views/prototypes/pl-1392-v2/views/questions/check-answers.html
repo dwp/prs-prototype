@@ -451,7 +451,13 @@
 
       {% if submission.failed %}
       {{ govukInsetText({
-        text: "There is a problem with our service and your application has not been submitted. Please try again."
+        id: "alert-submission-failed",
+        text: "There is a problem with our service and your application has not been submitted. Please try again.",
+        classes: "govuk-inset-text--danger",
+        attributes: {
+          "aria-role": "alert",
+          tabindex: "-1"
+        }
       }) }}
       {% endif %}
 
@@ -463,4 +469,14 @@
 
   </div>
 </div>
+{% endblock %}
+
+{% block pageScripts %}
+  <script>
+    var $alert = document.getElementById('alert-submission-failed')
+
+    if ($alert) {
+      $alert.focus();
+    }
+  </script>
 {% endblock %}
