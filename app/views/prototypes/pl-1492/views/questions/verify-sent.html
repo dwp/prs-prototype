@@ -11,7 +11,9 @@
     <form method="post">
 
       <h1 class="govuk-heading-xl">Confirm your email</h1>
-      <p>We have sent you a code to confirm your email.</p>
+      <p>We have sent you a code to confirm your email address to {{ data.landlordEmail }}.</p>
+
+      <p><a class="govuk-link" href="../landlord-details#landlord-email">Change email address</a></p>
 
       {{ govukInput({
         label: {
