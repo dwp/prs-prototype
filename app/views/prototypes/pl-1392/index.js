@@ -68,14 +68,24 @@ router.all('/questions/reason-for-request', (req, res) => {
 router.all('/questions/check-arrears', (req, res) => {
   const saved = req.session.data
 
+  // Applying for "Direct rent payment"
   if (saved.typeOfPayment === 'Direct rent payment') {
+
+    // Direct payment applications can have arrears
+    if (saved.twoMonthsArrears === 'yes') {
+      return res.redirect('./rent-arrears')
+    }
+
+    // Otherwise continue to rent details
     return res.redirect('./rent-details')
   }
 
+  // Applying for either rent arrears option
   if (['Rent arrears', 'Both direct rent payment and rent arrears'].includes(saved.typeOfPayment)) {
     return res.redirect('./rent-arrears')
   }
 
+  // Continue to two months arrears
   return res.redirect('./two-months-arrears')
 })
 
