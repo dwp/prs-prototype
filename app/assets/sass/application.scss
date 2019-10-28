@@ -18,6 +18,7 @@ $govuk-assets-path: "/govuk/assets/";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 @import "patterns/layout-index";
+@import "patterns/modal-dialogue-timeout";
 @import "components/check-postcode";
 @import "components/currency-input";
 @import "components/modal-dialogue";
@@ -29,6 +30,11 @@ $govuk-assets-path: "/govuk/assets/";
 
 .govuk-input--width-4[min] {
   min-width: 9ex;
+}
+
+// Disable scrolling, e.g. for modals
+.govuk-\!-scroll-disabled {
+  overflow-y: hidden;
 }
 
 // Add "danger" variant

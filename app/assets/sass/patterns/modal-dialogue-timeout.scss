@@ -1,0 +1,26 @@
+.govuk-modal-dialogue__continue,
+.govuk-modal-dialogue__cancel {
+  margin-bottom: 0;
+}
+
+.govuk-modal-dialogue__continue {
+  margin-top: govuk-spacing(2);
+}
+
+.govuk-modal-dialogue__cancel {
+  display: block;
+  margin-top: govuk-spacing(3);
+  text-align: center;
+}
+
+// New dialogue width, inline button + link
+@include govuk-media-query($from: tablet) {
+  .govuk-modal-dialogue__continue {
+    margin-top: 0;
+  }
+
+  .govuk-modal-dialogue__cancel {
+    display: inline-block;
+    margin: 7px 0 0 10px;
+  }
+}

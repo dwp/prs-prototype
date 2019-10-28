@@ -74,6 +74,7 @@
 
       {% call govukModalDialogue({
         id: "timeout",
+        role: "alertdialog",
         heading: {
           text: "Your session is due to expire in 5 minutes"
         },
@@ -99,11 +100,14 @@
 {% block pageScripts %}
   <script>
     var $dialogue = document.querySelector('[data-module="govuk-modal-dialogue"]')
-    var $dialogueClose = document.querySelector('.govuk-modal-dialogue__continue');
+    var $dialogueClose = document.querySelector('.govuk-modal-dialogue__continue')
 
     if ($dialogue && $dialogueClose) {
       var modal = new window.ModalDialogue($dialogue)
-        .init({ closeButton: $dialogueClose })
+        .init({
+          closeButton: $dialogueClose,
+          focusElement: $dialogueClose
+        })
 
       // Open modal after 10 seconds
       setTimeout(modal.open, 10000)

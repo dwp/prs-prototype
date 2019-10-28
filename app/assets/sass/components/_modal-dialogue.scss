@@ -1,112 +1,90 @@
-.govuk-template--modal {
-  overflow-y: hidden;
-}
+// Disables linting for this file only
+// sass-lint:disable no-duplicate-properties
 
 @include govuk-exports("govuk/component/timeout") {
-  $dialog-width: 640px;
-  $dialog-height: 350px;
+  $govuk-dialogue-width: 640px;
 
-  .govuk-modal-dialogue {
-    position: absolute;
-    z-index: 1;
-    top: govuk-spacing(4);
-    right: 5%;
-    left: 5%;
-
-    display: none;
-    width: 90%;
-
-    background: white;
-    border: $govuk-focus-width solid black;
-    box-sizing: border-box;
-    @include govuk-responsive-padding(7);
-
-    // Add focus outline to dialog
-    &:focus {
-      outline: $govuk-focus-width solid $govuk-focus-colour;
-    }
-  }
-
-  // Hide backdrop by default
-  .govuk-modal-dialogue-backdrop,
-  .govuk-modal-dialogue::backdrop {
-    display: none;
-  }
-
-  // Show dialog when opened
-  .govuk-modal-dialogue[open],
-  .govuk-modal-dialogue[open] + .govuk-modal-dialogue-backdrop {
-    display: block;
-  }
-
-  // Custom backdrop
-  .govuk-modal-dialogue-backdrop {
+  .govuk-modal-dialogue,
+  .govuk-modal-dialogue__backdrop {
     position: fixed;
     z-index: 0;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
+  }
 
+  // Hide dialogue when closed
+  .govuk-modal-dialogue {
     display: none;
-    content: '';
-
-    background: black;
-    opacity: 0.8;
   }
 
-  .govuk-modal-dialogue__continue {
-    margin: govuk-spacing(2) 0 0;
+  // Show dialogue when opened
+  .govuk-modal-dialogue--open {
+    display: table;
+    display: flex;
+    flex-direction: column;
   }
 
-  .govuk-modal-dialogue__cancel {
+  // Wrapper to handle overflow scrolling
+  .govuk-modal-dialogue__wrapper {
+    box-sizing: border-box;
+    display: table-cell;
+    display: flex;
+    height: inherit;
+    padding: govuk-spacing(4) 0;
+    overflow-y: auto;
+    vertical-align: middle;
+    align-items: center;
+  }
+
+  // HTML5 dialogue component
+  .govuk-modal-dialogue__box {
+    box-sizing: border-box;
     display: block;
-    text-align: center;
-    margin: govuk-spacing(3) 0 0 0;
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    border: $govuk-focus-width solid govuk-colour("black");
+    background: govuk-colour("white");
+    @include govuk-responsive-padding(7);
+
+    // Add focus outline to dialogue
+    &:focus {
+      outline: $govuk-focus-width solid $govuk-focus-colour;
+    }
+
+    // Hide browser backdrop
+    &::backdrop {
+      display: none;
+    }
   }
 
-  // New dialog width, inline button + link
+  // Custom backdrop
+  .govuk-modal-dialogue__backdrop {
+    opacity: .8;
+    background: govuk-colour("black");
+    pointer-events: none;
+    touch-action: none;
+  }
+
+  // New dialogue width, inline button + link
   @include govuk-media-query($from: tablet) {
-    .govuk-modal-dialogue {
-      top: govuk-spacing(8);
-      width: percentage($dialog-width / map-get($govuk-breakpoints, desktop));
-      margin: 0 auto;
+    .govuk-modal-dialogue__wrapper {
+      padding: govuk-spacing(8) 0;
     }
 
-    .govuk-modal-dialogue__continue {
-      margin-top: 0;
-    }
-
-    .govuk-modal-dialogue__cancel {
-      display: inline-block;
-      margin: 7px 0 0 10px;
-    }
-  }
-
-
-  // Vertical alignment only
-  @media (min-width: map-get($govuk-breakpoints, tablet)) and (min-height: $dialog-height + (2 * govuk-spacing(8))) {
-    .govuk-modal-dialogue {
-      top: 50%;
-      margin-top: ($dialog-height / -2);
+    .govuk-modal-dialogue__box {
+      width: percentage($govuk-dialogue-width / map-get($govuk-breakpoints, desktop));
     }
   }
 
   // Fixed width
   @include govuk-media-query($from: desktop) {
-    .govuk-modal-dialogue {
-      width: $dialog-width;
-    }
-  }
-
-  // Horizontal + vertical alignment
-  @media (min-width: map-get($govuk-breakpoints, desktop)) and (min-height: $dialog-height + (2 * govuk-spacing(8))) {
-    .govuk-modal-dialogue {
-      left: 50%;
-      margin: ($dialog-height / -2) 0 0 ($dialog-width / -2);
+    .govuk-modal-dialogue__box {
+      width: $govuk-dialogue-width;
     }
   }
 }
