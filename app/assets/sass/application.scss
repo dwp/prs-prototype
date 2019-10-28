@@ -2,7 +2,7 @@
 $govuk-global-styles: true;
 
 // We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
-$govuk-assets-path: '/govuk/assets/';
+$govuk-assets-path: "/govuk/assets/";
 
 // Import GOV.UK Frontend and any extension styles if extensions have been configured
 @import "lib/extensions/extensions";
@@ -33,8 +33,8 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add "danger" variant
 .govuk-inset-text--danger {
-  background-color: mix(white, govuk-colour("red"), 90%);
   border-left-color: govuk-colour("red");
+  background-color: mix(govuk-colour("white"), govuk-colour("red"), 90%);
 }
 
 // Add focus outline
@@ -43,6 +43,6 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 .cancel-review {
-  margin: 8px 10px;
   display: inline-block;
+  margin: 8px 10px;
 }

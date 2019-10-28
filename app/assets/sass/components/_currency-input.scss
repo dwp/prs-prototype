@@ -8,18 +8,18 @@
 }
 
 .govuk-currency-input__unit {
+  box-sizing: border-box;
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
 
-  display: block;
   width: 21px;
   height: 40px;
+  padding: 5px 0;
 
-  box-sizing: border-box;
   border: solid transparent;
   border-width: 2px 0 2px 2px;
-  padding: 5px 0;
 
   @include govuk-font($size: 19, $weight: bold);
   line-height: 28px;
