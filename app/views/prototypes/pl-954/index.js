@@ -35,7 +35,6 @@ router.all('/questions/type-of-payment', (req, res) => {
  */
 router.all('/questions/two-months-arrears', (req, res) => {
   const submitted = req.body
-  const saved = req.session.data
 
   if (submitted.twoMonthsArrears === 'yes') {
     return res.redirect('./check-arrears')

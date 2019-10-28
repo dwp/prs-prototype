@@ -70,7 +70,6 @@ router.all('/questions/check-arrears', (req, res) => {
 
   // Applying for "Direct rent payment"
   if (saved.typeOfPayment === 'Direct rent payment') {
-
     // Direct payment applications can have arrears
     if (saved.twoMonthsArrears === 'yes') {
       return res.redirect('./rent-arrears')

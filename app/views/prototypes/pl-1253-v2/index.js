@@ -24,7 +24,6 @@ router.all('/questions/check-postcode', (req, res) => {
   const submitted = req.body
 
   if (submitted.tenantPostcode) {
-
     // Postcode matches phased rollout region for v4 journey
     if (submitted.tenantPostcode.match(/^SK/ig)) {
       return res.redirect('../pages/we-are-changing')

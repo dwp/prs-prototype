@@ -70,7 +70,6 @@ router.all('/questions/check-arrears', (req, res) => {
 
   // Applying for "Direct rent payment"
   if (saved.typeOfPayment === 'Direct rent payment') {
-
     // Direct payment applications can have arrears
     if (saved.twoMonthsArrears === 'yes') {
       return res.redirect('./rent-arrears')
@@ -186,85 +185,83 @@ router.all('/questions/check-answers', (req, res) => {
   })
 })
 
-
 /**
  * Feedback-satisfied
  */
- router.all('/questions/feedback-satisfied', (req, res) => {
-   if (req.method === 'POST') {
-     return res.redirect('../questions/feedback-easy')
-   }
+router.all('/questions/feedback-satisfied', (req, res) => {
+  if (req.method === 'POST') {
+    return res.redirect('../questions/feedback-easy')
+  }
 
-   res.render(`${__dirname}/views/questions/feedback-satisfied`, {
-     isEditMode: 'change' in req.query
-   })
- })
-
- /**
-  * Feedback-easy
-  */
-  router.all('/questions/feedback-easy', (req, res) => {
-    if (req.method === 'POST') {
-      return res.redirect('../questions/feedback-time')
-    }
-
-    res.render(`${__dirname}/views/questions/feedback-easy`, {
-      isEditMode: 'change' in req.query
-    })
+  res.render(`${__dirname}/views/questions/feedback-satisfied`, {
+    isEditMode: 'change' in req.query
   })
+})
 
-  /**
-   * Feedback-time
-   */
-   router.all('/questions/feedback-time', (req, res) => {
-     if (req.method === 'POST') {
-       return res.redirect('../questions/feedback-help')
-     }
+/**
+ * Feedback-easy
+ */
+router.all('/questions/feedback-easy', (req, res) => {
+  if (req.method === 'POST') {
+    return res.redirect('../questions/feedback-time')
+  }
 
-     res.render(`${__dirname}/views/questions/feedback-time`, {
-       isEditMode: 'change' in req.query
-     })
-   })
+  res.render(`${__dirname}/views/questions/feedback-easy`, {
+    isEditMode: 'change' in req.query
+  })
+})
 
-   /**
-    * Feedback-help
-    */
-    router.all('/questions/feedback-help', (req, res) => {
-      if (req.method === 'POST') {
-        return res.redirect('../questions/feedback-improve')
-      }
+/**
+ * Feedback-time
+ */
+router.all('/questions/feedback-time', (req, res) => {
+  if (req.method === 'POST') {
+    return res.redirect('../questions/feedback-help')
+  }
 
-      res.render(`${__dirname}/views/questions/feedback-help`, {
-        isEditMode: 'change' in req.query
-      })
-    })
+  res.render(`${__dirname}/views/questions/feedback-time`, {
+    isEditMode: 'change' in req.query
+  })
+})
 
-    /**
-     * Feedback-improve
-     */
-     router.all('/questions/feedback-improve', (req, res) => {
-       if (req.method === 'POST') {
-         return res.redirect('../outcome/feedback-complete')
-       }
+/**
+ * Feedback-help
+ */
+router.all('/questions/feedback-help', (req, res) => {
+  if (req.method === 'POST') {
+    return res.redirect('../questions/feedback-improve')
+  }
 
-       res.render(`${__dirname}/views/questions/feedback-improve`, {
-         isEditMode: 'change' in req.query
-       })
-     })
+  res.render(`${__dirname}/views/questions/feedback-help`, {
+    isEditMode: 'change' in req.query
+  })
+})
 
-     /**
-      * Sorry we can't submit
-      */
-      router.all('/questions/not-submitted', (req, res) => {
-        if (req.method === 'POST') {
-          return res.redirect('../questions/check-answers')
-        }
+/**
+ * Feedback-improve
+ */
+router.all('/questions/feedback-improve', (req, res) => {
+  if (req.method === 'POST') {
+    return res.redirect('../outcome/feedback-complete')
+  }
 
-        res.render(`${__dirname}/views/questions/not-submitted`, {
-          isEditMode: 'change' in req.query
-        })
-      })
+  res.render(`${__dirname}/views/questions/feedback-improve`, {
+    isEditMode: 'change' in req.query
+  })
+})
 
+/**
+ * Sorry we can't submit
+ */
+router.all('/questions/not-submitted', (req, res) => {
+  if (req.method === 'POST') {
+    return res.redirect('../questions/check-answers')
+  }
+
+  res.render(`${__dirname}/views/questions/not-submitted`, {
+    isEditMode: 'change' in req.query
+  })
+})
 
 /**
  * Pages catch all
@@ -290,8 +287,6 @@ router.all('/questions/:question', (req, res) => {
 router.all('/outcome/:outcome', (req, res) => {
   res.render(`${__dirname}/views/outcomes/${req.params.outcome}`)
 })
-
-
 
 /**
  * Format date for display
