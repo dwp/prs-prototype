@@ -32,7 +32,8 @@
     display: table-cell;
     display: flex;
     height: inherit;
-    padding: govuk-spacing(4) 0;
+    @include govuk-responsive-padding(7, "top");
+    @include govuk-responsive-padding(7, "bottom");
     overflow-y: auto;
     vertical-align: middle;
     align-items: center;
@@ -47,9 +48,9 @@
     width: 90%;
     margin-right: auto;
     margin-left: auto;
+    padding: 0;
     border: $govuk-focus-width solid govuk-colour("black");
     background: govuk-colour("white");
-    @include govuk-responsive-padding(7);
 
     // Add focus outline to dialogue
     &:focus {
@@ -62,6 +63,12 @@
     }
   }
 
+  // Inner content
+  .govuk-modal-dialogue__content {
+    @include govuk-responsive-padding(7);
+    padding-top: 0;
+  }
+
   // Custom backdrop
   .govuk-modal-dialogue__backdrop {
     opacity: .8;
@@ -72,8 +79,8 @@
 
   // New dialogue width, inline button + link
   @include govuk-media-query($from: tablet) {
-    .govuk-modal-dialogue__wrapper {
-      padding: govuk-spacing(8) 0;
+    .govuk-modal-dialogue__content {
+      padding-top: 0;
     }
 
     .govuk-modal-dialogue__box {

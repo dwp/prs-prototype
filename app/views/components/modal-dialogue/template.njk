@@ -1,3 +1,4 @@
+{% from "govuk/components/button/macro.njk" import govukButton %}
 {% set headingLevel = params.headingLevel if params.headingLevel else 2 %}
 {% set labelledBy = params.labelledBy if params.labelledBy else params.id + "-title" %}
 {% set describedBy = params.describedBy if params.describedBy else params.id + "-description" %}
@@ -5,17 +6,17 @@
   <div class="govuk-modal-dialogue__wrapper">
     <dialog id="{{ params.id }}" class="govuk-modal-dialogue__box{% if params.classes %} {{ params.classes }}{% endif %}" aria-labelledby="{{ labelledBy }}" aria-describedby="{{ describedBy }}" aria-modal="true" role="{{ params.role | default('dialog') }}" tabindex="0"
     {%- for attribute, value in params.attributes %} {{ attribute }}="{{ value }}"{% endfor %}>
-      <h{{ headingLevel }} class="govuk-heading-l" id="{{ params.id }}-title">
-        {{ params.heading.html | safe if params.heading.html else params.heading.text }}
-      </h{{ headingLevel }}>
-      <div class="govuk-modal-dialogue__description" id="{{ params.id }}-description">
-        {{ params.description.html | safe if params.description.html else params.description.text }}
-      </div>
-      {% if caller %}
       <div class="govuk-modal-dialogue__content">
-        {{ caller() }}
+        <h{{ headingLevel }} class="govuk-heading-l" id="{{ params.id }}-title">
+          {{ params.heading.html | safe if params.heading.html else params.heading.text }}
+        </h{{ headingLevel }}>
+        <div class="govuk-modal-dialogue__description" id="{{ params.id }}-description">
+          {{ params.description.html | safe if params.description.html else params.description.text }}
+        </div>
+        {% if caller %}
+          {{ caller() }}
+        {% endif %}
       </div>
-      {% endif %}
     </dialog>
   </div>
   <div class="govuk-modal-dialogue__backdrop"></div>
