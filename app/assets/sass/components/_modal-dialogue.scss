@@ -4,15 +4,6 @@
 @include govuk-exports("govuk/component/timeout") {
   $govuk-dialogue-width: 640px;
 
-  // Secondary button variables
-  $govuk-dialogue-header-colour: govuk-colour("light-grey", $legacy: "grey-3");
-
-  // Close button variables
-  $govuk-dialogue-button-colour: govuk-shade($govuk-dialogue-header-colour, 10%);
-  $govuk-dialogue-button-hover-colour: govuk-shade($govuk-dialogue-header-colour, 20%);
-  $govuk-dialogue-button-shadow-colour: govuk-shade($govuk-dialogue-header-colour, 40%);
-  $govuk-dialogue-button-text-colour: govuk-colour("black");
-
   .govuk-modal-dialogue,
   .govuk-modal-dialogue__backdrop {
     position: fixed;
@@ -76,8 +67,9 @@
   .govuk-modal-dialogue__header {
     @include govuk-clearfix;
     @include govuk-responsive-margin(5, "bottom");
-    padding-bottom: $govuk-border-width-form-element;
-    background-color: $govuk-dialogue-header-colour;
+    padding-bottom: $govuk-focus-width;
+    color: govuk-colour("white");
+    background-color: govuk-colour("black");
     text-align: right;
   }
 
@@ -98,34 +90,35 @@
   // Crown icon
   .govuk-modal-dialogue__crown {
     display: block;
-    margin: 8px;
+    margin: 6px 0 0 6px;
     @include govuk-responsive-margin(5, "left");
     float: left;
   }
 
   // Close button
   .govuk-modal-dialogue__close {
+    $font-size: 36px;
+    $line-height: 1;
+
     display: block;
     width: auto;
-    min-width: 37px;
+    min-width: 44px;
     margin: 0;
+    padding: 2px 5px;
     float: right;
-    color: govuk-colour("black");
-    background-color: $govuk-dialogue-button-colour;
-    box-shadow: 0 $govuk-border-width-form-element 0 $govuk-dialogue-button-shadow-colour;
-    @include govuk-typography-weight-bold;
-    @include govuk-typography-responsive($size: 27, $override-line-height: 1);
-
-    &,
-    &:link,
-    &:visited,
-    &:active,
-    &:hover {
-      color: $govuk-dialogue-button-text-colour;
+    color: govuk-colour("white");
+    background-color: govuk-colour("black");
+    box-shadow: none !important;
+    font-size: $font-size;
+    @if $govuk-typography-use-rem {
+      font-size: govuk-px-to-rem($font-size);
     }
+    @include govuk-typography-weight-bold;
+    line-height: $line-height;
 
     &:hover {
-      background-color: $govuk-dialogue-button-hover-colour;
+      color: govuk-colour("black");
+      background-color: govuk-colour("yellow");
     }
 
     &:active {
@@ -141,11 +134,6 @@
 
     .govuk-modal-dialogue__box {
       width: percentage($govuk-dialogue-width / map-get($govuk-breakpoints, desktop));
-    }
-
-    // Close button
-    .govuk-modal-dialogue__close {
-      min-width: 46px;
     }
   }
 
