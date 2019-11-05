@@ -100,14 +100,14 @@
 {% block pageScripts %}
   <script>
     var $dialogue = document.querySelector('[data-module="govuk-modal-dialogue"]')
-    var $dialogueClose = document.querySelector('.govuk-modal-dialogue__continue')
+    var $dialogueButtonResume = document.querySelector('.govuk-modal-dialogue__continue')
 
-    if ($dialogue && $dialogueClose) {
+    if ($dialogue && $dialogueButtonResume) {
       var modal = new window.ModalDialogue($dialogue)
-        .init({
-          closeButton: $dialogueClose,
-          focusElement: $dialogueClose
-        })
+        .init({ focusElement: $dialogueButtonResume })
+
+      // Close dialogue on "Resume application"
+      $dialogueButtonResume.addEventListener('click', modal.close)
 
       // Open modal after 10 seconds
       setTimeout(modal.open, 10000)

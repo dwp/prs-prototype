@@ -4,6 +4,15 @@
 @include govuk-exports("govuk/component/timeout") {
   $govuk-dialogue-width: 640px;
 
+  // Secondary button variables
+  $govuk-dialogue-header-colour: govuk-colour("light-grey", $legacy: "grey-3");
+
+  // Close button variables
+  $govuk-dialogue-button-colour: govuk-shade($govuk-dialogue-header-colour, 10%);
+  $govuk-dialogue-button-hover-colour: govuk-shade($govuk-dialogue-header-colour, 20%);
+  $govuk-dialogue-button-shadow-colour: govuk-shade($govuk-dialogue-header-colour, 40%);
+  $govuk-dialogue-button-text-colour: govuk-colour("black");
+
   .govuk-modal-dialogue,
   .govuk-modal-dialogue__backdrop {
     position: fixed;
@@ -63,9 +72,18 @@
     }
   }
 
+  // Header with close button
+  .govuk-modal-dialogue__header {
+    @include govuk-clearfix;
+    @include govuk-responsive-margin(5, "bottom");
+    padding-bottom: $govuk-border-width-form-element;
+    background-color: $govuk-dialogue-header-colour;
+    text-align: right;
+  }
+
   // Inner content
   .govuk-modal-dialogue__content {
-    @include govuk-responsive-padding(7);
+    @include govuk-responsive-padding(6);
     padding-top: 0;
   }
 
@@ -77,6 +95,44 @@
     touch-action: none;
   }
 
+  // Crown icon
+  .govuk-modal-dialogue__crown {
+    display: block;
+    margin: 8px;
+    @include govuk-responsive-margin(5, "left");
+    float: left;
+  }
+
+  // Close button
+  .govuk-modal-dialogue__close {
+    display: block;
+    width: auto;
+    min-width: 37px;
+    margin: 0;
+    float: right;
+    color: govuk-colour("black");
+    background-color: $govuk-dialogue-button-colour;
+    box-shadow: 0 $govuk-border-width-form-element 0 $govuk-dialogue-button-shadow-colour;
+    @include govuk-typography-weight-bold;
+    @include govuk-typography-responsive($size: 27, $override-line-height: 1);
+
+    &,
+    &:link,
+    &:visited,
+    &:active,
+    &:hover {
+      color: $govuk-dialogue-button-text-colour;
+    }
+
+    &:hover {
+      background-color: $govuk-dialogue-button-hover-colour;
+    }
+
+    &:active {
+      top: 0;
+    }
+  }
+
   // New dialogue width, inline button + link
   @include govuk-media-query($from: tablet) {
     .govuk-modal-dialogue__content {
@@ -85,6 +141,11 @@
 
     .govuk-modal-dialogue__box {
       width: percentage($govuk-dialogue-width / map-get($govuk-breakpoints, desktop));
+    }
+
+    // Close button
+    .govuk-modal-dialogue__close {
+      min-width: 46px;
     }
   }
 

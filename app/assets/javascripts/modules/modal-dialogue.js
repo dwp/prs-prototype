@@ -46,6 +46,9 @@ ModalDialogue.prototype.init = function (options) {
   this.$focusableLast = this.$focussable[this.$focussable.length - 1]
   this.$focusElement = this.options.focusElement || this.$dialogBox
 
+  // Close button
+  this.$buttonClose = this.$dialogBox.querySelector('.govuk-modal-dialogue__close')
+
   // Default open state
   this.isOpen = this.$dialogBox.hasAttribute('open')
 
@@ -54,10 +57,8 @@ ModalDialogue.prototype.init = function (options) {
     this.options.triggerElement.addEventListener('click', this.open)
   }
 
-  // Optional close button
-  if (this.options.closeButton) {
-    this.options.closeButton.addEventListener('click', this.close)
-  }
+  // Close dialogue on close button click
+  this.$buttonClose.addEventListener('click', this.close)
 
   return this
 }
