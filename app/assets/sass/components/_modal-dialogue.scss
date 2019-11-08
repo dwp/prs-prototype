@@ -95,6 +95,11 @@
     float: left;
   }
 
+  // Heading
+  .govuk-modal-dialogue__heading:last-child {
+    margin-bottom: 0;
+  }
+
   // Close button
   .govuk-modal-dialogue__close {
     $font-size: 36px;

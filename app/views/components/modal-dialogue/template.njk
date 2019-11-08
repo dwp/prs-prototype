@@ -51,12 +51,14 @@
         }) }}
       </div>
       <div class="govuk-modal-dialogue__content">
-        <h{{ headingLevel }} class="govuk-heading-l" id="{{ params.id }}-title">
+        <h{{ headingLevel }} class="govuk-modal-dialogue__heading govuk-heading-l" id="{{ params.id }}-title">
           {{ params.heading.html | safe if params.heading.html else params.heading.text }}
         </h{{ headingLevel }}>
+        {% if params.description.html or params.description.text %}
         <div class="govuk-modal-dialogue__description" id="{{ params.id }}-description">
           {{ params.description.html | safe if params.description.html else params.description.text }}
         </div>
+        {% endif %}
         {% if caller %}
           {{ caller() }}
         {% endif %}
