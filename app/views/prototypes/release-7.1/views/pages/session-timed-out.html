@@ -9,16 +9,16 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      Sorry there is a problem
+      Your session has expired, you’ll need to start again
     </h1>
 
-    <h2 class="govuk-heading-m">
-      Your session has timed out
-    </h2>
+    <p class="govuk-body">Your session has ended because you have not done anything on the service for 1 hour.</p>
+    <p class="govuk-body">We do this for your security. We have not saved any personal information you entered.</p>
 
-    <p>You haven’t entered any details for an hour so we’ve cleared the page to keep your information secure.</p>
-    <p>You can start again by clicking on the link in your invitation email.</p>
-    <p>If you still can’t access the service, contact us by email at <a href="mailto:adpr.pbeta@dwp.gsi.gov.uk" class="govuk-link">adpr.pbeta@dwp.gsi.gov.uk</a></p>
+    {{ govukButton({
+      text: "Start your application again",
+      href: basePath
+    }) }}
 
   </div>
 </div>
