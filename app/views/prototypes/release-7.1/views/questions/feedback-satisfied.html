@@ -1,0 +1,65 @@
+{% extends "../question.html" %}
+
+{% block pageTitle -%}
+  Type of payment – {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form method="post">
+      <h1 class="govuk-heading-xl">Give feedback</h1>
+
+      {{ govukRadios({
+        idPrefix: "type-of-payment",
+        name: "typeOfPayment",
+        fieldset: {
+          legend: {
+            text: "Overall, how did you feel about the service you used today?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Very satisfied",
+            text: "Very satisfied",
+            checked: checked("verySatisfied", "Very satisfied")
+          },
+          {
+            value: "Satisfied",
+            text: "Satisfied",
+            checked: checked("satisfied", "Satisfied")
+          },
+          {
+            value: "Neither satisfied nor dissatisfied",
+            text: "Neither satisfied nor dissatisfied",
+            checked: checked("neitherSatisfiedNorDissatisfied", "Neither satisfied nor dissatisfied")
+          },
+          {
+            value: "Dissatisfied",
+            text: "Dissatisfied",
+            checked: checked("Dissatisfied", "Dissatisfied")
+          },
+          {
+            value: "Very dissatisfied",
+            text: "Very dissatisfied",
+            checked: checked("Very dissatisfied", "Very dissatisfied")
+          }
+
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

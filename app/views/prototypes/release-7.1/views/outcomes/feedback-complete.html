@@ -1,0 +1,21 @@
+{% extends "../outcome.html" %}
+
+{% block pageTitle -%}
+  Complete – {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukPanel({
+      titleText: "Feedback completed"
+    }) }}
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-7">What happens next</h2>
+
+    <p>We’ve received your anonymous feedback and will use this to improve our service.</p>
+
+  </div>
+</div>
+{% endblock %}
