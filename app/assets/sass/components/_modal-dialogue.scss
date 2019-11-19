@@ -7,7 +7,6 @@
   .govuk-modal-dialogue,
   .govuk-modal-dialogue__backdrop {
     position: fixed;
-    z-index: 0;
     top: 0;
     left: 0;
     width: 100%;
@@ -17,6 +16,7 @@
   // Hide dialogue when closed
   .govuk-modal-dialogue {
     display: none;
+    z-index: 1;
   }
 
   // Show dialogue when opened
@@ -24,6 +24,13 @@
     display: table;
     display: flex;
     flex-direction: column;
+  }
+
+  // Custom backdrop
+  .govuk-modal-dialogue__backdrop {
+    z-index: 0;
+    opacity: .8;
+    background: govuk-colour("black");
   }
 
   // Wrapper to handle overflow scrolling
@@ -77,14 +84,6 @@
   .govuk-modal-dialogue__content {
     @include govuk-responsive-padding(6);
     padding-top: 0;
-  }
-
-  // Custom backdrop
-  .govuk-modal-dialogue__backdrop {
-    opacity: .8;
-    background: govuk-colour("black");
-    pointer-events: none;
-    touch-action: none;
   }
 
   // Crown icon
