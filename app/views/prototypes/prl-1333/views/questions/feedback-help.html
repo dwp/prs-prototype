@@ -1,0 +1,55 @@
+{% extends "../question.html" %}
+
+{% block pageTitle -%}
+  Type of payment – {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form method="post">
+
+      {{ govukRadios({
+        idPrefix: "type-of-payment",
+        name: "typeOfPayment",
+        fieldset: {
+          legend: {
+            text: "When you used this service, did you:",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Use it by yourself",
+            text: "Use it by yourself",
+            checked: checked("useItByYourself", "Use it by yourself")
+          },
+          {
+            value: "Use it with someone",
+            text: "Use it with someone",
+            checked: checked("useItWithSomeone", "Use it with someone")
+          },
+          {
+            value: "Have someone use it for you",
+            text: "Have someone use it for you",
+            checked: checked("haveSomeoneUseItForYou", "Have someone use it for you")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save Changes" if isEditMode else "Continue"
+      }) }}
+
+      {% if isEditMode %}
+        <a href="{{ basePath }}/questions/check-answers" class="cancel-review govuk-body govuk-link--no-visited-state">Cancel</a>
+      {% endif %}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

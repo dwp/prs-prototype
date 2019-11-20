@@ -1,0 +1,25 @@
+{% extends "../page.html" %}
+
+{% block pageTitle -%}
+  Session timed out – {{ serviceName }} – GOV.UK
+{%- endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Your session has expired, you’ll need to start again
+    </h1>
+
+    <p class="govuk-body">Your session has ended because you have not done anything on the service for 1 hour.</p>
+    <p class="govuk-body">We do this for your security. We have not saved any personal information you entered.</p>
+
+    {{ govukButton({
+      text: "Start your application again",
+      href: basePath
+    }) }}
+
+  </div>
+</div>
+{% endblock %}
