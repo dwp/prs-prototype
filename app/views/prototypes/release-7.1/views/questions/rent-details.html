@@ -16,9 +16,12 @@
         <label class="govuk-label" for="rent-amount">
           Rent amount
         </label>
+        <span id="rent-amount-hint" class="govuk-hint">
+          (Include service charges if relevant)
+        </span>
         <div class="govuk-currency-input__inner">
           <span class="govuk-currency-input__unit">£</span>
-          <input class="govuk-input govuk-currency-input__input govuk-!-width-one-quarter" aria-describedby="Enter amount in pounds" name="rentAmount" id="rent-amount" type="number" value="{{ data.rentAmount }}" min="0" max="2500" inputmode="decimal">
+          <input class="govuk-input govuk-currency-input__input govuk-!-width-one-quarter" aria-describedby="f-rentAmount-hint" name="rentAmount" id="rent-amount" type="number" value="{{ data.rentAmount }}" min="0" max="2500" inputmode="decimal">
         </div>
       </div>
 
