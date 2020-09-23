@@ -212,7 +212,7 @@ const sessionName = 'govuk-prototype-kit-' + (Buffer.from(config.serviceName, 'u
 let sessionOptions = {
   secret: sessionName,
   cookie: {
-    maxAge: 1000 * 60 * 60 * 4, // 4 hours
+    maxAge: 1000 * 60 * 60 * 20, // 4 hours
     secure: isSecure
   }
 }

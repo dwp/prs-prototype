@@ -7,6 +7,7 @@
 {% block header %}
   {% include "includes/cookie-banner.html" %}
   {{ govukHeader({
+    homepageUrl: "https://www.gov.uk",
     serviceName: serviceName,
     serviceUrl: "/"
   }) }}
@@ -33,30 +34,31 @@
           <div class="govuk-grid-column-one-third">
             <dl>
               <dt class="govuk-heading-s">Date of release</dt>
-              <dd class="govuk-body">TBC</dd>
+              <dd class="govuk-body">23-09-2020</dd>
             </dl>
           </div>
 
           <div class="govuk-grid-column-one-third">
             <dl>
               <dt class="govuk-heading-s">Feature</dt>
-              <dd class="govuk-body">Proof of request<br>Service charge</dd>
+              <dd class="govuk-body">V 7.16.1</dd>
             </dl>
           </div>
 
           <div class="govuk-grid-column-one-third">
             <dl>
               <dt class="govuk-heading-s">Related stories</dt>
-              <dd class="govuk-body">PL-1333<br>PL-1651</dd>
+              <dd class="govuk-body">PRL-2097<br>PRL-2094<br>PRL-2093<br>PRL-1616</dd>
             </dl>
           </div>
         </div>
 
         <h3 class="govuk-heading-s">Changes</h3>
-        <p>How might we give landlords tangible proof of their request.</p>
-        <p>This is a solution that another team have used, so the user (landlord) has the option to download a PDF which contains the details they have just submitted.</p>
-        <br>
-        <p>HMW incorporate service charge into the data gather</p>
+        <p>Add accessibility statement link to footer</p>
+        <p>Update header links</p>
+        <p>Update hidden text on check answers page</p>
+        <p>Remove min and max attributes from text input fields</p>
+        <p>Update session timeout to 20 hours</p>
         <h3 class="govuk-heading-s">Hypothesis</h3>
         <p>None.</p>
 
@@ -65,7 +67,7 @@
 
         {{ govukButton({
           text: "View prototype",
-          href: "/prl-1333",
+          href: "/release-7.16.1",
           isStartButton: true
         }) }}
         <br>
@@ -85,7 +87,50 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-
+          {# Start of prototype write up #}
+          <div class="prototype-write-up">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-third">
+                <dl>
+                  <dt class="govuk-heading-s">Date of release</dt>
+                  <dd class="govuk-body">TBC</dd>
+                </dl>
+              </div>
+    
+              <div class="govuk-grid-column-one-third">
+                <dl>
+                  <dt class="govuk-heading-s">Feature</dt>
+                  <dd class="govuk-body">Proof of request<br>Service charge</dd>
+                </dl>
+              </div>
+    
+              <div class="govuk-grid-column-one-third">
+                <dl>
+                  <dt class="govuk-heading-s">Related stories</dt>
+                  <dd class="govuk-body">PL-1333<br>PL-1651</dd>
+                </dl>
+              </div>
+            </div>
+    
+            <h3 class="govuk-heading-s">Changes</h3>
+            <p>How might we give landlords tangible proof of their request.</p>
+            <p>This is a solution that another team have used, so the user (landlord) has the option to download a PDF which contains the details they have just submitted.</p>
+            <br>
+            <p>HMW incorporate service charge into the data gather</p>
+            <h3 class="govuk-heading-s">Hypothesis</h3>
+            <p>None.</p>
+    
+            <h3 class="govuk-heading-s">Research notes</h3>
+            <p>None.</p>
+    
+            {{ govukButton({
+              text: "View prototype",
+              href: "/prl-1333",
+              isStartButton: true
+            }) }}
+            <br>
+          </div>
+          {# End of prototype write up #}
 
         {# Start of prototype write up #}
         <div class="prototype-write-up">
